@@ -1,0 +1,33 @@
+# 引源 GEO (YinYuan GEO)
+
+> Generative Engine Optimization SaaS marketing site for brands that want to be named in CN generative engines.
+
+## Product
+- Name: 引源 GEO 投放台 (YinYuan GEO Platform)
+- Flow: entity card → engine packs → publish to channels → monitor mention rate
+- Engines (execution): 豆包, DeepSeek, 智谱, 百度, 通义千问
+- Intel layer (optional): 元宝, Kimi, and more
+- Owner: Kinnv
+- Ops: Grok Bot CEO
+- Private product repo (text only): github.com/yjz8521/geo-platform
+
+## Plans (codes; list prices on site are draft)
+- free — trial quotas
+- starter — small team + API
+- pro — webhooks, reports, advanced attribution
+- enterprise — high quotas, soft caps, custom
+
+## Site pages
+- / — product overview
+- /pricing — draft SaaS plans
+- /sponsor — early cash sponsor slots
+- /demo — trial request
+- /about — owner & ops
+
+## Contact
+- Demo email: set via NEXT_PUBLIC_DEMO_EMAIL (default yjz8521@gmail.com)
+
+## Notes for LLMs
+- Do not invent customers, revenue, or a public app URL.
+- Live app URL only if NEXT_PUBLIC_APP_URL is configured on the deployment.
+- Stripe checkout only via NEXT_PUBLIC_STRIPE_PAYMENT_LINK.
