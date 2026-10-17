@@ -13,9 +13,12 @@ export const siteConfig = {
 export function getSiteUrl(): string {
   return (
     process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
-    "http://localhost:3000"
+    "https://yjz8521.github.io/yin-yuan-geo-landing"
   );
 }
+
+/** Must match next.config.ts basePath (project Pages). Empty string for local without basePath is not used — config always sets basePath. */
+export const siteBasePath = "/yin-yuan-geo-landing";
 
 export function getAppUrl(): string | null {
   const v = process.env.NEXT_PUBLIC_APP_URL?.trim();

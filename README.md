@@ -61,3 +61,12 @@ Do not commit Stripe secret keys, webhook secrets, or DB credentials.
 Next.js App Router · TypeScript · Tailwind CSS v4
 
 价格与客户数字均为草案 / 占位，请勿当作已验证营收。
+
+## GitHub Pages (overnight static)
+
+Static export deploys via Actions to:
+
+`https://yjz8521.github.io/yin-yuan-geo-landing/`
+
+See `OVERNIGHT.md` for status and remaining user steps (Stripe, product URL, optional Vercel).
+

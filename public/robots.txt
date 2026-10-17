@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+
+Sitemap: https://yjz8521.github.io/yin-yuan-geo-landing/sitemap.xml
+Host: https://yjz8521.github.io/yin-yuan-geo-landing

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useI18n } from "@/lib/i18n";
-import { siteConfig } from "@/lib/site";
+import { siteBasePath, siteConfig } from "@/lib/site";
 
 export function Footer() {
   const { t } = useI18n();
@@ -34,7 +34,7 @@ export function Footer() {
           <Link href="/about" className="hover:text-white">
             {t("关于", "About")}
           </Link>
-          <a href="/llms.txt" className="hover:text-white">
+          <a href={`${siteBasePath}/llms.txt`} className="hover:text-white">
             llms.txt
           </a>
         </div>
