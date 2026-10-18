@@ -40,7 +40,7 @@ export const checkoutLinks = {
 };
 
 /** Pro quarterly (NT$9,900 / 季). Swap to Lemon Squeezy URL when ready. */
-export const CHECKOUT_PRO_QUARTERLY = `mailto:yjz8521@gmail.com?subject=${encodeURIComponent("引源 GEO Pro 季付")}`;
+export const CHECKOUT_PRO_QUARTERLY = "https://yin-yuan-geo.lemonsqueezy.com/checkout/buy/11775d12-9b90-4a13-8079-2e16a94bf7ce";
 
 /** @deprecated Stripe unsupported in Taiwan; kept for compat. */
 export function getStripeLink(): string {
