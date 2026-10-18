@@ -1,6 +1,7 @@
 # 引源 GEO · 4 周推广计划（华语市场）
 
 > 所有贴文均为 **DRAFT，须 Kinnv 审核后才可发布**。禁止杜撰客户、成效数据或营收。产品 App 尚未上线，文案只能说「申请试用 / 预约」。
+> 定价（统一口径）：Free NT$0；Starter NT$1,990/月；Pro NT$3,900/月或季付 NT$9,900/季（约 NT$3,300/月，省 15%）；Enterprise 洽谈。定位：自助工具、专做国产引擎，价格低于代运营。
 > 官网：https://yin-yuan-geo-landing.vercel.app ｜ 联系：yjz8521@gmail.com
 
 ## 0. GEO 成效测量（先做基线）
@@ -25,12 +26,12 @@
 
 ### 知乎（大陆，权重高，豆包/DeepSeek 常引用）
 **DRAFT 1 — 回答「什么是 GEO？」类问题**
-> GEO（生成式引擎优化）就是让 AI 在回答里点名你的品牌。和 SEO 争排名不同，GEO 看三件事：①品牌事实是否统一可验证；②内容是否写成 AI 可直接引用的定义句和 FAQ；③是否发布在 AI 会读取的公开渠道。我在做的「引源 GEO 投放台」把它拆成四步：实体卡 → 各引擎投放包 → 渠道发布 → 固定问法监测提及率。方法写在这里：https://yin-yuan-geo-landing.vercel.app/guide/geo-intro/ （利益相关：作者是开发者）
+> GEO（生成式引擎优化）就是让 AI 在回答里点名你的品牌。和 SEO 争排名不同，GEO 看三件事：①品牌事实是否统一可验证；②内容是否写成 AI 可直接引用的定义句和 FAQ；③是否发布在 AI 会读取的公开渠道。我在做的「引源 GEO 投放台」把它拆成四步：实体卡 → 各引擎投放包 → 渠道发布 → 固定问法监测提及率。方法写在这里：https://yin-yuan-geo-landing.vercel.app/guide/geo-intro/ Starter 每月 NT$1,990 起，自助工具、价格低于代运营。（利益相关：作者是开发者）
 
 **DRAFT 2 — 专栏文章**：转载/改写 `/guide/monitor-ai-mentions/` 全文，标题「如何检测豆包、DeepSeek 有没有提到你的品牌（附问法模板）」。
 
 ### 小红书
-**DRAFT**：标题「AI 不推荐你的品牌？试试 GEO 这 4 步🧭」正文：实体卡/投放包/发布/监测 四张卡片图 + 「评论区要问法模板」。#GEO #AI搜索 #品牌营销 #DeepSeek #豆包
+**DRAFT**：标题「AI 不推荐你的品牌？试试 GEO 这 4 步🧭」正文：实体卡/投放包/发布/监测 四张卡片图 + 「自助工具，Starter NT$1,990/月起」+ 「评论区要问法模板」。#GEO #AI搜索 #品牌营销 #DeepSeek #豆包
 
 ### 微信公众号
 **DRAFT**：《GEO 入门：让豆包和 DeepSeek 推荐你的品牌》全文（来自 /guide/geo-intro/），文末「申请试用：yjz8521@gmail.com」。
@@ -46,7 +47,7 @@
 **DRAFT**：「[分享] 如何檢測 AI（ChatGPT/DeepSeek）有沒有推薦你的品牌」——繁體改寫指南，文末揭露作者身份，避免硬廣（遵守板規，先讀板規）。
 
 ### X
-**DRAFT**：「Built 引源 GEO — GEO workflow for Chinese AI engines (Doubao, DeepSeek, Qwen, Zhipu, ERNIE): entity card → engine packs → publish → mention monitoring. Guide: https://yin-yuan-geo-landing.vercel.app/guide/」
+**DRAFT**：「Built 引源 GEO — GEO workflow for Chinese AI engines (Doubao, DeepSeek, Qwen, Zhipu, ERNIE): entity card → engine packs → publish → mention monitoring. Self-serve from NT$1,990/mo. Guide: https://yin-yuan-geo-landing.vercel.app/guide/」
 
 ### LinkedIn
 **DRAFT**：英文短文「Why your brand is invisible in Chinese AI answers — and a 4-step GEO method」，面向出海/华人品牌负责人。

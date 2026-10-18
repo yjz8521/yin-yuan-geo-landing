@@ -35,6 +35,9 @@ export const checkoutLinks = {
     "https://yin-yuan-geo.lemonsqueezy.com/checkout/buy/ce49e252-220e-4556-9003-e642cfa357a9",
 };
 
+/** Pro quarterly (NT$9,900 / 季). Swap to Lemon Squeezy URL when ready. */
+export const CHECKOUT_PRO_QUARTERLY = `mailto:yjz8521@gmail.com?subject=${encodeURIComponent("引源 GEO Pro 季付")}`;
+
 /** @deprecated Stripe unsupported in Taiwan; kept for compat. */
 export function getStripeLink(): string {
   const v = process.env.NEXT_PUBLIC_STRIPE_PAYMENT_LINK?.trim();
@@ -76,8 +79,8 @@ export const draftPlans = [
     code: "starter" as const,
     nameZh: "Starter",
     nameEn: "Starter",
-    priceZh: "NT$2,990",
-    priceEn: "$99",
+    priceZh: "NT$1,990",
+    priceEn: "~$62",
     periodZh: "/ 月",
     periodEn: "/ mo",
     blurbZh: "小团队起步投放与 API",
@@ -101,8 +104,8 @@ export const draftPlans = [
     code: "pro" as const,
     nameZh: "Pro",
     nameEn: "Pro",
-    priceZh: "NT$9,900",
-    priceEn: "$329",
+    priceZh: "NT$3,900",
+    priceEn: "~$122",
     periodZh: "/ 月",
     periodEn: "/ mo",
     blurbZh: "完整情报、Webhook 与归因",

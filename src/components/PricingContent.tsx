@@ -91,6 +91,11 @@ export function PricingContent() {
                   {ctaLabel}
                 </a>
               )}
+              {p.code === "pro" ? (
+                <a href={CHECKOUT_PRO_QUARTERLY} className="mt-2 block rounded-full border border-cyan-400/30 py-2 text-center text-xs text-cyan-200 hover:bg-white/5">
+                  {t("季付 NT$9,900／季（约 NT$3,300／月，省 15%）", "Quarterly NT$9,900 (~NT$3,300/mo, save 15%)")}
+                </a>
+              ) : null}
               {paid ? (
                 <a href={cnMailto} className="mt-2 block rounded-full border border-white/10 py-2 text-center text-xs text-zinc-300 hover:bg-white/5">
                   {t("大陆客户：联系开通（微信／对公转账）", "Mainland China: contact to activate (WeChat / bank transfer)")}

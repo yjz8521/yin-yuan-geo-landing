@@ -83,7 +83,7 @@ const ld = {
         priceCurrency: "TWD",
         url: `${siteUrl}/pricing/`,
         ...(p.code === "free" ? {} : { priceSpecification: { "@type": "UnitPriceSpecification", price: p.priceZh.replace(/[^0-9]/g, ""), priceCurrency: "TWD", billingDuration: "P1M" } }),
-      })),
+      })).concat([{ "@type": "Offer", name: "Pro (quarterly)", price: "9900", priceCurrency: "TWD", url: `${siteUrl}/pricing/`, priceSpecification: { "@type": "UnitPriceSpecification", price: "9900", priceCurrency: "TWD", billingDuration: "P3M" } } as never]),
     },
   ],
 };
