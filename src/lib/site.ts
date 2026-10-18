@@ -7,10 +7,11 @@ export const siteConfig = {
   owner: "Kinnv",
   repoText: "github.com/yjz8521/geo-platform",
   engines: ["豆包", "DeepSeek", "智谱清言", "百度文心／文小言", "通义千问"] as const,
-  intelEngines: ["元宝", "Kimi"] as const,
-  /** Live today: 一期投放包 + 监测列；情报层另含元宝、Kimi。 */
-  enginesDomesticLive: ["豆包", "DeepSeek", "智谱清言", "百度文心／文小言", "通义千问", "元宝", "Kimi"] as const,
-  /** Method / roadmap: fixed-prompt monitoring works today; dedicated packs & connectors are next. */
+  /** Connected today and running prompts automatically. */
+  enginesLive: ["DeepSeek"] as const,
+  /** 陆续接入中 — not monitored automatically yet. */
+  enginesDomesticComing: ["豆包", "通义千问", "智谱清言", "百度文心／文小言", "Kimi", "元宝"] as const,
+  /** 陆续接入中 — not monitored automatically yet; dedicated packs on roadmap. */
   enginesOverseas: ["ChatGPT", "Perplexity", "Google AI Overviews／Gemini", "Claude", "Copilot"] as const,
 };
 
@@ -110,14 +111,14 @@ export const draftPlans = [
       "每月 1,000 次监测",
       "每月 500 次 AI 请求",
       "API 存取 · 多工作区",
-      "国内＋海外引擎覆盖（海外专属投放包路线图）",
+      "DeepSeek 自动监测（其他引擎陆续接入中）",
     ],
     highlightsEn: [
       "Up to 10 projects · 3 workspaces",
       "1,000 monitor runs / month",
       "500 AI requests / month",
       "API access · multi-workspace",
-      "CN + global engines (overseas packs on roadmap)",
+      "DeepSeek auto-monitoring (more engines coming)",
     ],
     cta: "checkout" as const,
     featured: false,
@@ -137,14 +138,14 @@ export const draftPlans = [
       "每月 5,000 次监测",
       "Webhook · 排程报表 · 进阶归因",
       "自定义报表",
-      "国内＋海外引擎覆盖（海外专属投放包路线图）",
+      "DeepSeek 自动监测（其他引擎陆续接入中）",
     ],
     highlightsEn: [
       "Up to 50 projects · 10 workspaces",
       "5,000 monitor runs / month",
       "Webhooks · scheduled reports · advanced attribution",
       "Custom reports",
-      "CN + global engines (overseas packs on roadmap)",
+      "DeepSeek auto-monitoring (more engines coming)",
     ],
     cta: "checkout" as const,
     featured: true,

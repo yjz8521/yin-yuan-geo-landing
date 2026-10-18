@@ -1,7 +1,7 @@
 # 引源 GEO · 4 周推广计划（华语市场）
 
 > 所有贴文均为 **DRAFT，须 Kinnv 审核后才可发布**。禁止杜撰客户、成效数据或营收。产品 App 尚未上线，文案只能说「申请试用 / 预约」。
-> 定价（统一口径）：Free NT$0；Starter NT$1,990/月；Pro NT$3,900/月或季付 NT$9,900/季（约 NT$3,300/月，省 15%）；Enterprise 洽谈。定位：自助工具，覆盖国内与海外生成式引擎，价格低于代运营。国内一期：豆包/DeepSeek/千问/智谱/文心；情报：元宝/Kimi。海外：ChatGPT/Perplexity/Gemini/Claude/Copilot（固定问法监测可用，专属投放包路线图）。
+> 定价（统一口径）：Free NT$0；Starter NT$1,990/月；Pro NT$3,900/月或季付 NT$9,900/季（约 NT$3,300/月，省 15%）；Enterprise 洽谈。定位：自助工具，价格低于代运营。引擎口径：目前只有 DeepSeek 已接入并自动跑问；豆包、通义千问、智谱清言、百度文心／文小言、Kimi、元宝，以及海外 ChatGPT、Perplexity、Google AI Overviews／Gemini、Claude、Copilot 均为「陆续接入中」，不得写成已监测。
 > 官网：https://yin-yuan-geo-landing.vercel.app ｜ 联系：yjz8521@gmail.com
 
 ## 0. GEO 成效测量（先做基线）

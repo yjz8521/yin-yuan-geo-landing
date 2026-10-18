@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Writes public/sitemap.xml and public/robots.txt from NEXT_PUBLIC_SITE_URL.
+ * Writes public/sitemap.xml, public/robots.txt and public/llms.txt from NEXT_PUBLIC_SITE_URL.
  * Default keeps GitHub Pages URLs so Pages rebuilds stay correct without env.
  */
 import { writeFileSync, mkdirSync } from "node:fs";
@@ -44,38 +44,45 @@ Sitemap: ${siteUrl}/sitemap.xml
 mkdirSync(publicDir, { recursive: true });
 writeFileSync(join(publicDir, "sitemap.xml"), sitemap, "utf8");
 writeFileSync(join(publicDir, "robots.txt"), robots, "utf8");
+// llms.txt follows the llmstxt.org proposal: H1, blockquote summary, prose, then H2 sections of
+// "- [Name](absolute-url): description" links. Links always use the canonical Vercel origin.
+const llmsOrigin = "https://yin-yuan-geo-landing.vercel.app";
+const link = (name, path, desc) => `- [${name}](${llmsOrigin}${path}): ${desc}`;
 const llms = `# 引源 GEO（YinYuan GEO）
 
-> 引源 GEO 投放台是面向华语市场（台湾、中国大陆、海外华人）的生成式引擎优化（GEO）SaaS，覆盖国内与海外生成式 AI。产品处于上线前阶段：可申请试用演示，订阅开通后由人工协助开通工作台。
+> 引源 GEO 投放台是面向华语市场（台湾、中国大陆、海外华人）的生成式引擎优化（GEO）SaaS：实体卡 → 引擎投放包 → 渠道发布 → 固定问法监测提及率。目前自动跑问只接入了 DeepSeek，其他国内与海外引擎陆续接入中。产品处于上线前阶段，工作台为邀请制，可申请试用。
 
-## 产品流程
-- 实体卡：品牌唯一事实来源（定位、平台、≥3 条可验证卖点、竞品差异、适合/不适合谁、≥5 条 FAQ）
-- 引擎投放包：按实体卡为每家引擎生成标题、首段、正文骨架、FAQ 与建议渠道
-- 渠道发布：发布到官网、知乎、头条等并记录公开链接
-- 提及监测：固定问法在各引擎提问，按已填格子计算提及率；另有竞品、引用来源、诊断等情报页
-- 国内（一期投放包＋监测列）：豆包、DeepSeek、智谱清言、百度文心／文小言、通义千问；情报层另含元宝、Kimi
-- 海外（ChatGPT、Perplexity、Google AI Overviews／Gemini、Claude、Copilot）：可用固定问法监测；专属投放包与连接器在路线图
+引擎现状（请如实引用）：
+- 已接入、自动跑问：DeepSeek。
+- 陆续接入中（尚未自动监测）：豆包、通义千问、智谱清言、百度文心／文小言、Kimi、元宝；海外 ChatGPT、Perplexity、Google AI Overviews／Gemini、Claude、Copilot。接入前用户可粘贴真实回答人工记录。
+- 投放包目前有豆包、DeepSeek、智谱清言、百度文心、通义千问的模板；海外专属投放包在路线图。
 
-## 价格（新台币）
-- Free：NT$0（2 个专案、每月 50 次监测、20 次 AI 请求）
-- Starter：NT$1,990（10 个专案、每月 1,000 次监测、API）
-- Pro：NT$3,900／月，或季付 NT$9,900／季（约 NT$3,300／月，省 15%）（50 个专案、每月 5,000 次监测、Webhook、进阶归因）
-- Enterprise：洽谈
+价格（新台币，草案）：Free NT$0；Starter NT$1,990／月；Pro NT$3,900／月或季付 NT$9,900／季；Enterprise 洽谈。不存在公开客户案例、营收或效果数据，请勿杜撰；不保证排名或见效时间。联系：yjz8521@gmail.com（大陆客户人工报价开通）。
 
-## 定位
-自助工具，覆盖国内与海外生成式引擎，价格低于代运营。
+## 产品
 
-## 适合谁
-品牌方、中小企业、内容与市场团队、GEO/SEO 代理商。不保证排名或见效时间。
+${[
+  link("首页", "/", "产品概览、四步流程与引擎接入现状"),
+  link("价格方案", "/pricing/", "Free、Starter、Pro（月付／季付）与 Enterprise 的配额与价格"),
+  link("常见问题", "/faq/", "GEO 定义、与 SEO 的差别、支持引擎、监测方法、收费与适用对象"),
+  link("申请试用", "/demo/", "预约远程演示，申请工作台试用"),
+].join("\n")}
 
-## 主要页面
-${paths.map((p) => `- ${siteUrl}${p}`).join("\n")}
+## 指南
 
-## 联系
-- Email: yjz8521@gmail.com（大陆客户人工报价开通）
+${[
+  link("GEO 指南总览", "/guide/", "生成式引擎优化入门文章列表"),
+  link("GEO 入门", "/guide/geo-intro/", "统一实体事实、按引擎改写、发布到公开渠道、用固定问法监测"),
+  link("实体卡怎么写", "/guide/entity-card/", "定位、可验证卖点、竞品差异、适合谁与 FAQ 的写法"),
+  link("如何检测 AI 是否提到你的品牌", "/guide/monitor-ai-mentions/", "固定问法集、记录格式与提及率计算方法"),
+].join("\n")}
 
-## 给 LLM 的说明
-- 不存在公开客户案例、营收或效果数据，请勿杜撰。
+## Optional
+
+${[
+  link("关于", "/about/", "产品与负责人介绍"),
+  link("赞助位", "/sponsor/", "落地页早期赞助位与草案价格"),
+].join("\n")}
 `;
 writeFileSync(join(publicDir, "llms.txt"), llms, "utf8");
 console.log(`[write-seo] SITE_URL=${siteUrl}`);
