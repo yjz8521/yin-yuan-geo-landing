@@ -1,0 +1,36 @@
+# Drives the 引源 GEO app's background worker (prod: GEO_APP_URL secret).
+# Lives in this PUBLIC repo because Actions minutes are free for public repos.
+# Repo secrets: GEO_APP_URL, WORKER_TICK_SECRET. The secret is only sent as a
+# request header and is never echoed. Response body is a JSON summary only.
+# NOTE: GitHub disables scheduled workflows after 60 days without repo activity.
+name: geo-worker-tick
+on:
+  schedule:
+    - cron: "*/15 * * * *"   # every 15 min: keeps Neon Free under its compute budget
+  workflow_dispatch: {}
+permissions: {}
+concurrency:
+  group: geo-tick
+  cancel-in-progress: false
+jobs:
+  tick:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - name: POST /api/internal/tick
+        env:
+          GEO_APP_URL: ${{ secrets.GEO_APP_URL }}
+          WORKER_TICK_SECRET: ${{ secrets.WORKER_TICK_SECRET }}
+        run: |
+          set -euo pipefail
+          if [ -z "${GEO_APP_URL:-}" ] || [ -z "${WORKER_TICK_SECRET:-}" ]; then
+            echo "::error::GEO_APP_URL or WORKER_TICK_SECRET secret is missing"; exit 1
+          fi
+          code=$(curl -sS -o /tmp/out.json -w '%{http_code}' --max-time 320 -X POST \
+            -H "Authorization: Bearer ${WORKER_TICK_SECRET}" \
+            "${GEO_APP_URL%/}/api/internal/tick") || code="000"
+          echo "HTTP $code"
+          head -c 500 /tmp/out.json 2>/dev/null || true; echo
+          if [ "${code:0:1}" != "2" ]; then
+            echo "::error::tick returned HTTP $code"; exit 1
+          fi
