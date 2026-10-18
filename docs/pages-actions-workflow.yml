@@ -28,9 +28,11 @@ jobs:
       - run: npm ci
       - name: Build static export
         env:
-          NEXT_PUBLIC_SITE_URL: https://yjz8521.github.io/yin-yuan-geo-landing
+          # Canonical stays on Vercel so the Pages mirror is not duplicate content.
+          NEXT_PUBLIC_SITE_URL: https://yin-yuan-geo-landing.vercel.app
+          BASE_PATH: /yin-yuan-geo-landing
+          NEXT_PUBLIC_BASE_PATH: /yin-yuan-geo-landing
           NEXT_PUBLIC_APP_URL: ""
-          NEXT_PUBLIC_STRIPE_PAYMENT_LINK: "#"
           NEXT_PUBLIC_DEMO_EMAIL: yjz8521@gmail.com
         run: npm run build
       - uses: actions/upload-pages-artifact@v3

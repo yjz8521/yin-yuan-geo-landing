@@ -18,17 +18,17 @@ npm run build && npm start   # 生产构建
 
 | 变量 | 说明 |
 |------|------|
-| `NEXT_PUBLIC_SITE_URL` | 本站公开 URL（sitemap / OG）。Vercel 填 `https://….vercel.app`；Pages 默认 github.io |
+| `NEXT_PUBLIC_SITE_URL` | 本站公开 URL（sitemap / OG）。Vercel 填 `https://….vercel.app`；默认 `https://yin-yuan-geo-landing.vercel.app`（Pages 镜像也以 Vercel 为 canonical） |
 | `BASE_PATH` / `NEXT_PUBLIC_BASE_PATH` | Vercel / 本地根路径留空；GitHub project Pages 设为 `/yin-yuan-geo-landing` |
 | `NEXT_PUBLIC_APP_URL` | 上线后的 geo-platform 产品地址。**留空则不展示产品入口**，避免虚构 demo URL |
-| `NEXT_PUBLIC_STRIPE_PAYMENT_LINK` | Stripe Dashboard 的 Payment Link。未设或 `#` 时，付费 CTA 回退邮件询价 |
+| `NEXT_PUBLIC_CHECKOUT_STARTER` / `_PRO` / `_PRO_QUARTERLY` | Lemon Squeezy 结账链接覆盖（默认值写在 `src/lib/site.ts`） |
 | `NEXT_PUBLIC_DEMO_EMAIL` | 试用 / 赞助联系邮箱，默认 `yjz8521@gmail.com` |
 
-不要把 Stripe 私钥、Webhook secret 或数据库凭证放进本仓。
+不要把 Lemon Squeezy API key、Webhook secret 或数据库凭证放进本仓。
 
-Do not commit Stripe secret keys, webhook secrets, or DB credentials.
+Do not commit Lemon Squeezy API keys, webhook secrets, or DB credentials.
 
-## 连接正式产品与 Stripe / Connecting later
+## 连接正式产品与付款 / Connecting later
 
 ### 1. 产品 App（geo-platform）
 
@@ -37,16 +37,14 @@ Do not commit Stripe secret keys, webhook secrets, or DB credentials.
 3. 重新 build / 部署本落地页。首页与 `/demo`、`/about` 会自动出现「进入产品」链接。
 4. 未配置前，本站**不会**捏造公开 demo URL。
 
-### 2. Stripe
+### 2. 付款（Lemon Squeezy）
 
-1. 在 Stripe Dashboard 为 Starter / Pro 创建 **Payment Link**（或 Checkout Session 入口）。
-2. 将 Payment Link URL 设为 `NEXT_PUBLIC_STRIPE_PAYMENT_LINK`。
-3. 订阅状态、配额升降级仍由 **geo-platform** 内的 `billing.ts` + webhook 处理；本站只负责导流付款。
-4. 若需分方案不同链接，可后续扩展为 `NEXT_PUBLIC_STRIPE_LINK_STARTER` / `_PRO`（当前用单一占位链接）。
+Stripe 不支持台湾，改用 Lemon Squeezy（信用卡／PayPal，新台币）。结账链接在 `src/lib/site.ts`：Starter、Pro、Pro 季付。
+商店目前为 **Test mode**（审核中）。审核通过并切到 Live 后：把 `PAYMENTS_LIVE` 改为 `true`（移除定价页「付款通道审核中」提示），并确认 Live 模式下的结账链接是否变更。
 
 ### 3. 赞助位
 
-`/sponsor` 目前用 mailto 预订。有稳定流量后可改为 Stripe Payment Link 或手动发票。
+`/sponsor` 目前用 mailto 预订。有稳定流量后可改为 Lemon Squeezy 商品或手动发票。
 
 ## 路由 / Routes
 
@@ -87,7 +85,7 @@ BASE_PATH=/yin-yuan-geo-landing NEXT_PUBLIC_BASE_PATH=/yin-yuan-geo-landing \
 # then publish out/ to gh-pages branch (do not delete existing Pages)
 ```
 
-See `OVERNIGHT.md` for overnight status and remaining human steps (Stripe, product URL).
+See `OVERNIGHT.md` for overnight status and remaining human steps (product URL, Lemon Squeezy Live mode).
 
 
 

@@ -27,14 +27,14 @@ Verified HTTP 200 on `/` and `/pricing/`.
 
 | Item | Status |
 |------|--------|
-| Stripe Payment Link | **Not configured.** Paid CTAs fall back to email. |
-| Vercel | **Not done** (optional later). |
+| Payments | Lemon Squeezy checkouts (Starter / Pro / Pro 季付), store in **Test mode** pending approval. Stripe dropped (unsupported in Taiwan). |
+| Vercel | **Live** at https://yin-yuan-geo-landing.vercel.app (Git-connected, auto-deploys `main`). |
 | geo-platform product URL | **Not set** (`NEXT_PUBLIC_APP_URL` empty — no fake demo link). |
 | Paid billing | Draft list prices only on `/pricing`. |
 
 ## What still needs the user (when awake)
 
-1. **Stripe:** Create Payment Link → rebuild/redeploy with `NEXT_PUBLIC_STRIPE_PAYMENT_LINK` (do not commit secrets). Overnight rebuild path: set env locally, `npm run build`, force-push `out/` to `gh-pages` (or add Actions workflow with `workflow`-scoped token).
+1. **Lemon Squeezy:** after approval switch store to Live, set `PAYMENTS_LIVE = true` in `src/lib/site.ts`.
 2. **geo-platform:** Deploy with Neon / Railway (or similar) per that repo’s `DEPLOYMENT.md` secrets → set `NEXT_PUBLIC_APP_URL` on this landing → rebuild.
 3. **Optional Vercel:** Import this repo for custom domain / non-static later.
 4. **Optional Actions:** Copy `docs/pages-actions-workflow.yml` → `.github/workflows/pages.yml` once a token has `workflow` scope; then switch Pages to `build_type: workflow`.

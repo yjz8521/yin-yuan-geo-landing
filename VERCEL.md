@@ -22,11 +22,11 @@ Verified HTTP 200 on `/` and `/pricing/` (Asia/Taipei, 2026-10-18).
 - `BASE_PATH` = `` (empty)
 - `NEXT_PUBLIC_BASE_PATH` = `` (empty)
 
-Do **not** invent Stripe Payment Links or geo-platform product URLs.
+Do **not** invent checkout links or geo-platform product URLs.
 
 ## Remaining human items
 
-1. **Stripe** — create Payment Link(s) in Stripe Dashboard; set `NEXT_PUBLIC_STRIPE_PAYMENT_LINK` on this Vercel project (then redeploy).
+1. **Lemon Squeezy** — after store approval switch to Live and set `PAYMENTS_LIVE = true` in `src/lib/site.ts`.
 2. **Product app** — after geo-platform is live, set `NEXT_PUBLIC_APP_URL` to that HTTPS origin (no trailing slash); redeploy so “进入产品” links appear.
 3. Optional custom domain in Vercel → Domains.
 
