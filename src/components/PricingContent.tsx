@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { Section, SectionLabel, SectionLead, SectionTitle } from "./Section";
 import { useI18n } from "@/lib/i18n";
-import { draftPlans, checkoutLinks, getDemoEmail } from "@/lib/site";
+import { CHECKOUT_PRO_QUARTERLY, draftPlans, checkoutLinks, getDemoEmail } from "@/lib/site";
 
 export function PricingContent() {
   const { t, locale } = useI18n();
