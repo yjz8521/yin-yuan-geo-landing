@@ -31,6 +31,8 @@ export function DemoContent() {
   const [name, setName] = useState("");
   const [company, setCompany] = useState("");
   const [note, setNote] = useState("");
+  const [contact, setContact] = useState("");
+  const [sent, setSent] = useState(false);
 
   function onSubmit(e: FormEvent) {
     e.preventDefault();
@@ -38,21 +40,22 @@ export function DemoContent() {
       locale === "zh" ? "引源 GEO 试用申请" : "YinYuan GEO demo request";
     const body =
       locale === "zh"
-        ? `姓名 / 称呼：${name}\n公司：${company}\n需求：\n${note}`
-        : `Name: ${name}\nCompany: ${company}\nNotes:\n${note}`;
-    window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        ? `姓名 / 称呼：${name}\n公司 / 品牌：${company || "（未填）"}\n联系方式（微信／电话，选填）：${contact || "（未填）"}\n需求：\n${note || "（未填）"}`
+        : `Name: ${name}\nCompany / brand: ${company || "(not provided)"}\nOther contact (optional): ${contact || "(not provided)"}\nNotes:\n${note || "(not provided)"}`;
+    window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject + (company ? ` · ${company}` : ""))}&body=${encodeURIComponent(body)}`;
+    setSent(true);
   }
 
   return (
     <Section className="pt-12 sm:pt-16">
       <SectionLabel>{t("试用", "Demo")}</SectionLabel>
-      <SectionTitle>
-        {t("试用包含什么", "What a trial includes")}
+      <SectionTitle as="h1">
+        {t("申请试用：演示包含什么", "Request a demo: what it includes")}
       </SectionTitle>
       <SectionLead>
         {t(
-          "远程演示约 30–45 分钟。产品 App 上线后会通过环境变量露出入口；目前请用邮件预约。",
-          "Remote walkthrough ~30–45 minutes. When the app is live, NEXT_PUBLIC_APP_URL will expose the entry; for now, book by email.",
+          "远程演示约 30–45 分钟。产品工作台目前采邀请制，演示或订阅后由我们为你开通账号；现在请用下方表单或邮件预约。",
+          "Remote walkthrough ~30–45 minutes. The workspace is invite-only for now — we open your account after the demo or subscription. Book with the form below or by email.",
         )}
       </SectionLead>
 
@@ -76,8 +79,8 @@ export function DemoContent() {
       ) : (
         <p className="mt-6 text-sm text-zinc-500">
           {t(
-            "尚未配置 NEXT_PUBLIC_APP_URL，故不展示公开产品链接。",
-            "NEXT_PUBLIC_APP_URL is unset — no public product URL is shown.",
+            "目前还没有公开的自助注册入口；收到申请后我们会邮件回复，约定演示时间。",
+            "There is no public self-signup yet; we will reply by email to schedule the demo.",
           )}
         </p>
       )}
@@ -87,7 +90,7 @@ export function DemoContent() {
         className="mt-10 max-w-lg space-y-4 rounded-2xl border border-white/8 bg-[#0c121c] p-6"
       >
         <p className="text-sm font-medium text-white">
-          {t("填写后会打开邮件客户端", "Opens your mail client on submit")}
+          {t("填写后会打开你的邮件程序，按「发送」即完成申请", "Opens your mail app — press Send to submit")}
         </p>
         <label className="block text-sm text-zinc-400">
           {t("称呼", "Name")}
@@ -107,6 +110,14 @@ export function DemoContent() {
           />
         </label>
         <label className="block text-sm text-zinc-400">
+          {t("微信／电话（选填）", "WeChat / phone (optional)")}
+          <input
+            value={contact}
+            onChange={(e) => setContact(e.target.value)}
+            className="mt-1.5 w-full rounded-lg border border-white/10 bg-black/30 px-3 py-2 text-zinc-100 outline-none focus:border-cyan-400/40"
+          />
+        </label>
+        <label className="block text-sm text-zinc-400">
           {t("想看什么", "What you want to see")}
           <textarea
             rows={4}
@@ -121,8 +132,16 @@ export function DemoContent() {
         >
           {t(`发送至 ${email}`, `Send to ${email}`)}
         </button>
+        {sent ? (
+          <p role="status" className="rounded-lg border border-cyan-400/20 bg-cyan-400/5 px-3 py-2 text-xs text-cyan-100">
+            {t(
+              `若邮件程序没有自动打开，请直接写信到 ${email}，并附上上面填写的内容。`,
+              `If your mail app did not open, email ${email} directly with the details above.`,
+            )}
+          </p>
+        ) : null}
         <p className="text-center text-xs text-zinc-600">
-          <a href={`mailto:${email}`} className="hover:text-zinc-400">
+          <a href={`mailto:${email}?subject=${encodeURIComponent(locale === "zh" ? "引源 GEO 试用申请" : "YinYuan GEO demo request")}`} className="hover:text-zinc-400">
             {t("或直接写信", "Or email directly")}: {email}
           </a>
         </p>

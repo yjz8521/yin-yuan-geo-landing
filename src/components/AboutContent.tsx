@@ -12,13 +12,13 @@ export function AboutContent() {
   return (
     <Section className="pt-12 sm:pt-16">
       <SectionLabel>{t("关于", "About")}</SectionLabel>
-      <SectionTitle>
+      <SectionTitle as="h1">
         {t(siteConfig.productFull, `${siteConfig.nameEn} Platform`)}
       </SectionTitle>
       <SectionLead>
         {t(
           "帮助品牌在国内与海外生成式 AI（豆包、DeepSeek、ChatGPT、Perplexity 等）上被提及、被引用、被推荐的 GEO SaaS。",
-          "A GEO SaaS that helps brands get mentioned, cited, and recommended in CN generative engines.",
+          "A GEO SaaS that helps brands get mentioned, cited, and recommended in Chinese and global generative AI (Doubao, DeepSeek, ChatGPT, Perplexity, and more).",
         )}
       </SectionLead>
 
@@ -56,8 +56,8 @@ export function AboutContent() {
         <p className="mt-2 font-mono text-sm text-zinc-400">{siteConfig.repoText}</p>
         <p className="mt-3 text-sm text-zinc-500">
           {t(
-            "仓库为私有，本站仅以文字标示路径，不提供公开 clone / demo URL。",
-            "The repo is private. This site only prints the path as text — no public clone or demo URL.",
+            "仓库为私有，本站仅以文字标示路径。产品工作台目前采邀请制，需先申请试用或订阅，由我们开通账号。",
+            "The repo is private; the path is shown as text only. The workspace is invite-only for now — request a demo or subscribe and we will open your account.",
           )}
         </p>
         {appUrl ? (
@@ -75,13 +75,13 @@ export function AboutContent() {
 
       <div className="mt-8 flex flex-wrap gap-3">
         <Link
-          href="/demo"
+          href="/demo/"
           className="rounded-full bg-gradient-to-r from-cyan-400 to-violet-500 px-5 py-2 text-sm font-semibold text-[#070b12]"
         >
           {t("申请试用", "Request demo")}
         </Link>
         <Link
-          href="/pricing"
+          href="/pricing/"
           className="rounded-full border border-white/15 px-5 py-2 text-sm text-zinc-200"
         >
           {t("方案", "Pricing")}

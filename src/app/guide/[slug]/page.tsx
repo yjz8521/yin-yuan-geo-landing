@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const g = guides.find((x) => x.slug === slug);
   if (!g) return {};
-  return { title: g.title, description: g.description, alternates: { canonical: `/guide/${g.slug}/` }, openGraph: { type: "article", title: g.title, description: g.description } };
+  return { title: g.title, description: g.description, alternates: { canonical: `/guide/${g.slug}/` }, openGraph: { type: "article", url: `/guide/${g.slug}/`, siteName: "引源 GEO", locale: "zh_TW", title: g.title, description: g.description } };
 }
 
 export default async function GuidePage({ params }: { params: Promise<{ slug: string }> }) {

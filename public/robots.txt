@@ -52,4 +52,4 @@ Allow: /
 User-Agent: *
 Allow: /
 
-Sitemap: https://yjz8521.github.io/yin-yuan-geo-landing/sitemap.xml
+Sitemap: https://yin-yuan-geo-landing.vercel.app/sitemap.xml

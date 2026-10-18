@@ -11,7 +11,7 @@ export function SponsorContent() {
   return (
     <Section className="pt-12 sm:pt-16">
       <SectionLabel>{t("早期赞助", "Early sponsors")}</SectionLabel>
-      <SectionTitle>
+      <SectionTitle as="h1">
         {t("SaaS 爬坡期的现金赞助位", "Cash sponsor slots while SaaS ramps")}
       </SectionTitle>
       <SectionLead>
@@ -27,7 +27,11 @@ export function SponsorContent() {
             locale === "zh"
               ? `引源 GEO 赞助咨询 · ${s.nameZh}`
               : `YinYuan GEO sponsor · ${s.nameEn}`;
-          const mailto = `mailto:${email}?subject=${encodeURIComponent(subject)}`;
+          const body =
+            locale === "zh"
+              ? `您好，我想预订「${s.nameZh}」（${s.priceZh}）。\n品牌：\n网址：\n希望的开始日期／周数：\n一句标语：\n`
+              : `Hi, I'd like to book "${s.nameEn}" (${s.priceEn}).\nBrand:\nURL:\nPreferred start date / weeks:\nOne-line blurb:\n`;
+          const mailto = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
           return (
             <article
               key={s.id}

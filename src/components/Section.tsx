@@ -24,11 +24,12 @@ export function SectionLabel({ children }: { children: ReactNode }) {
   );
 }
 
-export function SectionTitle({ children }: { children: ReactNode }) {
+export function SectionTitle({ children, as = "h2" }: { children: ReactNode; as?: "h1" | "h2" }) {
+  const Tag = as;
   return (
-    <h2 className="max-w-2xl text-2xl font-semibold tracking-tight text-white sm:text-3xl">
+    <Tag className="max-w-2xl text-2xl font-semibold tracking-tight text-white sm:text-3xl">
       {children}
-    </h2>
+    </Tag>
   );
 }
 

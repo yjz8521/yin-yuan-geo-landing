@@ -17,8 +17,8 @@ const steps = [
     n: "02",
     zh: "生成引擎投放包",
     en: "Engine packs",
-    dZh: "对豆包 / DeepSeek / 智谱 / 百度 / 千问产出标题、大纲与渠道清单。",
-    dEn: "Generate titles, outlines, and channel lists for each CN generative engine.",
+    dZh: "对豆包 / DeepSeek / 智谱 / 百度 / 千问产出标题、大纲与渠道清单；海外引擎沿用同一实体事实。",
+    dEn: "Titles, outlines, and channel lists for each CN engine; global engines reuse the same entity facts.",
   },
   {
     n: "03",
@@ -83,13 +83,13 @@ export function HomeContent() {
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <Link
-              href="/demo"
+              href="/demo/"
               className="rounded-full bg-gradient-to-r from-cyan-400 to-violet-500 px-6 py-2.5 text-sm font-semibold text-[#070b12] shadow-[0_0_28px_rgba(34,211,238,0.3)] transition hover:brightness-110"
             >
               {t("申请试用", "Request a demo")}
             </Link>
             <Link
-              href="/pricing"
+              href="/pricing/"
               className="rounded-full border border-white/15 bg-white/5 px-6 py-2.5 text-sm font-medium text-zinc-200 transition hover:bg-white/10"
             >
               {t("查看方案", "View pricing")}
@@ -106,8 +106,8 @@ export function HomeContent() {
           </div>
           <p className="mt-4 text-xs text-zinc-600">
             {t(
-              "Starter / Pro 支持信用卡／PayPal 按月订阅；赞助位价格为草案。",
-              "Starter / Pro are monthly card / PayPal subscriptions; sponsor slots are draft.",
+              "Starter NT$1,990／月 · Pro NT$3,900／月（季付 NT$9,900）· 信用卡／PayPal；大陆客户可人工开通。",
+              "Starter NT$1,990/mo · Pro NT$3,900/mo (NT$9,900/quarter) · card / PayPal; manual activation for mainland China.",
             )}
           </p>
         </div>
@@ -195,47 +195,44 @@ export function HomeContent() {
         </div>
       </Section>
 
-      {/* Social proof placeholders */}
+      {/* Early access (no invented social proof) */}
       <Section className="border-y border-white/5">
-        <SectionLabel>{t("口碑（占位）", "Social proof (placeholder)")}</SectionLabel>
+        <SectionLabel>{t("早期合作", "Early access")}</SectionLabel>
         <SectionTitle>
-          {t("案例与数据稍后上线", "Case studies coming soon")}
+          {t("招募首批合作品牌", "Looking for our first partner brands")}
         </SectionTitle>
         <SectionLead>
           {t(
-            "我们不会编造营收或客户。正式合作后会在此放可核验的提及率与引用提升摘要。",
-            "We do not invent revenue or customers. Verified mention / citation lifts will appear here after real partnerships.",
+            "我们不编造客户、营收或效果数据。首批合作品牌会先用固定问法建立提及率基线，之后在此公开可核验的前后对比（经品牌同意）。",
+            "We do not invent customers, revenue, or results. Early partners start with a fixed-prompt mention baseline; verified before/after summaries will be published here with their consent.",
           )}
         </SectionLead>
-        <div className="mt-8 grid gap-4 sm:grid-cols-3">
-          {[1, 2, 3].map((i) => (
-            <div
-              key={i}
-              className="flex h-36 flex-col justify-between rounded-2xl border border-dashed border-white/10 bg-white/[0.02] p-5"
-            >
-              <div className="h-3 w-24 rounded bg-white/10" />
-              <div className="space-y-2">
-                <div className="h-2 w-full rounded bg-white/5" />
-                <div className="h-2 w-4/5 rounded bg-white/5" />
-              </div>
-              <p className="text-xs text-zinc-600">
-                {t(`占位卡片 ${i}`, `Placeholder ${i}`)}
-              </p>
-            </div>
+        <ul className="mt-8 grid gap-4 sm:grid-cols-3">
+          {[
+            { zh: "先用固定问法建立提及率基线（国内＋海外引擎）", en: "Start with a fixed-prompt mention baseline (CN + global engines)" },
+            { zh: "协助填写实体卡与第一批投放包", en: "Help with your entity card and first packs" },
+            { zh: "按周追踪提及率变化，方法公开可复核", en: "Track mention rate weekly with an open, repeatable method" },
+          ].map((x) => (
+            <li key={x.en} className="rounded-2xl border border-white/8 bg-[#0c121c] p-5 text-sm leading-relaxed text-zinc-200">
+              {t(x.zh, x.en)}
+            </li>
           ))}
-        </div>
+        </ul>
+        <Link href="/demo/" className="mt-6 inline-flex text-sm font-medium text-cyan-300 hover:underline">
+          {t("申请成为合作品牌", "Apply as a partner brand")} →
+        </Link>
       </Section>
 
       {/* Pricing teaser */}
       <Section>
         <SectionLabel>{t("方案预览", "Pricing teaser")}</SectionLabel>
         <SectionTitle>
-          {t("与产品内 plan 对齐：free / starter / pro / enterprise", "Aligned with in-app plans")}
+          {t("Free / Starter / Pro / Enterprise", "Free / Starter / Pro / Enterprise")}
         </SectionTitle>
         <SectionLead>
           {t(
-            "下列价目以新台币计；配额来自 geo-platform 的 PlanConfig。",
-            "Draft list prices; quotas mirror geo-platform PlanConfig.",
+            "下列价目以新台币计；Pro 另有季付 NT$9,900／季（约 NT$3,300／月）。",
+            "Prices in TWD; Pro is also NT$9,900 per quarter (~NT$3,300/mo).",
           )}
         </SectionLead>
         <div className="mt-8 grid gap-4 md:grid-cols-2">
@@ -271,10 +268,10 @@ export function HomeContent() {
           ))}
         </div>
         <Link
-          href="/pricing"
+          href="/pricing/"
           className="mt-6 inline-flex text-sm font-medium text-cyan-300 hover:underline"
         >
-          {t("看完整方案与赞助", "Full pricing & sponsors")} →
+          {t("看完整方案", "Full pricing")} →
         </Link>
       </Section>
 
@@ -292,13 +289,13 @@ export function HomeContent() {
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Link
-              href="/demo"
+              href="/demo/"
               className="rounded-full bg-white px-6 py-2.5 text-sm font-semibold text-[#070b12] transition hover:bg-zinc-200"
             >
               {t("申请试用", "Request demo")}
             </Link>
             <Link
-              href="/sponsor"
+              href="/sponsor/"
               className="rounded-full border border-white/20 px-6 py-2.5 text-sm font-medium text-zinc-200 transition hover:bg-white/5"
             >
               {t("赞助位", "Sponsor slots")}

@@ -22,10 +22,10 @@ export function Footer() {
           </p>
         </div>
         <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-zinc-400">
-          <Link href="/pricing" className="hover:text-white">
+          <Link href="/pricing/" className="hover:text-white">
             {t("方案", "Pricing")}
           </Link>
-          <Link href="/sponsor" className="hover:text-white">
+          <Link href="/sponsor/" className="hover:text-white">
             {t("赞助", "Sponsor")}
           </Link>
           <Link href="/guide/" className="hover:text-white">
@@ -34,10 +34,10 @@ export function Footer() {
           <Link href="/faq/" className="hover:text-white">
             FAQ
           </Link>
-          <Link href="/demo" className="hover:text-white">
+          <Link href="/demo/" className="hover:text-white">
             {t("试用", "Demo")}
           </Link>
-          <Link href="/about" className="hover:text-white">
+          <Link href="/about/" className="hover:text-white">
             {t("关于", "About")}
           </Link>
           <a href={`${siteBasePath}/llms.txt`} className="hover:text-white">

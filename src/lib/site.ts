@@ -17,8 +17,28 @@ export const siteConfig = {
 export function getSiteUrl(): string {
   return (
     process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
-    "https://yjz8521.github.io/yin-yuan-geo-landing"
+    "https://yin-yuan-geo-landing.vercel.app"
   );
+}
+
+/** Canonical production origin (Vercel). GitHub Pages mirror canonicalises here to avoid duplicate content. */
+export const CANONICAL_ORIGIN = "https://yin-yuan-geo-landing.vercel.app";
+
+/**
+ * Lemon Squeezy store is still in Test mode (application under review).
+ * Flip to true once the store is approved and switched to Live.
+ */
+export const PAYMENTS_LIVE = false;
+
+/** Per-page metadata: canonical + Open Graph URL/title/description. */
+export function pageMeta(path: string, title: string, description: string) {
+  return {
+    title,
+    description,
+    alternates: { canonical: path },
+    openGraph: { type: "website" as const, url: path, siteName: "引源 GEO", locale: "zh_TW", title: `${title} · 引源 GEO`, description },
+    twitter: { card: "summary_large_image" as const, title: `${title} · 引源 GEO`, description },
+  };
 }
 
 /** Must match next.config.ts basePath. Empty on Vercel root; set BASE_PATH=/yin-yuan-geo-landing for GitHub Pages. */
@@ -39,20 +59,16 @@ export const checkoutLinks = {
     "https://yin-yuan-geo.lemonsqueezy.com/checkout/buy/ce49e252-220e-4556-9003-e642cfa357a9",
 };
 
-/** Pro quarterly (NT$9,900 / 季). Swap to Lemon Squeezy URL when ready. */
-export const CHECKOUT_PRO_QUARTERLY = "https://yin-yuan-geo.lemonsqueezy.com/checkout/buy/11775d12-9b90-4a13-8079-2e16a94bf7ce";
-
-/** @deprecated Stripe unsupported in Taiwan; kept for compat. */
-export function getStripeLink(): string {
-  const v = process.env.NEXT_PUBLIC_STRIPE_PAYMENT_LINK?.trim();
-  return v && v !== "#" ? v : "#";
-}
+/** Pro quarterly (NT$9,900 / 季) Lemon Squeezy checkout. */
+export const CHECKOUT_PRO_QUARTERLY =
+  process.env.NEXT_PUBLIC_CHECKOUT_PRO_QUARTERLY?.trim() ||
+  "https://yin-yuan-geo.lemonsqueezy.com/checkout/buy/11775d12-9b90-4a13-8079-2e16a94bf7ce";
 
 export function getDemoEmail(): string {
   return process.env.NEXT_PUBLIC_DEMO_EMAIL?.trim() || "yjz8521@gmail.com";
 }
 
-/** Draft list prices — not live billing; align with geo-platform plan codes. */
+/** List prices (TWD); quotas align with geo-platform plan codes. */
 export const draftPlans = [
   {
     code: "free" as const,
