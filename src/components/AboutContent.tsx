@@ -17,7 +17,7 @@ export function AboutContent() {
       </SectionTitle>
       <SectionLead>
         {t(
-          "帮助品牌在国内生成式引擎上被提及、被引用、被推荐的 GEO SaaS。",
+          "帮助品牌在国内与海外生成式 AI（豆包、DeepSeek、ChatGPT、Perplexity 等）上被提及、被引用、被推荐的 GEO SaaS。",
           "A GEO SaaS that helps brands get mentioned, cited, and recommended in CN generative engines.",
         )}
       </SectionLead>

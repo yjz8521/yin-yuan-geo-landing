@@ -5,7 +5,7 @@ import { faqs } from "@/content/geo";
 
 export const metadata: Metadata = {
   title: "常见问题 FAQ：什么是 GEO、和 SEO 差别、价格",
-  description: "引源 GEO 常见问题：什么是生成式引擎优化（GEO）、与 SEO 的差别、支持豆包 DeepSeek 千问等哪些引擎、如何监测品牌提及、多久见效、价格与适用对象。",
+  description: "引源 GEO 常见问题：什么是 GEO、与 SEO 差别、国内与海外引擎覆盖（豆包 DeepSeek ChatGPT Perplexity 等）、如何监测、价格与适用对象。",
   alternates: { canonical: "/faq/" },
 };
 

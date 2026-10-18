@@ -43,7 +43,7 @@ const problems = [
   },
   {
     zh: "五家引擎问法不同，人工投放难以规模化",
-    en: "Five engines, five prompt styles — manual GEO does not scale",
+    en: "Many engines, many prompt styles — manual GEO does not scale",
   },
   {
     zh: "没有提及率、引用与竞品缺口数据",
@@ -67,7 +67,7 @@ export function HomeContent() {
         <div className="relative mx-auto max-w-6xl px-4 pb-20 pt-16 sm:px-6 sm:pb-28 sm:pt-24">
           <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-400/5 px-3 py-1 text-xs font-medium text-cyan-200/90">
             <span className="h-1.5 w-1.5 rounded-full bg-cyan-400" />
-            {t("Generative Engine Optimization · 国内引擎", "GEO for CN generative engines")}
+            {t("Generative Engine Optimization · 国内＋海外", "GEO for CN + global generative AI")}
           </p>
           <h1 className="max-w-3xl text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
             {t(siteConfig.name, siteConfig.nameEn)}
@@ -118,14 +118,14 @@ export function HomeContent() {
         <SectionLabel>{t("痛点", "Problem")}</SectionLabel>
         <SectionTitle>
           {t(
-            "品牌在国内生成式引擎里「隐形」",
-            "Brands are invisible inside CN generative engines",
+            "品牌在国内与海外生成式 AI 里「隐形」",
+            "Brands are invisible in Chinese and global generative AI",
           )}
         </SectionTitle>
         <SectionLead>
           {t(
-            "用户越来越常直接问豆包、DeepSeek、智谱、百度、通义。若没有结构化投放与监测，你的品牌不会被点名。",
-            "Users ask Doubao, DeepSeek, Zhipu, Baidu, and Qwen directly. Without structured GEO and monitoring, you never get named.",
+            "用户越来越常直接问豆包、DeepSeek、通义千问，也问 ChatGPT、Perplexity、Gemini。若没有结构化投放与监测，你的品牌不会被点名。",
+            "Users ask Doubao, DeepSeek, Qwen — and ChatGPT, Perplexity, Gemini. Without structured GEO and monitoring, you never get named.",
           )}
         </SectionLead>
         <ul className="mt-10 grid gap-4 sm:grid-cols-3">
@@ -166,35 +166,31 @@ export function HomeContent() {
 
       {/* Engines */}
       <Section>
-        <SectionLabel>{t("覆盖引擎", "Engines covered")}</SectionLabel>
+        <SectionLabel>{t("覆盖引擎（国内＋海外）", "Engines covered")}</SectionLabel>
         <SectionTitle>
-          {t("五家投放引擎 + 情报层扩展", "Five execution engines + intel layer")}
+          {t("国内已支持 · 海外可监测（专属投放包路线图）", "CN live · Global monitorable (packs on roadmap)")}
         </SectionTitle>
         <SectionLead>
           {t(
-            "投放模板覆盖豆包、DeepSeek、智谱、百度、通义千问；情报层另可纳入元宝、Kimi 等。",
-            "Pack templates cover Doubao, DeepSeek, Zhipu, Baidu, Qwen; intel can also include Yuanbao, Kimi, and more.",
+            "一期投放包与监测列：豆包、DeepSeek、智谱清言、百度文心／文小言、通义千问；情报层另含元宝、Kimi。海外（ChatGPT、Perplexity、Google AI Overviews／Gemini、Claude、Copilot）可用固定问法监测，专属投放包与连接器在路线图。",
+            "Phase-1 packs & monitor columns: Doubao, DeepSeek, Zhipu, Baidu/ERNIE, Qwen; intel also Yuanbao, Kimi. Overseas (ChatGPT, Perplexity, Google AI Overviews/Gemini, Claude, Copilot): fixed-prompt monitoring today; dedicated packs & connectors on the roadmap.",
           )}
         </SectionLead>
-        <div className="mt-8 flex flex-wrap gap-3">
+        <p className="mt-6 text-xs font-medium uppercase tracking-wide text-zinc-500">{t("国内（已支持）", "CN (live)")}</p>
+        <div className="mt-2 flex flex-wrap gap-3">
           {siteConfig.engines.map((e) => (
-            <span
-              key={e}
-              className="rounded-full border border-cyan-400/20 bg-cyan-400/5 px-4 py-2 text-sm font-medium text-cyan-100"
-            >
-              {e}
-            </span>
+            <span key={e} className="rounded-full border border-cyan-400/20 bg-cyan-400/5 px-4 py-2 text-sm font-medium text-cyan-100">{e}</span>
           ))}
           {siteConfig.intelEngines.map((e) => (
-            <span
-              key={e}
-              className="rounded-full border border-violet-400/20 bg-violet-400/5 px-4 py-2 text-sm font-medium text-violet-100"
-            >
-              {e}
-              <span className="ml-1.5 text-xs text-violet-300/60">
-                {t("情报", "intel")}
-              </span>
+            <span key={e} className="rounded-full border border-violet-400/20 bg-violet-400/5 px-4 py-2 text-sm font-medium text-violet-100">
+              {e}<span className="ml-1.5 text-xs text-violet-300/60">{t("情报", "intel")}</span>
             </span>
+          ))}
+        </div>
+        <p className="mt-6 text-xs font-medium uppercase tracking-wide text-zinc-500">{t("海外（监测可用 · 投放包路线图）", "Global (monitorable · packs on roadmap)")}</p>
+        <div className="mt-2 flex flex-wrap gap-3">
+          {siteConfig.enginesOverseas.map((e) => (
+            <span key={e} className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-sm font-medium text-zinc-200">{e}</span>
           ))}
         </div>
       </Section>

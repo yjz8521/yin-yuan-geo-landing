@@ -1,7 +1,7 @@
 # 引源 GEO · 4 周推广计划（华语市场）
 
 > 所有贴文均为 **DRAFT，须 Kinnv 审核后才可发布**。禁止杜撰客户、成效数据或营收。产品 App 尚未上线，文案只能说「申请试用 / 预约」。
-> 定价（统一口径）：Free NT$0；Starter NT$1,990/月；Pro NT$3,900/月或季付 NT$9,900/季（约 NT$3,300/月，省 15%）；Enterprise 洽谈。定位：自助工具、专做国产引擎，价格低于代运营。
+> 定价（统一口径）：Free NT$0；Starter NT$1,990/月；Pro NT$3,900/月或季付 NT$9,900/季（约 NT$3,300/月，省 15%）；Enterprise 洽谈。定位：自助工具，覆盖国内与海外生成式引擎，价格低于代运营。国内一期：豆包/DeepSeek/千问/智谱/文心；情报：元宝/Kimi。海外：ChatGPT/Perplexity/Gemini/Claude/Copilot（固定问法监测可用，专属投放包路线图）。
 > 官网：https://yin-yuan-geo-landing.vercel.app ｜ 联系：yjz8521@gmail.com
 
 ## 0. GEO 成效测量（先做基线）
@@ -26,7 +26,7 @@
 
 ### 知乎（大陆，权重高，豆包/DeepSeek 常引用）
 **DRAFT 1 — 回答「什么是 GEO？」类问题**
-> GEO（生成式引擎优化）就是让 AI 在回答里点名你的品牌。和 SEO 争排名不同，GEO 看三件事：①品牌事实是否统一可验证；②内容是否写成 AI 可直接引用的定义句和 FAQ；③是否发布在 AI 会读取的公开渠道。我在做的「引源 GEO 投放台」把它拆成四步：实体卡 → 各引擎投放包 → 渠道发布 → 固定问法监测提及率。方法写在这里：https://yin-yuan-geo-landing.vercel.app/guide/geo-intro/ Starter 每月 NT$1,990 起，自助工具、价格低于代运营。（利益相关：作者是开发者）
+> GEO（生成式引擎优化）就是让 AI 在回答里点名你的品牌。和 SEO 争排名不同，GEO 看三件事：①品牌事实是否统一可验证；②内容是否写成 AI 可直接引用的定义句和 FAQ；③是否发布在 AI 会读取的公开渠道。我在做的「引源 GEO 投放台」把它拆成四步：实体卡 → 各引擎投放包 → 渠道发布 → 固定问法监测提及率。方法写在这里：https://yin-yuan-geo-landing.vercel.app/guide/geo-intro/ Starter 每月 NT$1,990 起；国内＋海外引擎，自助工具、价格低于代运营。（利益相关：作者是开发者）
 
 **DRAFT 2 — 专栏文章**：转载/改写 `/guide/monitor-ai-mentions/` 全文，标题「如何检测豆包、DeepSeek 有没有提到你的品牌（附问法模板）」。
 

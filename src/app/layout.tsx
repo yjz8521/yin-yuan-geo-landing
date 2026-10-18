@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     default: `${siteConfig.name} · ${siteConfig.taglineZh}`,
     template: `%s · ${siteConfig.name}`,
   },
-  description: `引源 GEO 投放台是面向华语市场的生成式引擎优化（GEO）SaaS：实体卡 → 引擎投放包 → 渠道发布 → 提及监测，让品牌在豆包、DeepSeek、通义千问、智谱、百度文心等 AI 回答中被点名。`,
+  description: `引源 GEO 投放台：面向华语市场的 GEO SaaS，覆盖国内（豆包、DeepSeek、通义千问、智谱、百度文心／文小言、Kimi、元宝）与海外（ChatGPT、Perplexity、Google AI Overviews／Gemini、Claude、Copilot）生成式引擎。实体卡 → 投放包 → 发布 → 提及监测。`,
   keywords: [
     "GEO",
     "Generative Engine Optimization",
@@ -36,6 +36,10 @@ export const metadata: Metadata = {
     "百度",
     "通义千问",
     "品牌提及率",
+    "ChatGPT",
+    "Perplexity",
+    "Gemini",
+    "Claude",
   ],
   authors: [{ name: siteConfig.owner }],
   openGraph: {
@@ -74,7 +78,7 @@ const ld = {
       alternateName: siteConfig.nameEn,
       applicationCategory: "BusinessApplication",
       operatingSystem: "Web",
-      description: "生成式引擎优化（GEO）工作台：实体卡、各引擎投放包、渠道发布清单与 AI 品牌提及监测，覆盖豆包、DeepSeek、智谱清言、百度文心、通义千问。",
+      description: "生成式引擎优化（GEO）工作台：实体卡、引擎投放包、渠道发布与提及监测。国内：豆包、DeepSeek、智谱清言、百度文心／文小言、通义千问、元宝、Kimi；海外：ChatGPT、Perplexity、Google AI Overviews／Gemini、Claude、Copilot（专属投放包路线图，固定问法监测可用）。",
       publisher: { "@id": orgId },
       offers: draftPlans.filter((p) => p.code !== "enterprise").map((p) => ({
         "@type": "Offer",

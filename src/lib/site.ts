@@ -2,12 +2,16 @@ export const siteConfig = {
   name: "引源 GEO",
   nameEn: "YinYuan GEO",
   productFull: "引源 GEO 投放台",
-  taglineZh: "让品牌在豆包、DeepSeek、智谱、百度、通义里被点名",
-  taglineEn: "Get your brand named in Doubao, DeepSeek, Zhipu, Baidu, and Qwen",
+  taglineZh: "让品牌在国内与海外生成式 AI 里被点名",
+  taglineEn: "Get your brand named across Chinese and global generative AI",
   owner: "Kinnv",
   repoText: "github.com/yjz8521/geo-platform",
-  engines: ["豆包", "DeepSeek", "智谱", "百度", "通义千问"] as const,
+  engines: ["豆包", "DeepSeek", "智谱清言", "百度文心／文小言", "通义千问"] as const,
   intelEngines: ["元宝", "Kimi"] as const,
+  /** Live today: 一期投放包 + 监测列；情报层另含元宝、Kimi。 */
+  enginesDomesticLive: ["豆包", "DeepSeek", "智谱清言", "百度文心／文小言", "通义千问", "元宝", "Kimi"] as const,
+  /** Method / roadmap: fixed-prompt monitoring works today; dedicated packs & connectors are next. */
+  enginesOverseas: ["ChatGPT", "Perplexity", "Google AI Overviews／Gemini", "Claude", "Copilot"] as const,
 };
 
 export function getSiteUrl(): string {
@@ -90,12 +94,14 @@ export const draftPlans = [
       "每月 1,000 次监测",
       "每月 500 次 AI 请求",
       "API 存取 · 多工作区",
+      "国内＋海外引擎覆盖（海外专属投放包路线图）",
     ],
     highlightsEn: [
       "Up to 10 projects · 3 workspaces",
       "1,000 monitor runs / month",
       "500 AI requests / month",
       "API access · multi-workspace",
+      "CN + global engines (overseas packs on roadmap)",
     ],
     cta: "checkout" as const,
     featured: false,
@@ -115,12 +121,14 @@ export const draftPlans = [
       "每月 5,000 次监测",
       "Webhook · 排程报表 · 进阶归因",
       "自定义报表",
+      "国内＋海外引擎覆盖（海外专属投放包路线图）",
     ],
     highlightsEn: [
       "Up to 50 projects · 10 workspaces",
       "5,000 monitor runs / month",
       "Webhooks · scheduled reports · advanced attribution",
       "Custom reports",
+      "CN + global engines (overseas packs on roadmap)",
     ],
     cta: "checkout" as const,
     featured: true,

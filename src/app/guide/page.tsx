@@ -4,7 +4,7 @@ import { guides } from "@/content/geo";
 
 export const metadata: Metadata = {
   title: "GEO 指南：生成式引擎优化入门",
-  description: "引源 GEO 指南：GEO 入门、实体卡写法、如何检测豆包 DeepSeek 千问等 AI 是否提到你的品牌。",
+  description: "引源 GEO 指南：GEO 入门、实体卡写法、如何检测国内与海外 AI（豆包、DeepSeek、ChatGPT、Perplexity 等）是否提到你的品牌。",
   alternates: { canonical: "/guide/" },
 };
 
