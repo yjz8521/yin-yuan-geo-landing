@@ -6,7 +6,9 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "prebuild": "node scripts/write-seo.mjs",
+    "write-seo": "node scripts/write-seo.mjs"
   },
   "dependencies": {
     "next": "^16.4.2",

@@ -17,8 +17,9 @@ export function getSiteUrl(): string {
   );
 }
 
-/** Must match next.config.ts basePath (project Pages). Empty string for local without basePath is not used — config always sets basePath. */
-export const siteBasePath = "/yin-yuan-geo-landing";
+/** Must match next.config.ts basePath. Empty on Vercel root; set BASE_PATH=/yin-yuan-geo-landing for GitHub Pages. */
+export const siteBasePath =
+  process.env.NEXT_PUBLIC_BASE_PATH || process.env.BASE_PATH || "";
 
 export function getAppUrl(): string | null {
   const v = process.env.NEXT_PUBLIC_APP_URL?.trim();

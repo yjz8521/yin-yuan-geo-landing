@@ -18,7 +18,8 @@ npm run build && npm start   # 生产构建
 
 | 变量 | 说明 |
 |------|------|
-| `NEXT_PUBLIC_SITE_URL` | 本站公开 URL（sitemap / OG），默认 `http://localhost:3000` |
+| `NEXT_PUBLIC_SITE_URL` | 本站公开 URL（sitemap / OG）。Vercel 填 `https://….vercel.app`；Pages 默认 github.io |
+| `BASE_PATH` / `NEXT_PUBLIC_BASE_PATH` | Vercel / 本地根路径留空；GitHub project Pages 设为 `/yin-yuan-geo-landing` |
 | `NEXT_PUBLIC_APP_URL` | 上线后的 geo-platform 产品地址。**留空则不展示产品入口**，避免虚构 demo URL |
 | `NEXT_PUBLIC_STRIPE_PAYMENT_LINK` | Stripe Dashboard 的 Payment Link。未设或 `#` 时，付费 CTA 回退邮件询价 |
 | `NEXT_PUBLIC_DEMO_EMAIL` | 试用 / 赞助联系邮箱，默认 `yjz8521@gmail.com` |
@@ -62,11 +63,29 @@ Next.js App Router · TypeScript · Tailwind CSS v4
 
 价格与客户数字均为草案 / 占位，请勿当作已验证营收。
 
-## GitHub Pages (overnight static)
+## Deploy
 
-Static export deploys via Actions to:
+### Vercel (preferred, root URL)
+
+- Leave `BASE_PATH` / `NEXT_PUBLIC_BASE_PATH` empty (default).
+- Set `NEXT_PUBLIC_SITE_URL` to the production `https://….vercel.app` URL (no trailing slash).
+- `prebuild` runs `scripts/write-seo.mjs` so sitemap/robots match that URL.
+- See `VERCEL.md` after first deploy.
+
+### GitHub Pages (project site)
+
+Static export still works at:
 
 `https://yjz8521.github.io/yin-yuan-geo-landing/`
 
-See `OVERNIGHT.md` for status and remaining user steps (Stripe, product URL, optional Vercel).
+Rebuild with path prefix, then publish `out/` to `gh-pages`:
+
+```bash
+BASE_PATH=/yin-yuan-geo-landing NEXT_PUBLIC_BASE_PATH=/yin-yuan-geo-landing \
+  NEXT_PUBLIC_SITE_URL=https://yjz8521.github.io/yin-yuan-geo-landing \
+  npm run build
+# then publish out/ to gh-pages branch (do not delete existing Pages)
+```
+
+See `OVERNIGHT.md` for overnight status and remaining human steps (Stripe, product URL).
 

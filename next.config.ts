@@ -1,6 +1,6 @@
 import type { NextConfig } from "next";
 
-const basePath = "/yin-yuan-geo-landing";
+const basePath = process.env.BASE_PATH || "";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
@@ -9,7 +9,7 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
   basePath,
-  assetPrefix: basePath,
+  assetPrefix: basePath || undefined,
   trailingSlash: true,
 };
 
