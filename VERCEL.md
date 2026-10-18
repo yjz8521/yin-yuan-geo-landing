@@ -5,45 +5,46 @@
 | Item | Value |
 |------|--------|
 | Production URL | https://yin-yuan-geo-landing.vercel.app |
-| Team alias | https://yin-yuan-geo-landing-789-094e.vercel.app |
+| Alias (team) | https://yin-yuan-geo-landing-789-094e.vercel.app |
+| Git alias | https://yin-yuan-geo-landing-git-main-789-094e.vercel.app |
 | Project name | `yin-yuan-geo-landing` |
 | Project id | `prj_xVLQ0KK9S9LzU8Gnf6gJvTDImovy` |
-| Team / account id | `team_vBmaIsENELlNZtVVnzGak4xH` (slug `789-094e`) |
-| Framework | Next.js (`output: 'export'`) |
-| Commit deployed | `92d567d` (`Prepare landing for Vercel root deploy (env BASE_PATH)`) |
+| Team id | `team_vBmaIsENELlNZtVVnzGak4xH` (slug `789-094e`) |
+| Framework | Next.js (static `output: 'export'`) |
+| Linked repo | `yjz8521/yin-yuan-geo-landing` (`main`) |
+| Dashboard | https://vercel.com/789-094e/yin-yuan-geo-landing |
 
-Verified: `GET /` and `GET /pricing/` return HTTP 200.
+Verified HTTP 200 on `/` and `/pricing/` (Asia/Taipei, 2026-10-18).
 
-GitHub Pages (unchanged): https://yjz8521.github.io/yin-yuan-geo-landing/
-
-## Env set on the project
+## Env already set on Vercel
 
 - `NEXT_PUBLIC_SITE_URL` = `https://yin-yuan-geo-landing.vercel.app` (production + preview + development)
-- `BASE_PATH` = empty
-- `NEXT_PUBLIC_BASE_PATH` = empty
+- `BASE_PATH` = `` (empty)
+- `NEXT_PUBLIC_BASE_PATH` = `` (empty)
 
-**Not set (by design):** `NEXT_PUBLIC_APP_URL`, `NEXT_PUBLIC_STRIPE_PAYMENT_LINK` — fill after geo-platform / Stripe Payment Links exist. Do not invent URLs.
+Do **not** invent Stripe Payment Links or geo-platform product URLs.
 
-## Remaining human steps
+## Remaining human items
 
-1. **Install Vercel GitHub app** (needed for permanent repo link + auto-deploy on push):  
-   https://vercel.com/docs/git/vercel-for-github  
-   Or Dashboard → Project → Settings → Git → Connect `yjz8521/yin-yuan-geo-landing`.  
-   Until then, deploys were triggered via API `gitSource` (works once), but `create_git_project` / project Git link may still fail with “install the GitHub integration first”.
-2. **Stripe Payment Link** → set `NEXT_PUBLIC_STRIPE_PAYMENT_LINK` in Vercel env, redeploy.
-3. **geo-platform product URL** → set `NEXT_PUBLIC_APP_URL`, redeploy.
-4. Optional custom domain in Vercel → then update `NEXT_PUBLIC_SITE_URL` and redeploy (prebuild rewrites sitemap/robots).
+1. **Stripe** — create Payment Link(s) in Stripe Dashboard; set `NEXT_PUBLIC_STRIPE_PAYMENT_LINK` on this Vercel project (then redeploy).
+2. **Product app** — after geo-platform is live, set `NEXT_PUBLIC_APP_URL` to that HTTPS origin (no trailing slash); redeploy so “进入产品” links appear.
+3. Optional custom domain in Vercel → Domains.
 
-## Pages rebuild (keep gh-pages)
+## GitHub Pages (still live)
+
+https://yjz8521.github.io/yin-yuan-geo-landing/
+
+Do not delete `gh-pages`. To rebuild Pages after code changes:
 
 ```bash
 BASE_PATH=/yin-yuan-geo-landing NEXT_PUBLIC_BASE_PATH=/yin-yuan-geo-landing \
   NEXT_PUBLIC_SITE_URL=https://yjz8521.github.io/yin-yuan-geo-landing \
   npm run build
-# publish out/ to gh-pages — do not delete the branch
+# publish out/ to gh-pages
 ```
 
-## Notes
+Vercel uses empty `BASE_PATH` (root URL). Pages needs the project path prefix.
 
-- Vercel Auth (SSO protection) was disabled on this project so the marketing site is public.
-- Prefer empty `BASE_PATH` on Vercel; do not set Output Directory to `out` (causes `NEXT_NO_ROUTES_MANIFEST`).
+## Note on MCP team scope
+
+Calls that pass `teamId=team_vBmaIsENELlNZtVVnzGak4xH` may 403 with scope `789-094e` on this connector; project/list without teamId still works. Re-auth Vercel MCP with that team if team-scoped tools are needed.
