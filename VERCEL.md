@@ -48,3 +48,9 @@ Vercel uses empty `BASE_PATH` (root URL). Pages needs the project path prefix.
 ## Note on MCP team scope
 
 Calls that pass `teamId=team_vBmaIsENELlNZtVVnzGak4xH` may 403 with scope `789-094e` on this connector; project/list without teamId still works. Re-auth Vercel MCP with that team if team-scoped tools are needed.
+
+
+## 收款 Payments (Lemon Squeezy)
+- Starter / Pro CTAs use Lemon Squeezy checkout links hardcoded in `src/lib/site.ts` (override: `NEXT_PUBLIC_CHECKOUT_STARTER` / `NEXT_PUBLIC_CHECKOUT_PRO`). Stripe is not used (unsupported in Taiwan); `NEXT_PUBLIC_STRIPE_PAYMENT_LINK` is obsolete.
+- **Note:** the Lemon Squeezy store is currently in **Test mode** pending approval — real charges won't happen until the store is activated (switch links to live if they change).
+- Mainland customers: mailto yjz8521@gmail.com (WeChat / bank transfer, manual).

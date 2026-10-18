@@ -89,3 +89,9 @@ BASE_PATH=/yin-yuan-geo-landing NEXT_PUBLIC_BASE_PATH=/yin-yuan-geo-landing \
 
 See `OVERNIGHT.md` for overnight status and remaining human steps (Stripe, product URL).
 
+
+
+## 收款 Payments (Lemon Squeezy)
+- Starter / Pro CTAs use Lemon Squeezy checkout links hardcoded in `src/lib/site.ts` (override: `NEXT_PUBLIC_CHECKOUT_STARTER` / `NEXT_PUBLIC_CHECKOUT_PRO`). Stripe is not used (unsupported in Taiwan); `NEXT_PUBLIC_STRIPE_PAYMENT_LINK` is obsolete.
+- **Note:** the Lemon Squeezy store is currently in **Test mode** pending approval — real charges won't happen until the store is activated (switch links to live if they change).
+- Mainland customers: mailto yjz8521@gmail.com (WeChat / bank transfer, manual).

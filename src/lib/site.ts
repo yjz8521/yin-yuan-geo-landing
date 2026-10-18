@@ -26,6 +26,16 @@ export function getAppUrl(): string | null {
   return v ? v.replace(/\/$/, "") : null;
 }
 
+export const checkoutLinks = {
+  starter:
+    process.env.NEXT_PUBLIC_CHECKOUT_STARTER?.trim() ||
+    "https://yin-yuan-geo.lemonsqueezy.com/checkout/buy/c1919b13-7784-426a-aef8-8cea6dd43b4e",
+  pro:
+    process.env.NEXT_PUBLIC_CHECKOUT_PRO?.trim() ||
+    "https://yin-yuan-geo.lemonsqueezy.com/checkout/buy/ce49e252-220e-4556-9003-e642cfa357a9",
+};
+
+/** @deprecated Stripe unsupported in Taiwan; kept for compat. */
 export function getStripeLink(): string {
   const v = process.env.NEXT_PUBLIC_STRIPE_PAYMENT_LINK?.trim();
   return v && v !== "#" ? v : "#";
@@ -68,8 +78,8 @@ export const draftPlans = [
     nameEn: "Starter",
     priceZh: "NT$2,990",
     priceEn: "$99",
-    periodZh: "/ 月（草案）",
-    periodEn: "/ mo (draft)",
+    periodZh: "/ 月",
+    periodEn: "/ mo",
     blurbZh: "小团队起步投放与 API",
     blurbEn: "Small-team packs + API",
     highlightsZh: [
@@ -84,7 +94,7 @@ export const draftPlans = [
       "500 AI requests / month",
       "API access · multi-workspace",
     ],
-    cta: "stripe" as const,
+    cta: "checkout" as const,
     featured: false,
   },
   {
@@ -93,8 +103,8 @@ export const draftPlans = [
     nameEn: "Pro",
     priceZh: "NT$9,900",
     priceEn: "$329",
-    periodZh: "/ 月（草案）",
-    periodEn: "/ mo (draft)",
+    periodZh: "/ 月",
+    periodEn: "/ mo",
     blurbZh: "完整情报、Webhook 与归因",
     blurbEn: "Full intel, webhooks & attribution",
     highlightsZh: [
@@ -109,7 +119,7 @@ export const draftPlans = [
       "Webhooks · scheduled reports · advanced attribution",
       "Custom reports",
     ],
-    cta: "stripe" as const,
+    cta: "checkout" as const,
     featured: true,
   },
   {

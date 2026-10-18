@@ -3,15 +3,15 @@
 import Link from "next/link";
 import { Section, SectionLabel, SectionLead, SectionTitle } from "./Section";
 import { useI18n } from "@/lib/i18n";
-import { draftPlans, getDemoEmail, getStripeLink } from "@/lib/site";
+import { draftPlans, checkoutLinks, getDemoEmail } from "@/lib/site";
 
 export function PricingContent() {
   const { t, locale } = useI18n();
-  const stripe = getStripeLink();
   const email = getDemoEmail();
   const mailto = `mailto:${email}?subject=${encodeURIComponent(
     locale === "zh" ? "引源 GEO 方案咨询" : "YinYuan GEO plan inquiry",
   )}`;
+  const cnMailto = `mailto:${email}?subject=${encodeURIComponent("引源 GEO 大陆客户开通咨询（微信／对公转账）")}`;
 
   return (
     <Section className="pt-12 sm:pt-16">
@@ -21,22 +21,24 @@ export function PricingContent() {
       </SectionTitle>
       <SectionLead>
         {t(
-          "方案代码与配额对齐私有产品 geo-platform 的 PlanConfig。标价为草案，正式以 Stripe Payment Link / 合约为准。",
-          "Plan codes and quotas align with private geo-platform PlanConfig. List prices are draft until Stripe Payment Links / contracts go live.",
+          "Starter / Pro 支持信用卡与 PayPal 按月订阅（新台币计价）。大陆客户可联系人工开通（微信／对公转账）。",
+          "Starter / Pro are monthly subscriptions via card or PayPal (billed in TWD). Mainland China customers can contact us for manual activation.",
         )}
       </SectionLead>
 
       <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
         {draftPlans.map((p) => {
-          const useStripe = p.cta === "stripe" && stripe !== "#";
-          const href = useStripe ? stripe : p.cta === "demo" ? "/demo" : mailto;
-          const ctaLabel = useStripe
-            ? t("前往付款（草案）", "Pay (draft link)")
+          const paid = p.code === "starter" || p.code === "pro";
+          const href = paid
+            ? checkoutLinks[p.code as "starter" | "pro"]
+            : p.code === "enterprise"
+              ? mailto
+              : "/demo";
+          const ctaLabel = paid
+            ? t("信用卡／PayPal 订阅", "Subscribe (card / PayPal)")
             : p.code === "enterprise"
               ? t("联系销售", "Contact sales")
-              : p.cta === "stripe"
-                ? t("询价 / 预约", "Inquire")
-                : t("申请试用", "Request demo");
+              : t("申请试用", "Request demo");
 
           const className = `mt-6 block rounded-full py-2.5 text-center text-sm font-semibold transition ${
             p.featured
@@ -89,6 +91,11 @@ export function PricingContent() {
                   {ctaLabel}
                 </a>
               )}
+              {paid ? (
+                <a href={cnMailto} className="mt-2 block rounded-full border border-white/10 py-2 text-center text-xs text-zinc-300 hover:bg-white/5">
+                  {t("大陆客户：联系开通（微信／对公转账）", "Mainland China: contact to activate (WeChat / bank transfer)")}
+                </a>
+              ) : null}
             </div>
           );
         })}
@@ -96,8 +103,8 @@ export function PricingContent() {
 
       <p className="mt-8 text-xs leading-relaxed text-zinc-600">
         {t(
-          "环境变量 NEXT_PUBLIC_STRIPE_PAYMENT_LINK 配置后，Starter / Pro 按钮会导向真实 Payment Link。未配置时回退为邮件询价。",
-          "When NEXT_PUBLIC_STRIPE_PAYMENT_LINK is set, Starter / Pro CTAs open that Payment Link; otherwise they fall back to email.",
+          "订阅可随时取消。Enterprise 与发票需求请来信 yjz8521@gmail.com。",
+          "Cancel anytime. For Enterprise or invoices, email yjz8521@gmail.com.",
         )}
       </p>
     </Section>

@@ -28,6 +28,12 @@ export function Footer() {
           <Link href="/sponsor" className="hover:text-white">
             {t("赞助", "Sponsor")}
           </Link>
+          <Link href="/guide/" className="hover:text-white">
+            {t("GEO 指南", "Guide")}
+          </Link>
+          <Link href="/faq/" className="hover:text-white">
+            FAQ
+          </Link>
           <Link href="/demo" className="hover:text-white">
             {t("试用", "Demo")}
           </Link>

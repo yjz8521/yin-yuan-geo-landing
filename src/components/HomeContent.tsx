@@ -92,7 +92,7 @@ export function HomeContent() {
               href="/pricing"
               className="rounded-full border border-white/15 bg-white/5 px-6 py-2.5 text-sm font-medium text-zinc-200 transition hover:bg-white/10"
             >
-              {t("查看方案（草案）", "View draft pricing")}
+              {t("查看方案", "View pricing")}
             </Link>
             {appUrl ? (
               <a
@@ -106,8 +106,8 @@ export function HomeContent() {
           </div>
           <p className="mt-4 text-xs text-zinc-600">
             {t(
-              "价格与赞助位均为草案，正式计费以 Stripe / 合约为准。",
-              "Prices and sponsor slots are draft until Stripe / contracts go live.",
+              "Starter / Pro 支持信用卡／PayPal 按月订阅；赞助位价格为草案。",
+              "Starter / Pro are monthly card / PayPal subscriptions; sponsor slots are draft.",
             )}
           </p>
         </div>
@@ -238,7 +238,7 @@ export function HomeContent() {
         </SectionTitle>
         <SectionLead>
           {t(
-            "下列为草案价目；配额来自 geo-platform 的 PlanConfig。",
+            "下列价目以新台币计；配额来自 geo-platform 的 PlanConfig。",
             "Draft list prices; quotas mirror geo-platform PlanConfig.",
           )}
         </SectionLead>

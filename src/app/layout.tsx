@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { JsonLd } from "@/components/JsonLd";
 import { Providers } from "@/components/Providers";
-import { getSiteUrl, siteConfig } from "@/lib/site";
+import { draftPlans, getDemoEmail, getSiteUrl, siteConfig } from "@/lib/site";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
     default: `${siteConfig.name} · ${siteConfig.taglineZh}`,
     template: `%s · ${siteConfig.name}`,
   },
-  description: `${siteConfig.productFull} — ${siteConfig.taglineZh}. Entity card → engine packs → publish → mention monitoring for Doubao, DeepSeek, Zhipu, Baidu, Qwen.`,
+  description: `引源 GEO 投放台是面向华语市场的生成式引擎优化（GEO）SaaS：实体卡 → 引擎投放包 → 渠道发布 → 提及监测，让品牌在豆包、DeepSeek、通义千问、智谱、百度文心等 AI 回答中被点名。`,
   keywords: [
     "GEO",
     "Generative Engine Optimization",
@@ -56,8 +57,35 @@ export const metadata: Metadata = {
     follow: true,
   },
   alternates: {
-    canonical: siteUrl,
+    canonical: "/",
+    languages: { "zh-Hant": "/", "zh-Hans": "/", en: "/", "x-default": "/" },
   },
+};
+
+const orgId = `${siteUrl}/#org`;
+const ld = {
+  "@context": "https://schema.org",
+  "@graph": [
+    { "@type": "Organization", "@id": orgId, name: siteConfig.name, alternateName: [siteConfig.nameEn, siteConfig.productFull], url: siteUrl, email: getDemoEmail(), founder: { "@type": "Person", name: siteConfig.owner }, areaServed: ["TW", "CN", "Worldwide"] },
+    { "@type": "WebSite", "@id": `${siteUrl}/#website`, name: siteConfig.name, url: siteUrl, inLanguage: ["zh-Hant", "zh-Hans", "en"], publisher: { "@id": orgId } },
+    {
+      "@type": "SoftwareApplication",
+      name: siteConfig.productFull,
+      alternateName: siteConfig.nameEn,
+      applicationCategory: "BusinessApplication",
+      operatingSystem: "Web",
+      description: "生成式引擎优化（GEO）工作台：实体卡、各引擎投放包、渠道发布清单与 AI 品牌提及监测，覆盖豆包、DeepSeek、智谱清言、百度文心、通义千问。",
+      publisher: { "@id": orgId },
+      offers: draftPlans.filter((p) => p.code !== "enterprise").map((p) => ({
+        "@type": "Offer",
+        name: p.nameEn,
+        price: p.priceZh.replace(/[^0-9]/g, "") || "0",
+        priceCurrency: "TWD",
+        url: `${siteUrl}/pricing/`,
+        ...(p.code === "free" ? {} : { priceSpecification: { "@type": "UnitPriceSpecification", price: p.priceZh.replace(/[^0-9]/g, ""), priceCurrency: "TWD", billingDuration: "P1M" } }),
+      })),
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -70,6 +98,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <JsonLd data={ld} />
         <Providers>
           <div className="flex min-h-screen flex-col">
             <Header />
