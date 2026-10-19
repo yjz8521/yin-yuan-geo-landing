@@ -15,7 +15,7 @@ export function PricingContent() {
       ? "您好，我想了解引源 GEO 方案。\n公司／品牌：\n团队规模：\n想监测的引擎／品类：\n"
       : "Hi, I'd like to learn about YinYuan GEO plans.\nCompany / brand:\nTeam size:\nEngines / category to monitor:\n",
   )}`;
-  const cnMailto = `mailto:${email}?subject=${encodeURIComponent("引源 GEO 大陆客户开通咨询（微信／对公转账）")}&body=${encodeURIComponent("您好，我想开通引源 GEO。\n方案（Starter／Pro／Pro 季付）：\n公司／品牌：\n联系方式（微信／电话）：\n付款方式（微信／对公转账）：\n")}`;
+  const cnMailto = `mailto:${email}?subject=${encodeURIComponent("引源 GEO 大陆客户开通咨询（微信／支付宝）")}&body=${encodeURIComponent("您好，我想开通引源 GEO。\n方案（Starter／Pro／Pro 季付）：\n公司／品牌：\n联系方式（微信／电话）：\n付款方式（微信／支付宝）：\n")}`;
 
   return (
     <Section className="pt-12 sm:pt-16">
@@ -25,7 +25,7 @@ export function PricingContent() {
       </SectionTitle>
       <SectionLead>
         {t(
-          "Starter / Pro 支持信用卡与 PayPal 订阅（新台币计价，Pro 另有季付）。大陆客户可联系人工开通（微信／对公转账）。",
+          "Starter / Pro 支持信用卡与 PayPal 订阅（新台币计价，Pro 另有季付）。大陆客户可联系人工开通（微信／支付宝）。",
           "Starter / Pro subscriptions via card or PayPal (billed in TWD; Pro also quarterly). Mainland China customers can contact us for manual activation.",
         )}
       </SectionLead>
@@ -111,7 +111,7 @@ export function PricingContent() {
               ) : null}
               {paid ? (
                 <a href={cnMailto} className="mt-2 block rounded-full border border-white/10 py-2 text-center text-xs text-zinc-300 hover:bg-white/5">
-                  {t("大陆客户／付款问题：联系开通（微信／对公转账）", "Mainland China / payment issues: contact to activate (WeChat / bank transfer)")}
+                  {t("大陆客户／付款问题：联系开通（微信／支付宝）", "Mainland China / payment issues: contact to activate (WeChat Pay / Alipay)")}
                 </a>
               ) : null}
             </div>
