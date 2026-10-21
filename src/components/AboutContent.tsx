@@ -49,29 +49,13 @@ export function AboutContent() {
         </div>
       </div>
 
-      <div className="mt-8 rounded-2xl border border-zinc-200 bg-white/[0.02] p-6">
-        <h3 className="text-base font-semibold text-zinc-950">
-          {t("产品仓库（私有）", "Product repository (private)")}
-        </h3>
-        <p className="mt-2 font-mono text-sm text-zinc-600">{siteConfig.repoText}</p>
-        <p className="mt-3 text-sm text-zinc-500">
-          {t(
-            "仓库为私有，本站仅以文字标示路径。产品工作台目前采邀请制，需先申请试用或订阅，由我们开通账号。",
-            "The repo is private; the path is shown as text only. The workspace is invite-only for now — request a demo or subscribe and we will open your account.",
-          )}
+      {appUrl ? (
+        <p className="mt-8 text-sm">
+          <a href={appUrl} className="text-zinc-950 underline-offset-4 hover:underline" rel="noopener noreferrer">
+            {t("已配置的产品入口", "Configured product entry")} →
+          </a>
         </p>
-        {appUrl ? (
-          <p className="mt-4 text-sm">
-            <a
-              href={appUrl}
-              className="text-zinc-950 underline-offset-4 hover:underline"
-              rel="noopener noreferrer"
-            >
-              {t("已配置的产品入口", "Configured product entry")} →
-            </a>
-          </p>
-        ) : null}
-      </div>
+      ) : null}
 
       <div className="mt-8 flex flex-wrap gap-3">
         <Link

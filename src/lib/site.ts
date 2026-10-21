@@ -6,7 +6,6 @@ export const siteConfig = {
   taglineZh: "让品牌在国内与海外生成式 AI 里被点名",
   taglineEn: "Get your brand named across Chinese and global generative AI",
   owner: "Kinnv",
-  repoText: "github.com/yjz8521/geo-platform",
   engines: ["豆包", "DeepSeek", "智谱清言", "百度文心／文小言", "通义千问"] as const,
   /** Connected today and running prompts automatically. */
   enginesLive: ["DeepSeek"] as const,

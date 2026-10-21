@@ -63,7 +63,6 @@ Next.js App Router · TypeScript · Tailwind CSS v4
 - Leave `BASE_PATH` / `NEXT_PUBLIC_BASE_PATH` empty (default).
 - Set `NEXT_PUBLIC_SITE_URL` to the production `https://….vercel.app` URL (no trailing slash).
 - `prebuild` runs `scripts/write-seo.mjs` so sitemap/robots match that URL.
-- See `VERCEL.md` after first deploy.
 
 ### GitHub Pages (project site)
 
@@ -80,7 +79,6 @@ BASE_PATH=/yin-yuan-geo-landing NEXT_PUBLIC_BASE_PATH=/yin-yuan-geo-landing \
 # then publish out/ to gh-pages branch (do not delete existing Pages)
 ```
 
-See `OVERNIGHT.md` for overnight status and remaining human steps (product URL, Lemon Squeezy Live mode).
 
 
 
