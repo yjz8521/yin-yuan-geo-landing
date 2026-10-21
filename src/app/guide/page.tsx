@@ -6,7 +6,8 @@ export const metadata: Metadata = {
   title: "GEO 指南：生成式引擎优化入门",
   description: "引源 GEO 指南：GEO 入门、实体卡写法、如何检测国内与海外 AI（豆包、DeepSeek、ChatGPT、Perplexity 等）是否提到你的品牌。",
   alternates: { canonical: "/guide/" },
-  openGraph: { type: "website", url: "/guide/", siteName: "引源 GEO", locale: "zh_TW" },
+  openGraph: { type: "website", url: "/guide/", siteName: "引源 GEO", locale: "zh_TW", images: [{ url: "/og.png", width: 1200, height: 630, alt: "引源 GEO" }] },
+  twitter: { card: "summary_large_image", images: ["/og.png"] },
 };
 
 export default function GuideIndex() {

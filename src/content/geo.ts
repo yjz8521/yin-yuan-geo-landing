@@ -11,11 +11,12 @@ export const faqs: { q: string; a: string }[] = [
   { q: "大陆客户如何付款？", a: "台湾与海外客户可用信用卡或 PayPal 线上订阅；大陆客户可通过 yjz8521@gmail.com 联系，人工报价并开通。" },
 ];
 
-export type Guide = { slug: string; title: string; description: string; sections: { h: string; p: string[] }[] };
+export type Guide = { slug: string; date: string; title: string; description: string; sections: { h: string; p: string[] }[] };
 
 export const guides: Guide[] = [
   {
     slug: "geo-intro",
+    date: "2026-10-18",
     title: "GEO 入门：让国内与海外 AI 推荐你的品牌",
     description: "用四个步骤理解生成式引擎优化：统一实体事实、按引擎改写、发布到会被读取的渠道、用固定问法监测国内与海外 AI。",
     sections: [
@@ -28,6 +29,7 @@ export const guides: Guide[] = [
   },
   {
     slug: "entity-card",
+    date: "2026-10-18",
     title: "实体卡怎么写：GEO 的唯一事实来源",
     description: "实体卡各栏位的写法与常见错误：定位、卖点、竞品差异、适合谁、FAQ。",
     sections: [
@@ -40,6 +42,7 @@ export const guides: Guide[] = [
   },
   {
     slug: "monitor-ai-mentions",
+    date: "2026-10-18",
     title: "如何检测 AI 是否提到你的品牌",
     description: "建立固定问法、记录格式与提及率计算方法，用一致的方法追踪国内与海外 AI（豆包、DeepSeek、ChatGPT、Perplexity 等）的品牌提及。",
     sections: [
@@ -51,6 +54,7 @@ export const guides: Guide[] = [
   },
   {
     slug: "deepseek-self-check",
+    date: "2026-10-21",
     title: "怎么知道 DeepSeek 有没有推荐我的品牌？六步自测法",
     description: "不需要任何工具，一个表格加半小时：写 10 条真实问法、固定联网条件、每题至少问 2 次、每个回答记 5 栏、看懂常见结果、没被提到时先补公开资料。",
     sections: [

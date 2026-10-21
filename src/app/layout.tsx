@@ -50,11 +50,13 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     title: `${siteConfig.name} · ${siteConfig.taglineZh}`,
     description: siteConfig.taglineZh,
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "引源 GEO" }],
   },
   twitter: {
     card: "summary_large_image",
     title: siteConfig.name,
     description: siteConfig.taglineZh,
+    images: ["/og.png"],
   },
   robots: {
     index: true,

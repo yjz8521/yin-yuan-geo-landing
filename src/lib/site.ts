@@ -37,8 +37,8 @@ export function pageMeta(path: string, title: string, description: string) {
     title,
     description,
     alternates: { canonical: path },
-    openGraph: { type: "website" as const, url: path, siteName: "引源 GEO", locale: "zh_TW", title: `${title} · 引源 GEO`, description },
-    twitter: { card: "summary_large_image" as const, title: `${title} · 引源 GEO`, description },
+    openGraph: { type: "website" as const, url: path, siteName: "引源 GEO", locale: "zh_TW", title: `${title} · 引源 GEO`, description, images: [{ url: "/og.png", width: 1200, height: 630, alt: "引源 GEO" }] },
+    twitter: { card: "summary_large_image" as const, title: `${title} · 引源 GEO`, description, images: ["/og.png"] },
   };
 }
 
