@@ -28,7 +28,7 @@ export function Footer() {
             FAQ
           </Link>
           <Link href={lpath("/demo/")} className="hover:text-zinc-950">
-            {t("试用", "Demo")}
+            {t("免费健检", "Free check")}
           </Link>
           <Link href={lpath("/about/")} className="hover:text-zinc-950">
             {t("关于", "About")}

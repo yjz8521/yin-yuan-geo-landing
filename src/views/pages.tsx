@@ -22,7 +22,7 @@ export const Pricing = () => <PricingContent />;
 export const aboutMeta = (l: Locale): Metadata => pageMeta(l, "/about/", "关于 About", "引源 GEO 投放台：面向华语市场、以国内与海外生成式 AI 为目标的 GEO SaaS（自动监测已接入 DeepSeek，其他引擎陆续接入中），产品负责人 Kinnv。");
 export const About = () => <AboutContent />;
 
-export const demoMeta = (l: Locale): Metadata => pageMeta(l, "/demo/", "申请试用 Demo", "申请引源 GEO 远程演示：实体卡、国内与海外引擎投放包与提及监测矩阵，约 30–45 分钟。");
+export const demoMeta = (l: Locale): Metadata => pageMeta(l, "/demo/", "免费 AI 能见度健检", "免费 AI 能见度健检：用 10 个固定问法问 DeepSeek（自动），其他 AI 人工查询，整理成报告：有没有提到你、提到哪些竞争对手、建议先补哪些公开资料。免费、不绑约，不保证排名或见效时间。也可申请试用／远程演示。");
 export const Demo = () => <DemoContent />;
 
 export const faqMeta = (l: Locale): Metadata => pageMeta(l, "/faq/", "常见问题 FAQ：什么是 GEO、和 SEO 差别、价格", "引源 GEO 常见问题：什么是 GEO、与 SEO 差别、国内与海外引擎覆盖（豆包 DeepSeek ChatGPT Perplexity 等）、如何监测、价格与适用对象。");

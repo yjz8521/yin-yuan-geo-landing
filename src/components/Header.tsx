@@ -10,9 +10,9 @@ import { PREFIXED } from "@/lib/locales";
 const links = [
   { href: "/", zh: "首页", en: "Home" },
   { href: "/pricing/", zh: "方案", en: "Pricing" },
-  { href: "/guide/", zh: "指南", en: "Guide" },
+  { href: "/guide/", zh: "指南", en: "Guide (Chinese)" },
   { href: "/faq/", zh: "FAQ", en: "FAQ" },
-  { href: "/demo/", zh: "试用", en: "Demo" },
+  { href: "/demo/", zh: "免费健检", en: "Free check" },
   { href: "/about/", zh: "关于", en: "About" },
 ];
 
@@ -66,7 +66,8 @@ export function Header() {
             href={lpath("/demo/")}
             className="whitespace-nowrap rounded-full bg-zinc-950 px-3.5 py-1.5 text-xs font-semibold text-white transition hover:bg-zinc-800 sm:text-sm"
           >
-            {t("申请试用", "Request demo")}
+            <span className="sm:hidden">{t("免费健检", "Free check")}</span>
+            <span className="hidden sm:inline">{t("免费 AI 能见度健检", "Free AI visibility check")}</span>
           </Link>
         </div>
       </div>

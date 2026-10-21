@@ -86,7 +86,13 @@ export function HomeContent() {
               href={lpath("/demo/")}
               className="rounded-full bg-zinc-950 px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-zinc-800"
             >
-              {t("申请试用", "Request a demo")}
+              {t("免费 AI 能见度健检", "Free AI visibility check")}
+            </Link>
+            <Link
+              href={lpath("/demo/#demo")}
+              className="rounded-full border border-zinc-200 bg-white px-6 py-2.5 text-sm font-medium text-zinc-700 transition hover:bg-zinc-100"
+            >
+              {t("申请试用／远程演示", "Request a trial / remote demo")}
             </Link>
             <Link
               href={lpath("/pricing/")}
@@ -286,8 +292,8 @@ export function HomeContent() {
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-zinc-600">
             {t(
-              "申请试用，我们会约时间远程演示。",
-              "Request a trial and we will schedule a remote demo.",
+              "先做一次免费 AI 能见度健检，看看 DeepSeek 等 AI 现在怎么回答你的品类。免费、不绑约。",
+              "Start with a free AI visibility check to see how DeepSeek and other AI answer questions in your category. Free, no commitment.",
             )}
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
@@ -295,7 +301,13 @@ export function HomeContent() {
               href={lpath("/demo/")}
               className="rounded-full bg-zinc-950 px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-zinc-800"
             >
-              {t("申请试用", "Request demo")}
+              {t("免费 AI 能见度健检", "Free AI visibility check")}
+            </Link>
+            <Link
+              href={lpath("/demo/#demo")}
+              className="rounded-full border border-zinc-200 bg-white px-6 py-2.5 text-sm font-medium text-zinc-700 transition hover:bg-zinc-100"
+            >
+              {t("申请试用／远程演示", "Request a trial / remote demo")}
             </Link>
           </div>
         </div>

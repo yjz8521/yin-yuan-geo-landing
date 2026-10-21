@@ -68,6 +68,18 @@ export const CHECKOUT_PRO_QUARTERLY =
   process.env.NEXT_PUBLIC_CHECKOUT_PRO_QUARTERLY?.trim() ||
   "https://yin-yuan-geo.lemonsqueezy.com/checkout/buy/11775d12-9b90-4a13-8079-2e16a94bf7ce";
 
+/**
+ * Public contact IDs shown on /demo/. Leave empty to hide that row.
+ * ＿＿ LINE ID / WeChat ID: waiting for the owner to provide.
+ */
+export const contactIds = {
+  line: process.env.NEXT_PUBLIC_CONTACT_LINE_ID?.trim() || "",
+  wechat: process.env.NEXT_PUBLIC_CONTACT_WECHAT_ID?.trim() || "",
+};
+
+/** Free AI-visibility check: delivery time in working days. ＿＿ = waiting for the owner. */
+export const checkDeliveryDays = process.env.NEXT_PUBLIC_CHECK_DELIVERY_DAYS?.trim() || "＿＿";
+
 export function getDemoEmail(): string {
   return process.env.NEXT_PUBLIC_DEMO_EMAIL?.trim() || "yjz8521@gmail.com";
 }
