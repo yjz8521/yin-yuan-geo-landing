@@ -66,7 +66,7 @@ Next.js App Router · TypeScript · Tailwind CSS v4
 - 聯絡信箱：`NEXT_PUBLIC_DEMO_EMAIL` 可覆寫；預設 yjz8521@gmail.com。網域開好 Email Routing 後改成 `hi@<網域>`（規格 4-4）；該信箱只能收信，回信先用 Gmail。
 - 轉址：`public/_redirects`（Cloudflare 格式，與 `vercel.json` 相同，301）；`public/_headers` 設安全標頭與快取。
 - `vercel.json`：舊網址 yin-yuan-geo-landing.vercel.app 整站 301 到 https://yin-yuan-geo.pages.dev 。
-- 選填：`NEXT_PUBLIC_CHECK_DELIVERY_DAYS`（健檢交付工作天，預設 2）、`NEXT_PUBLIC_CONTACT_LINE_ID`、`NEXT_PUBLIC_CONTACT_WECHAT_ID`（覆寫健檢頁的 LINE／微信 ID）、`NEXT_PUBLIC_FORMSPREE_ENDPOINT`（有值才在健檢頁顯示線上表單，否則只有 mailto 與聯絡方式）。
+- 選填：`NEXT_PUBLIC_CHECK_DELIVERY_DAYS`（健檢交付工作天，預設 2）、`NEXT_PUBLIC_CONTACT_LINE_ID`、`NEXT_PUBLIC_CONTACT_WECHAT_ID`（覆寫健檢頁的 LINE／微信 ID）、`NEXT_PUBLIC_FORMSPREE_ENDPOINT`（健檢頁線上表單，預設 https://formspree.io/f/mdeaqldp ，可用環境變數覆寫）。
 
 ### Vercel (preferred, root URL)
 

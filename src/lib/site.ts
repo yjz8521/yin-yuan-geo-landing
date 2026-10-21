@@ -80,8 +80,8 @@ export const contactIds = {
 /** Free AI-visibility check: delivery time in working days (owner confirmed ~2). */
 export const checkDeliveryDays = process.env.NEXT_PUBLIC_CHECK_DELIVERY_DAYS?.trim() || "2";
 
-/** Formspree endpoint (e.g. https://formspree.io/f/xxxx). Empty = no form; mailto + contacts only. */
-export const FORMSPREE_ENDPOINT = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT?.trim() || "";
+/** Formspree endpoint (public form URL, not a secret). Env overrides; set env to empty-string-equivalent by editing here to hide the form. */
+export const FORMSPREE_ENDPOINT = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT?.trim() || "https://formspree.io/f/mdeaqldp";
 
 export function getDemoEmail(): string {
   return process.env.NEXT_PUBLIC_DEMO_EMAIL?.trim() || "yjz8521@gmail.com";
