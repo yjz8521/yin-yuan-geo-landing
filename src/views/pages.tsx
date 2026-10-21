@@ -6,7 +6,6 @@ import { DemoContent } from "@/components/DemoContent";
 import { HomeContent } from "@/components/HomeContent";
 import { JsonLd } from "@/components/JsonLd";
 import { PricingContent } from "@/components/PricingContent";
-import { SponsorContent } from "@/components/SponsorContent";
 import { faqs, guides } from "@/content/geo";
 import { LOCALE_META, alternates, lp, tr, type Locale } from "@/lib/locales";
 import { getSiteUrl, pageMeta, siteConfig } from "@/lib/site";
@@ -25,9 +24,6 @@ export const About = () => <AboutContent />;
 
 export const demoMeta = (l: Locale): Metadata => pageMeta(l, "/demo/", "申请试用 Demo", "申请引源 GEO 远程演示：实体卡、国内与海外引擎投放包与提及监测矩阵，约 30–45 分钟。");
 export const Demo = () => <DemoContent />;
-
-export const sponsorMeta = (l: Locale): Metadata => pageMeta(l, "/sponsor/", "赞助位 Sponsor", "引源 GEO 落地页早期赞助位：首页主赞助 US$250／周、引擎区条幅 US$150／周（草案价）。");
-export const Sponsor = () => <SponsorContent />;
 
 export const faqMeta = (l: Locale): Metadata => pageMeta(l, "/faq/", "常见问题 FAQ：什么是 GEO、和 SEO 差别、价格", "引源 GEO 常见问题：什么是 GEO、与 SEO 差别、国内与海外引擎覆盖（豆包 DeepSeek ChatGPT Perplexity 等）、如何监测、价格与适用对象。");
 export function Faq({ l }: { l: Locale }) {

@@ -1,10 +1,7 @@
 import hant from "@/i18n/zh-hant.json";
 import enD from "@/i18n/en.json";
-import msD from "@/i18n/ms.json";
-import jaD from "@/i18n/ja.json";
-import koD from "@/i18n/ko.json";
 
-export const LOCALES = ["zh-hant", "zh-hans", "en", "ms", "ja", "ko"] as const;
+export const LOCALES = ["zh-hant", "zh-hans", "en"] as const;
 export type Locale = (typeof LOCALES)[number];
 export const PREFIXED = LOCALES.filter((l) => l !== "zh-hant");
 export const DEFAULT_LOCALE: Locale = "zh-hant";
@@ -13,12 +10,9 @@ export const LOCALE_META: Record<Locale, { label: string; html: string; og: stri
   "zh-hant": { label: "繁體中文", html: "zh-Hant-TW", og: "zh_TW", hreflang: "zh-Hant" },
   "zh-hans": { label: "简体中文", html: "zh-Hans", og: "zh_CN", hreflang: "zh-Hans" },
   en: { label: "English", html: "en", og: "en_US", hreflang: "en" },
-  ms: { label: "Bahasa Melayu", html: "ms", og: "ms_MY", hreflang: "ms" },
-  ja: { label: "日本語", html: "ja", og: "ja_JP", hreflang: "ja" },
-  ko: { label: "한국어", html: "ko", og: "ko_KR", hreflang: "ko" },
 };
 
-const D: Record<string, Record<string, string>> = { "zh-hant": hant, en: enD, ms: msD, ja: jaD, ko: koD };
+const D: Record<string, Record<string, string>> = { "zh-hant": hant, en: enD };
 
 export function isLocale(x: string): x is Locale {
   return (LOCALES as readonly string[]).includes(x);

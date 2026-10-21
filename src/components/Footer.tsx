@@ -25,9 +25,6 @@ export function Footer() {
           <Link href={lpath("/pricing/")} className="hover:text-zinc-950">
             {t("方案", "Pricing")}
           </Link>
-          <Link href={lpath("/sponsor/")} className="hover:text-zinc-950">
-            {t("赞助", "Sponsor")}
-          </Link>
           <Link href={lpath("/guide/")} className="hover:text-zinc-950">
             {t("GEO 指南", "Guide")}
           </Link>

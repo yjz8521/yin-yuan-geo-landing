@@ -13,7 +13,6 @@ const links = [
   { href: "/guide/", zh: "指南", en: "Guide" },
   { href: "/faq/", zh: "FAQ", en: "FAQ" },
   { href: "/demo/", zh: "试用", en: "Demo" },
-  { href: "/sponsor/", zh: "赞助", en: "Sponsor" },
   { href: "/about/", zh: "关于", en: "About" },
 ];
 

@@ -20,14 +20,11 @@ const LOCALES = [
   { code: "zh-hant", prefix: "", hreflang: "zh-Hant", label: "繁體中文" },
   { code: "zh-hans", prefix: "/zh-hans", hreflang: "zh-Hans", label: "简体中文" },
   { code: "en", prefix: "/en", hreflang: "en", label: "English" },
-  { code: "ms", prefix: "/ms", hreflang: "ms", label: "Bahasa Melayu" },
-  { code: "ja", prefix: "/ja", hreflang: "ja", label: "日本語" },
-  { code: "ko", prefix: "/ko", hreflang: "ko", label: "한국어" },
 ];
 const GUIDE_SLUGS = ["geo-intro", "entity-card", "monitor-ai-mentions", "deepseek-self-check"];
 // [path, locales that have it]
 const pages = [
-  ...["/", "/pricing/", "/faq/", "/guide/", "/sponsor/", "/demo/", "/about/"].map((p) => [p, LOCALES]),
+  ...["/", "/pricing/", "/faq/", "/guide/", "/demo/", "/about/"].map((p) => [p, LOCALES]),
   ...GUIDE_SLUGS.map((s) => [`/guide/${s}/`, LOCALES.filter((l) => l.code.startsWith("zh"))]),
 ];
 const today = new Date().toISOString().slice(0, 10);
@@ -103,7 +100,6 @@ ${LOCALES.map((l) => link(l.label, `${l.prefix}/`, `${l.label} 首頁；同一�
 
 ${[
   link("關於", "/about/", "產品與負責人介紹"),
-  link("贊助位", "/sponsor/", "落地頁早期贊助位與草案價格"),
   link("简体中文指南", "/zh-hans/guide/", "四篇 GEO 指南的简体中文版"),
 ].join("\n")}
 `;

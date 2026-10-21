@@ -286,8 +286,8 @@ export function HomeContent() {
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-zinc-600">
             {t(
-              "申请试用，或在 SaaS 爬坡期先预订首页赞助位。",
-              "Request a trial, or book a homepage sponsor slot while SaaS ramps.",
+              "申请试用，我们会约时间远程演示。",
+              "Request a trial and we will schedule a remote demo.",
             )}
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
@@ -296,12 +296,6 @@ export function HomeContent() {
               className="rounded-full bg-zinc-950 px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-zinc-800"
             >
               {t("申请试用", "Request demo")}
-            </Link>
-            <Link
-              href={lpath("/sponsor/")}
-              className="rounded-full border border-zinc-200 px-6 py-2.5 text-sm font-medium text-zinc-700 transition hover:bg-zinc-100"
-            >
-              {t("赞助位", "Sponsor slots")}
             </Link>
           </div>
         </div>
