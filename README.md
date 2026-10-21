@@ -58,6 +58,16 @@ Next.js App Router · TypeScript · Tailwind CSS v4
 
 ## Deploy
 
+### Cloudflare Pages（搬遷中，等待網域）
+
+- Build command：`npm run build`；Output directory：`out`
+- 環境變數：`NEXT_PUBLIC_SITE_URL=https://<網域>`（或 `SITE_URL`，不要結尾斜線）；`BASE_PATH`、`NEXT_PUBLIC_BASE_PATH` 留空。
+- canonical、hreflang、JSON-LD、sitemap.xml、robots.txt、llms.txt 都從這個變數取網域（`src/lib/site.ts` 的 `getSiteUrl()`、`scripts/write-seo.mjs`）。預設仍是舊的 Vercel 網址，**等網域買好後**再改預設值（規格 4-3）。
+- 聯絡信箱：`NEXT_PUBLIC_DEMO_EMAIL` 可覆寫；預設 yjz8521@gmail.com。網域開好 Email Routing 後改成 `hi@<網域>`（規格 4-4）；該信箱只能收信，回信先用 Gmail。
+- 轉址：`public/_redirects`（Cloudflare 格式，與 `vercel.json` 相同，301）；`public/_headers` 設安全標頭與快取。
+- 待網域：`vercel.json` 加整站 301 到新網域（規格 4-6）尚未加。
+- 選填：`NEXT_PUBLIC_CHECK_DELIVERY_DAYS`（健檢交付工作天）、`NEXT_PUBLIC_CONTACT_LINE_ID`、`NEXT_PUBLIC_CONTACT_WECHAT_ID`（沒設就不顯示）。
+
 ### Vercel (preferred, root URL)
 
 - Leave `BASE_PATH` / `NEXT_PUBLIC_BASE_PATH` empty (default).
