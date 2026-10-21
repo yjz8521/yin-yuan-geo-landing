@@ -22,31 +22,26 @@ export function AboutContent() {
         )}
       </SectionLead>
 
-      <div className="mt-10 grid gap-6 md:grid-cols-2">
-        <div className="rounded-2xl border border-zinc-200 bg-white p-6">
-          <h3 className="text-sm font-semibold uppercase tracking-wider text-zinc-500">
-            {t("产品负责人", "Product owner")}
-          </h3>
-          <p className="mt-3 text-2xl font-semibold text-zinc-950">{siteConfig.owner}</p>
-          <p className="mt-2 text-sm leading-relaxed text-zinc-600">
-            {t(
-              "负责产品方向、商业化与对外合作。",
-              "Owns product direction, monetization, and partnerships.",
-            )}
-          </p>
-        </div>
-        <div className="rounded-2xl border border-zinc-200 bg-white p-6">
-          <h3 className="text-sm font-semibold uppercase tracking-wider text-zinc-500">
-            {t("运营搭档", "Ops partner")}
-          </h3>
-          <p className="mt-3 text-2xl font-semibold text-zinc-950">Grok Bot CEO</p>
-          <p className="mt-2 text-sm leading-relaxed text-zinc-600">
-            {t(
-              "由 Grok Bot 担任「CEO」角色，协助落地页、分发与日常运营例程。",
-              "Grok Bot acts as CEO co-pilot for landing, distribution, and day-to-day ops routines.",
-            )}
-          </p>
-        </div>
+      <div className="mt-10 max-w-3xl rounded-2xl border border-zinc-200 bg-white p-6 sm:p-8">
+        <h2 className="text-sm font-semibold uppercase tracking-wider text-zinc-500">
+          {t("负责人", "Founder")}
+        </h2>
+        <p className="mt-3 text-2xl font-semibold text-zinc-950">
+          {siteConfig.owner}
+          <span className="ml-2 text-base font-normal text-zinc-500">{t("（团子）", "(Tuanzi)")}</span>
+        </p>
+        <ul className="mt-5 space-y-3 text-sm leading-relaxed text-zinc-600">
+          <li>{t("实践大学国际经营与贸易学系。", "Shih Chien University, Department of International Business and Trade.")}</li>
+          <li>{t("家里的事业在大陆做 B2B 设备的销售与服务。", "The family business sells and services B2B equipment in mainland China.")}</li>
+          <li>{t("每天实际使用 DeepSeek、豆包、ChatGPT、Claude 等 AI，熟悉两岸不同 AI 平台和繁体、简体的差异。", "Uses DeepSeek, Doubao, ChatGPT, Claude and other AI every day, and knows how AI platforms — and Traditional vs. Simplified Chinese — differ across the Taiwan Strait.")}</li>
+        </ul>
+        <h3 className="mt-6 text-base font-semibold text-zinc-950">{t("为什么做引源 GEO", "Why YinYuan GEO")}</h3>
+        <p className="mt-2 text-sm leading-relaxed text-zinc-600">
+          {t(
+            "两岸的 AI 平台不一样，台湾品牌和台商常常只顾到其中一边。",
+            "AI platforms differ between Taiwan and mainland China, and Taiwan brands and Taiwanese businesses often cover only one side.",
+          )}
+        </p>
       </div>
 
       {appUrl ? (
@@ -62,7 +57,7 @@ export function AboutContent() {
           href={lpath("/demo/")}
           className="rounded-full bg-zinc-950 px-5 py-2 text-sm font-semibold text-white"
         >
-          {t("申请试用", "Request demo")}
+          {t("免费 AI 能见度健检", "Free AI visibility check")}
         </Link>
         <Link
           href={lpath("/pricing/")}

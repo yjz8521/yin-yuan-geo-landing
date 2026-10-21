@@ -51,6 +51,14 @@ const problems = [
   },
 ];
 
+const engineEn: Record<string, string> = {
+  豆包: "Doubao",
+  通义千问: "Qwen",
+  智谱清言: "Zhipu Qingyan",
+  "百度文心／文小言": "Baidu ERNIE / Wenxiaoyan",
+  元宝: "Yuanbao",
+};
+
 export function HomeContent() {
   const { t, p: lpath } = useI18n();
   const appUrl = getAppUrl();
@@ -77,8 +85,8 @@ export function HomeContent() {
           </h1>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-zinc-600 sm:text-lg">
             {t(
-              "实体卡 → 引擎投放包 → 渠道发布 → 提及率监测。给品牌与增长团队一套可复盘的 GEO 工作流。",
-              "Entity card → engine packs → publish → mention monitoring. A measurable GEO workflow for brand and growth teams.",
+              "目前已接入 DeepSeek 自动监测，其他引擎陆续接入中。流程：实体卡 → 引擎投放包 → 渠道发布 → 提及率监测。",
+              "DeepSeek auto-monitoring is live; other engines are being connected. Workflow: entity card → engine packs → publish → mention monitoring.",
             )}
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
@@ -192,7 +200,7 @@ export function HomeContent() {
         <div className="mt-2 flex flex-wrap gap-3">
           {siteConfig.enginesDomesticComing.map((e) => (
             <span key={e} className="rounded-full border border-zinc-200 bg-zinc-50 px-4 py-2 text-sm font-medium text-zinc-500">
-              {e}<span className="ml-1.5 text-xs text-zinc-500">{t("接入中", "coming")}</span>
+              {t(e as string, engineEn[e] ?? e)}<span className="ml-1.5 text-xs text-zinc-500">{t("接入中", "coming")}</span>
             </span>
           ))}
         </div>

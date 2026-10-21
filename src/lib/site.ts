@@ -3,8 +3,14 @@ export const siteConfig = {
   name: "引源 GEO",
   nameEn: "YinYuan GEO",
   productFull: "引源 GEO 投放台",
-  taglineZh: "让品牌在国内与海外生成式 AI 里被点名",
-  taglineEn: "Get your brand named across Chinese and global generative AI",
+  /**
+   * Homepage headline — 3 candidates, owner to pick (＿＿). Using #1 for now.
+   * 1) 帮台湾品牌与台商被 DeepSeek 等 AI 推荐
+   * 2) 让 DeepSeek 等 AI 回答时，正确提到你的品牌——专为台湾品牌与台商
+   * 3) 两岸 AI 都查得到你：给台湾品牌与台商的 GEO 工具
+   */
+  taglineZh: "帮台湾品牌与台商被 DeepSeek 等 AI 推荐",
+  taglineEn: "Helping Taiwan brands and Taiwanese businesses get recommended by DeepSeek and other AI",
   owner: "Kinnv",
   engines: ["豆包", "DeepSeek", "智谱清言", "百度文心／文小言", "通义千问"] as const,
   /** Connected today and running prompts automatically. */
