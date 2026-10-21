@@ -89,29 +89,14 @@ function FormspreeForm({ endpoint }: { endpoint: string }) {
 }
 
 function HealthCheck() {
-  const { t, locale } = useI18n();
+  const { t } = useI18n();
   const email = getDemoEmail();
-  const zh = locale.startsWith("zh");
   const days = checkDeliveryDays;
   const contacts = [
     { k: "Email", v: email },
     ...(contactIds.line ? [{ k: "LINE ID", v: contactIds.line }] : []),
     ...(contactIds.wechat ? [{ k: t("微信 ID", "WeChat ID"), v: contactIds.wechat }] : []),
   ];
-  const [f, setF] = useState({ company: "", website: "", industry: "", product: "", market: "" });
-  const set = (k: keyof typeof f) => (e: { target: { value: string } }) => setF({ ...f, [k]: e.target.value });
-
-  function onSubmit(e: FormEvent) {
-    e.preventDefault();
-    const subject = (zh ? "免费 AI 能见度健检申请" : "Free AI visibility check request") + (f.company ? ` · ${f.company}` : "");
-    const na = zh ? "（未填）" : "(not provided)";
-    const body = zh
-      ? `公司／品牌名称：${f.company}\n网站：${f.website || na}\n产业：${f.industry || na}\n主要产品或服务：${f.product || na}\n主要市场（台湾／大陆／海外）：${f.market || na}`
-      : `Company / brand: ${f.company}\nWebsite: ${f.website || na}\nIndustry: ${f.industry || na}\nMain products or services: ${f.product || na}\nMain market (Taiwan / mainland China / overseas): ${f.market || na}`;
-    window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  }
-
-  const input = "mt-1.5 w-full rounded-lg border border-zinc-200 bg-zinc-50 px-3 py-2 text-zinc-800 outline-none focus:border-zinc-950";
   return (
     <>
       <SectionLabel>{t("免费健检", "Free check")}</SectionLabel>
@@ -148,6 +133,7 @@ function HealthCheck() {
       </ul>
 
       <div className="mt-10 grid gap-6 md:grid-cols-2">
+        {FORMSPREE_ENDPOINT ? <FormspreeForm endpoint={FORMSPREE_ENDPOINT} /> : null}
         <div className="rounded-2xl border border-zinc-200 bg-white p-6">
           <h2 className="text-base font-semibold text-zinc-950">{t("联系方式", "Contact")}</h2>
           <p className="mt-1 text-sm text-zinc-500">{t("把上面的资料传给我们即可申请。", "Send us the details above to apply.")}</p>
@@ -164,18 +150,6 @@ function HealthCheck() {
           </ul>
         </div>
 
-        {FORMSPREE_ENDPOINT ? <FormspreeForm endpoint={FORMSPREE_ENDPOINT} /> : null}
-        <form onSubmit={onSubmit} className={`space-y-3 rounded-2xl border border-zinc-200 bg-white p-6 ${FORMSPREE_ENDPOINT ? "md:col-span-2" : ""}`}>
-          <p className="text-sm font-medium text-zinc-950">{t("或用邮件申请（会打开你的邮件程序）", "Or apply by email (opens your mail app)")}</p>
-          <label className="block text-sm text-zinc-600">{t("公司／品牌名称", "Company / brand name")}<input required value={f.company} onChange={set("company")} className={input} /></label>
-          <label className="block text-sm text-zinc-600">{t("网站", "Website")}<input value={f.website} onChange={set("website")} className={input} /></label>
-          <label className="block text-sm text-zinc-600">{t("产业", "Industry")}<input value={f.industry} onChange={set("industry")} className={input} /></label>
-          <label className="block text-sm text-zinc-600">{t("主要产品或服务", "Main products or services")}<input value={f.product} onChange={set("product")} className={input} /></label>
-          <label className="block text-sm text-zinc-600">{t("主要市场（台湾／大陆／海外）", "Main market (Taiwan / mainland China / overseas)")}<input value={f.market} onChange={set("market")} className={input} /></label>
-          <button type="submit" className="w-full rounded-full bg-zinc-950 py-2.5 text-sm font-semibold text-white transition hover:bg-zinc-800">
-            {t("用邮件申请健检", "Apply by email")}
-          </button>
-        </form>
       </div>
     </>
   );
