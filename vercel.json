@@ -1,10 +1,45 @@
 {
   "redirects": [
-    { "source": "/:lang(ms|ja|ko)", "destination": "/en/", "permanent": true },
-    { "source": "/:lang(ms|ja|ko)/:path*", "destination": "/en/:path*", "permanent": true },
-    { "source": "/sponsor", "destination": "/", "permanent": true },
-    { "source": "/sponsor/", "destination": "/", "permanent": true },
-    { "source": "/:lang(zh-hans|en)/sponsor", "destination": "/:lang/", "permanent": true },
-    { "source": "/:lang(zh-hans|en)/sponsor/", "destination": "/:lang/", "permanent": true }
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "yin-yuan-geo-landing.vercel.app"
+        }
+      ],
+      "destination": "https://yin-yuan-geo.pages.dev/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(ms|ja|ko)",
+      "destination": "/en/",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(ms|ja|ko)/:path*",
+      "destination": "/en/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/sponsor",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/sponsor/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(zh-hans|en)/sponsor",
+      "destination": "/:lang/",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(zh-hans|en)/sponsor/",
+      "destination": "/:lang/",
+      "permanent": true
+    }
   ]
 }

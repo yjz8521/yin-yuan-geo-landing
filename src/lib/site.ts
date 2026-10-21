@@ -3,14 +3,9 @@ export const siteConfig = {
   name: "引源 GEO",
   nameEn: "YinYuan GEO",
   productFull: "引源 GEO 投放台",
-  /**
-   * Homepage headline — 3 candidates, owner to pick (＿＿). Using #1 for now.
-   * 1) 帮台湾品牌与台商被 DeepSeek 等 AI 推荐
-   * 2) 让 DeepSeek 等 AI 回答时，正确提到你的品牌——专为台湾品牌与台商
-   * 3) 两岸 AI 都查得到你：给台湾品牌与台商的 GEO 工具
-   */
-  taglineZh: "帮台湾品牌与台商被 DeepSeek 等 AI 推荐",
-  taglineEn: "Helping Taiwan brands and Taiwanese businesses get recommended by DeepSeek and other AI",
+  /** Homepage headline (owner picked option 3 of 3). */
+  taglineZh: "两岸 AI 都查得到你：给台湾品牌与台商的 GEO 工具",
+  taglineEn: "Be found by AI on both sides of the Strait: GEO for Taiwan brands and Taiwanese businesses",
   owner: "Kinnv",
   engines: ["豆包", "DeepSeek", "智谱清言", "百度文心／文小言", "通义千问"] as const,
   /** Connected today and running prompts automatically. */
@@ -24,7 +19,7 @@ export const siteConfig = {
 export function getSiteUrl(): string {
   return (
     process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
-    "https://yin-yuan-geo-landing.vercel.app"
+    "https://yin-yuan-geo.pages.dev"
   );
 }
 
@@ -76,15 +71,17 @@ export const CHECKOUT_PRO_QUARTERLY =
 
 /**
  * Public contact IDs shown on /demo/. Leave empty to hide that row.
- * ＿＿ LINE ID / WeChat ID: waiting for the owner to provide.
  */
 export const contactIds = {
-  line: process.env.NEXT_PUBLIC_CONTACT_LINE_ID?.trim() || "",
-  wechat: process.env.NEXT_PUBLIC_CONTACT_WECHAT_ID?.trim() || "",
+  line: process.env.NEXT_PUBLIC_CONTACT_LINE_ID?.trim() || "a1993391683",
+  wechat: process.env.NEXT_PUBLIC_CONTACT_WECHAT_ID?.trim() || "hao_031105",
 };
 
 /** Free AI-visibility check: delivery time in working days (owner confirmed ~2). */
 export const checkDeliveryDays = process.env.NEXT_PUBLIC_CHECK_DELIVERY_DAYS?.trim() || "2";
+
+/** Formspree endpoint (e.g. https://formspree.io/f/xxxx). Empty = no form; mailto + contacts only. */
+export const FORMSPREE_ENDPOINT = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT?.trim() || "";
 
 export function getDemoEmail(): string {
   return process.env.NEXT_PUBLIC_DEMO_EMAIL?.trim() || "yjz8521@gmail.com";

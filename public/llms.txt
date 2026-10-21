@@ -11,26 +11,26 @@
 
 ## 產品
 
-- [首頁](https://yin-yuan-geo-landing.vercel.app/): 產品概覽、四步流程與引擎接入現況
-- [方案與價格](https://yin-yuan-geo-landing.vercel.app/pricing/): Free、Starter、Pro（月付／季付）與 Enterprise 的配額與價格
-- [常見問題](https://yin-yuan-geo-landing.vercel.app/faq/): GEO 定義、與 SEO 的差別、支援引擎、監測方法、收費與適用對象
-- [申請試用](https://yin-yuan-geo-landing.vercel.app/demo/): 預約遠端演示，申請工作台試用（邀請制）
+- [首頁](https://yin-yuan-geo.pages.dev/): 產品概覽、四步流程與引擎接入現況
+- [方案與價格](https://yin-yuan-geo.pages.dev/pricing/): Free、Starter、Pro（月付／季付）與 Enterprise 的配額與價格
+- [常見問題](https://yin-yuan-geo.pages.dev/faq/): GEO 定義、與 SEO 的差別、支援引擎、監測方法、收費與適用對象
+- [申請試用](https://yin-yuan-geo.pages.dev/demo/): 預約遠端演示，申請工作台試用（邀請制）
 
 ## 指南（繁體中文；簡體版在 /zh-hans/guide/）
 
-- [GEO 指南總覽](https://yin-yuan-geo-landing.vercel.app/guide/): 生成式引擎最佳化入門文章列表
-- [GEO 入門](https://yin-yuan-geo-landing.vercel.app/guide/geo-intro/): 統一實體事實、按引擎改寫、發布到公開管道、用固定問法監測
-- [實體卡怎麼寫](https://yin-yuan-geo-landing.vercel.app/guide/entity-card/): 定位、可驗證賣點、競品差異、適合誰與 FAQ 的寫法
-- [如何檢測 AI 是否提到你的品牌](https://yin-yuan-geo-landing.vercel.app/guide/monitor-ai-mentions/): 固定問法集、記錄格式與提及率計算方法
-- [怎麼知道 DeepSeek 有沒有推薦我的品牌](https://yin-yuan-geo-landing.vercel.app/guide/deepseek-self-check/): 不用工具的 DeepSeek 六步自測：寫問法、固定條件、每題問 2 次、記 5 欄、解讀結果、補公開資料
+- [GEO 指南總覽](https://yin-yuan-geo.pages.dev/guide/): 生成式引擎最佳化入門文章列表
+- [GEO 入門](https://yin-yuan-geo.pages.dev/guide/geo-intro/): 統一實體事實、按引擎改寫、發布到公開管道、用固定問法監測
+- [實體卡怎麼寫](https://yin-yuan-geo.pages.dev/guide/entity-card/): 定位、可驗證賣點、競品差異、適合誰與 FAQ 的寫法
+- [如何檢測 AI 是否提到你的品牌](https://yin-yuan-geo.pages.dev/guide/monitor-ai-mentions/): 固定問法集、記錄格式與提及率計算方法
+- [怎麼知道 DeepSeek 有沒有推薦我的品牌](https://yin-yuan-geo.pages.dev/guide/deepseek-self-check/): 不用工具的 DeepSeek 六步自測：寫問法、固定條件、每題問 2 次、記 5 欄、解讀結果、補公開資料
 
 ## 其他語言版本（Languages）
 
-- [繁體中文](https://yin-yuan-geo-landing.vercel.app/): 繁體中文 首頁；同一份事實與價格口徑
-- [简体中文](https://yin-yuan-geo-landing.vercel.app/zh-hans/): 简体中文 首頁；同一份事實與價格口徑
-- [English](https://yin-yuan-geo-landing.vercel.app/en/): English 首頁；同一份事實與價格口徑
+- [繁體中文](https://yin-yuan-geo.pages.dev/): 繁體中文 首頁；同一份事實與價格口徑
+- [简体中文](https://yin-yuan-geo.pages.dev/zh-hans/): 简体中文 首頁；同一份事實與價格口徑
+- [English](https://yin-yuan-geo.pages.dev/en/): English 首頁；同一份事實與價格口徑
 
 ## Optional
 
-- [關於](https://yin-yuan-geo-landing.vercel.app/about/): 產品與負責人介紹
-- [简体中文指南](https://yin-yuan-geo-landing.vercel.app/zh-hans/guide/): 四篇 GEO 指南的简体中文版
+- [關於](https://yin-yuan-geo.pages.dev/about/): 產品與負責人介紹
+- [简体中文指南](https://yin-yuan-geo.pages.dev/zh-hans/guide/): 四篇 GEO 指南的简体中文版

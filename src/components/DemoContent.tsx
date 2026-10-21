@@ -3,7 +3,7 @@
 import { useState, type FormEvent } from "react";
 import { Section, SectionLabel, SectionLead, SectionTitle } from "./Section";
 import { useI18n } from "@/lib/i18n";
-import { checkDeliveryDays, contactIds, getAppUrl, getDemoEmail } from "@/lib/site";
+import { FORMSPREE_ENDPOINT, checkDeliveryDays, contactIds, getAppUrl, getDemoEmail } from "@/lib/site";
 
 const includes = [
   {
@@ -50,6 +50,41 @@ function CopyButton({ value, label, done }: { value: string; label: string; done
     >
       {ok ? done : label}
     </button>
+  );
+}
+
+function FormspreeForm({ endpoint }: { endpoint: string }) {
+  const { t } = useI18n();
+  const [state, setState] = useState<"idle" | "sending" | "ok" | "err">("idle");
+  const input = "mt-1.5 w-full rounded-lg border border-zinc-200 bg-zinc-50 px-3 py-2 text-zinc-800 outline-none focus:border-zinc-950";
+  async function onSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setState("sending");
+    try {
+      const res = await fetch(endpoint, { method: "POST", body: new FormData(e.currentTarget), headers: { Accept: "application/json" } });
+      setState(res.ok ? "ok" : "err");
+    } catch {
+      setState("err");
+    }
+  }
+  if (state === "ok") {
+    return <p role="status" className="rounded-2xl border border-zinc-300 bg-zinc-50 p-6 text-sm text-zinc-950">{t("已收到申请，我们会尽快用 Email 联系你。", "Thanks — we got your request and will reply by email soon.")}</p>;
+  }
+  return (
+    <form onSubmit={onSubmit} className="space-y-3 rounded-2xl border border-zinc-200 bg-white p-6">
+      <p className="text-sm font-medium text-zinc-950">{t("在线申请健检", "Apply online")}</p>
+      <input type="hidden" name="_subject" value="免费 AI 能见度健检申请" />
+      <label className="block text-sm text-zinc-600">{t("品牌名", "Brand name")}<input required name="brand" className={input} /></label>
+      <label className="block text-sm text-zinc-600">{t("网站", "Website")}<input name="website" className={input} /></label>
+      <label className="block text-sm text-zinc-600">{t("产业", "Industry")}<input name="industry" className={input} /></label>
+      <label className="block text-sm text-zinc-600">{t("主要产品", "Main products")}<input name="product" className={input} /></label>
+      <label className="block text-sm text-zinc-600">{t("主要市场（台湾／大陆／海外）", "Main market (Taiwan / mainland China / overseas)")}<input name="market" className={input} /></label>
+      <label className="block text-sm text-zinc-600">Email<input required type="email" name="email" className={input} /></label>
+      <button type="submit" disabled={state === "sending"} className="w-full rounded-full bg-zinc-950 py-2.5 text-sm font-semibold text-white transition hover:bg-zinc-800 disabled:opacity-60">
+        {state === "sending" ? t("送出中…", "Sending…") : t("送出申请", "Submit")}
+      </button>
+      {state === "err" ? <p role="alert" className="text-xs text-red-700">{t("送出失败，请改用下方邮件或联系方式。", "Something went wrong. Please use email or the contacts below.")}</p> : null}
+    </form>
   );
 }
 
@@ -129,7 +164,8 @@ function HealthCheck() {
           </ul>
         </div>
 
-        <form onSubmit={onSubmit} className="space-y-3 rounded-2xl border border-zinc-200 bg-white p-6">
+        {FORMSPREE_ENDPOINT ? <FormspreeForm endpoint={FORMSPREE_ENDPOINT} /> : null}
+        <form onSubmit={onSubmit} className={`space-y-3 rounded-2xl border border-zinc-200 bg-white p-6 ${FORMSPREE_ENDPOINT ? "md:col-span-2" : ""}`}>
           <p className="text-sm font-medium text-zinc-950">{t("或用邮件申请（会打开你的邮件程序）", "Or apply by email (opens your mail app)")}</p>
           <label className="block text-sm text-zinc-600">{t("公司／品牌名称", "Company / brand name")}<input required value={f.company} onChange={set("company")} className={input} /></label>
           <label className="block text-sm text-zinc-600">{t("网站", "Website")}<input value={f.website} onChange={set("website")} className={input} /></label>
