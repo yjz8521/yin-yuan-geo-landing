@@ -3,7 +3,7 @@
 import { useState, type FormEvent } from "react";
 import { Section, SectionLabel, SectionLead, SectionTitle } from "./Section";
 import { useI18n } from "@/lib/i18n";
-import { getAppUrl, getDemoEmail } from "@/lib/site";
+import { FORMSPREE_ENDPOINT, checkDeliveryDays, contactIds, getAppUrl, getDemoEmail } from "@/lib/site";
 
 const includes = [
   {
@@ -24,8 +24,165 @@ const includes = [
   },
 ];
 
+const provide = [
+  { zh: "公司／品牌名称", en: "Company / brand name" },
+  { zh: "网站", en: "Website" },
+  { zh: "产业", en: "Industry" },
+  { zh: "主要产品或服务", en: "Main products or services" },
+  { zh: "主要市场（台湾／大陆／海外）", en: "Main market (Taiwan / mainland China / overseas)" },
+];
+
+function CopyButton({ value, label, done }: { value: string; label: string; done: string }) {
+  const [ok, setOk] = useState(false);
+  return (
+    <button
+      type="button"
+      onClick={async () => {
+        try {
+          await navigator.clipboard.writeText(value);
+          setOk(true);
+          setTimeout(() => setOk(false), 1500);
+        } catch {
+          /* clipboard unavailable */
+        }
+      }}
+      className="shrink-0 rounded-full border border-zinc-200 bg-white px-3 py-1 text-xs font-medium text-zinc-700 hover:bg-zinc-100"
+    >
+      {ok ? done : label}
+    </button>
+  );
+}
+
+function FormspreeForm({ endpoint }: { endpoint: string }) {
+  const { t } = useI18n();
+  const [state, setState] = useState<"idle" | "sending" | "ok" | "err">("idle");
+  const input = "mt-1.5 w-full rounded-lg border border-zinc-200 bg-zinc-50 px-3 py-2 text-zinc-800 outline-none focus:border-zinc-950";
+  async function onSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setState("sending");
+    try {
+      const res = await fetch(endpoint, { method: "POST", body: new FormData(e.currentTarget), headers: { Accept: "application/json" } });
+      setState(res.ok ? "ok" : "err");
+    } catch {
+      setState("err");
+    }
+  }
+  if (state === "ok") {
+    return <p role="status" className="rounded-2xl border border-zinc-300 bg-zinc-50 p-6 text-sm text-zinc-950">{t("已收到申请，我们会尽快用 Email 联系你。", "Thanks — we got your request and will reply by email soon.")}</p>;
+  }
+  return (
+    <form onSubmit={onSubmit} className="space-y-3 rounded-2xl border border-zinc-200 bg-white p-6">
+      <p className="text-sm font-medium text-zinc-950">{t("在线申请健检", "Apply online")}</p>
+      <input type="hidden" name="_subject" value="免费 AI 能见度健检申请" />
+      <label className="block text-sm text-zinc-600">{t("品牌名", "Brand name")}<input required name="brand" className={input} /></label>
+      <label className="block text-sm text-zinc-600">{t("网站", "Website")}<input name="website" className={input} /></label>
+      <label className="block text-sm text-zinc-600">{t("产业", "Industry")}<input name="industry" className={input} /></label>
+      <label className="block text-sm text-zinc-600">{t("主要产品", "Main products")}<input name="product" className={input} /></label>
+      <label className="block text-sm text-zinc-600">{t("主要市场（台湾／大陆／海外）", "Main market (Taiwan / mainland China / overseas)")}<input name="market" className={input} /></label>
+      <label className="block text-sm text-zinc-600">Email<input required type="email" name="email" className={input} /></label>
+      <button type="submit" disabled={state === "sending"} className="w-full rounded-full bg-zinc-950 py-2.5 text-sm font-semibold text-white transition hover:bg-zinc-800 disabled:opacity-60">
+        {state === "sending" ? t("送出中…", "Sending…") : t("送出申请", "Submit")}
+      </button>
+      {state === "err" ? <p role="alert" className="text-xs text-red-700">{t("送出失败，请改用下方邮件或联系方式。", "Something went wrong. Please use email or the contacts below.")}</p> : null}
+    </form>
+  );
+}
+
+function HealthCheck() {
+  const { t, locale } = useI18n();
+  const email = getDemoEmail();
+  const zh = locale.startsWith("zh");
+  const days = checkDeliveryDays;
+  const contacts = [
+    { k: "Email", v: email },
+    ...(contactIds.line ? [{ k: "LINE ID", v: contactIds.line }] : []),
+    ...(contactIds.wechat ? [{ k: t("微信 ID", "WeChat ID"), v: contactIds.wechat }] : []),
+  ];
+  const [f, setF] = useState({ company: "", website: "", industry: "", product: "", market: "" });
+  const set = (k: keyof typeof f) => (e: { target: { value: string } }) => setF({ ...f, [k]: e.target.value });
+
+  function onSubmit(e: FormEvent) {
+    e.preventDefault();
+    const subject = (zh ? "免费 AI 能见度健检申请" : "Free AI visibility check request") + (f.company ? ` · ${f.company}` : "");
+    const na = zh ? "（未填）" : "(not provided)";
+    const body = zh
+      ? `公司／品牌名称：${f.company}\n网站：${f.website || na}\n产业：${f.industry || na}\n主要产品或服务：${f.product || na}\n主要市场（台湾／大陆／海外）：${f.market || na}`
+      : `Company / brand: ${f.company}\nWebsite: ${f.website || na}\nIndustry: ${f.industry || na}\nMain products or services: ${f.product || na}\nMain market (Taiwan / mainland China / overseas): ${f.market || na}`;
+    window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  }
+
+  const input = "mt-1.5 w-full rounded-lg border border-zinc-200 bg-zinc-50 px-3 py-2 text-zinc-800 outline-none focus:border-zinc-950";
+  return (
+    <>
+      <SectionLabel>{t("免费健检", "Free check")}</SectionLabel>
+      <SectionTitle as="h1">{t("免费 AI 能见度健检", "Free AI visibility check")}</SectionTitle>
+      <SectionLead>
+        {t(
+          "看看 DeepSeek 等 AI 现在回答你的品类时，有没有提到你。免费、不绑约；不保证排名或见效时间。",
+          "See whether DeepSeek and other AI mention you when answering questions in your category. Free, no commitment; no guarantee of rankings or timing.",
+        )}
+      </SectionLead>
+
+      <div className="mt-10 grid gap-6 md:grid-cols-2">
+        <div className="rounded-2xl border border-zinc-200 bg-white p-6">
+          <h2 className="text-base font-semibold text-zinc-950">{t("你要提供", "What you provide")}</h2>
+          <ul className="mt-3 space-y-2 text-sm text-zinc-600">
+            {provide.map((x) => <li key={x.en}>· {t(x.zh, x.en)}</li>)}
+          </ul>
+        </div>
+        <div className="rounded-2xl border border-zinc-200 bg-white p-6">
+          <h2 className="text-base font-semibold text-zinc-950">{t("我们会做", "What we do")}</h2>
+          <p className="mt-3 text-sm leading-relaxed text-zinc-600">
+            {t(
+              "用 10 个固定问法去问 DeepSeek（自动），其他 AI（豆包、ChatGPT 等）由人工查询记录，整理成一份报告：有没有提到你、提到哪些竞争对手、建议先补哪些公开资料。",
+              "We ask DeepSeek 10 fixed questions (automated) and check other AI (Doubao, ChatGPT and more) manually, then send you a report: whether you are mentioned, which competitors are mentioned, and which public information to add first.",
+            )}
+          </p>
+        </div>
+      </div>
+
+      <ul className="mt-6 grid gap-3 text-sm sm:grid-cols-3">
+        <li className="rounded-xl border border-zinc-200 bg-zinc-50 px-4 py-3 text-zinc-700">{t("交付时间：约 ", "Delivery: within about ")}{days}{t(" 个工作天内", " business days")}</li>
+        <li className="rounded-xl border border-zinc-200 bg-zinc-50 px-4 py-3 text-zinc-700">{t("免费、不绑约", "Free, no commitment")}</li>
+        <li className="rounded-xl border border-zinc-200 bg-zinc-50 px-4 py-3 text-zinc-700">{t("不保证排名或见效时间", "No guarantee of rankings or timing")}</li>
+      </ul>
+
+      <div className="mt-10 grid gap-6 md:grid-cols-2">
+        <div className="rounded-2xl border border-zinc-200 bg-white p-6">
+          <h2 className="text-base font-semibold text-zinc-950">{t("联系方式", "Contact")}</h2>
+          <p className="mt-1 text-sm text-zinc-500">{t("把上面的资料传给我们即可申请。", "Send us the details above to apply.")}</p>
+          <ul className="mt-4 space-y-3">
+            {contacts.map((c) => (
+              <li key={c.k} className="flex items-center justify-between gap-3 rounded-xl border border-zinc-200 px-4 py-3">
+                <span className="min-w-0 text-sm">
+                  <span className="block text-xs text-zinc-500">{c.k}</span>
+                  <span className="block break-all font-medium text-zinc-950">{c.v}</span>
+                </span>
+                <CopyButton value={c.v} label={t("复制", "Copy")} done={t("已复制", "Copied")} />
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {FORMSPREE_ENDPOINT ? <FormspreeForm endpoint={FORMSPREE_ENDPOINT} /> : null}
+        <form onSubmit={onSubmit} className={`space-y-3 rounded-2xl border border-zinc-200 bg-white p-6 ${FORMSPREE_ENDPOINT ? "md:col-span-2" : ""}`}>
+          <p className="text-sm font-medium text-zinc-950">{t("或用邮件申请（会打开你的邮件程序）", "Or apply by email (opens your mail app)")}</p>
+          <label className="block text-sm text-zinc-600">{t("公司／品牌名称", "Company / brand name")}<input required value={f.company} onChange={set("company")} className={input} /></label>
+          <label className="block text-sm text-zinc-600">{t("网站", "Website")}<input value={f.website} onChange={set("website")} className={input} /></label>
+          <label className="block text-sm text-zinc-600">{t("产业", "Industry")}<input value={f.industry} onChange={set("industry")} className={input} /></label>
+          <label className="block text-sm text-zinc-600">{t("主要产品或服务", "Main products or services")}<input value={f.product} onChange={set("product")} className={input} /></label>
+          <label className="block text-sm text-zinc-600">{t("主要市场（台湾／大陆／海外）", "Main market (Taiwan / mainland China / overseas)")}<input value={f.market} onChange={set("market")} className={input} /></label>
+          <button type="submit" className="w-full rounded-full bg-zinc-950 py-2.5 text-sm font-semibold text-white transition hover:bg-zinc-800">
+            {t("用邮件申请健检", "Apply by email")}
+          </button>
+        </form>
+      </div>
+    </>
+  );
+}
+
 export function DemoContent() {
-  const { t, locale, p: lpath } = useI18n();
+  const { t, locale } = useI18n();
   const email = getDemoEmail();
   const appUrl = getAppUrl();
   const [name, setName] = useState("");
@@ -47,9 +204,13 @@ export function DemoContent() {
   }
 
   return (
+    <>
     <Section className="pt-12 sm:pt-16">
+      <HealthCheck />
+    </Section>
+    <Section id="demo" className="border-t border-zinc-200">
       <SectionLabel>{t("试用", "Demo")}</SectionLabel>
-      <SectionTitle as="h1">
+      <SectionTitle>
         {t("申请试用：演示包含什么", "Request a demo: what it includes")}
       </SectionTitle>
       <SectionLead>
@@ -147,5 +308,6 @@ export function DemoContent() {
         </p>
       </form>
     </Section>
+    </>
   );
 }

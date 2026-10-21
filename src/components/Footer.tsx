@@ -16,10 +16,6 @@ export function Footer() {
           <p className="text-sm leading-relaxed text-zinc-500">
             {t(siteConfig.taglineZh, siteConfig.taglineEn)}
           </p>
-          <p className="text-xs text-zinc-400">
-            {t("产品私有仓（仅文字）", "Private product repo (text only)")}:{" "}
-            <span className="font-mono text-zinc-500">{siteConfig.repoText}</span>
-          </p>
         </div>
         <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-zinc-600">
           <Link href={lpath("/pricing/")} className="hover:text-zinc-950">
@@ -32,7 +28,7 @@ export function Footer() {
             FAQ
           </Link>
           <Link href={lpath("/demo/")} className="hover:text-zinc-950">
-            {t("试用", "Demo")}
+            {t("免费健检", "Free check")}
           </Link>
           <Link href={lpath("/about/")} className="hover:text-zinc-950">
             {t("关于", "About")}

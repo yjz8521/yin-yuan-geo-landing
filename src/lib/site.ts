@@ -3,10 +3,10 @@ export const siteConfig = {
   name: "引源 GEO",
   nameEn: "YinYuan GEO",
   productFull: "引源 GEO 投放台",
-  taglineZh: "让品牌在国内与海外生成式 AI 里被点名",
-  taglineEn: "Get your brand named across Chinese and global generative AI",
+  /** Homepage headline (owner picked option 3 of 3). */
+  taglineZh: "两岸 AI 都查得到你：给台湾品牌与台商的 GEO 工具",
+  taglineEn: "Be found by AI on both sides of the Strait: GEO for Taiwan brands and Taiwanese businesses",
   owner: "Kinnv",
-  repoText: "github.com/yjz8521/geo-platform",
   engines: ["豆包", "DeepSeek", "智谱清言", "百度文心／文小言", "通义千问"] as const,
   /** Connected today and running prompts automatically. */
   enginesLive: ["DeepSeek"] as const,
@@ -19,7 +19,7 @@ export const siteConfig = {
 export function getSiteUrl(): string {
   return (
     process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
-    "https://yin-yuan-geo-landing.vercel.app"
+    "https://yin-yuan-geo.pages.dev"
   );
 }
 
@@ -68,6 +68,20 @@ export const checkoutLinks = {
 export const CHECKOUT_PRO_QUARTERLY =
   process.env.NEXT_PUBLIC_CHECKOUT_PRO_QUARTERLY?.trim() ||
   "https://yin-yuan-geo.lemonsqueezy.com/checkout/buy/11775d12-9b90-4a13-8079-2e16a94bf7ce";
+
+/**
+ * Public contact IDs shown on /demo/. Leave empty to hide that row.
+ */
+export const contactIds = {
+  line: process.env.NEXT_PUBLIC_CONTACT_LINE_ID?.trim() || "a1993391683",
+  wechat: process.env.NEXT_PUBLIC_CONTACT_WECHAT_ID?.trim() || "hao_031105",
+};
+
+/** Free AI-visibility check: delivery time in working days (owner confirmed ~2). */
+export const checkDeliveryDays = process.env.NEXT_PUBLIC_CHECK_DELIVERY_DAYS?.trim() || "2";
+
+/** Formspree endpoint (public form URL, not a secret). NEXT_PUBLIC_FORMSPREE_ENDPOINT overrides. */
+export const FORMSPREE_ENDPOINT = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT?.trim() || "https://formspree.io/f/mdeaqldp";
 
 export function getDemoEmail(): string {
   return process.env.NEXT_PUBLIC_DEMO_EMAIL?.trim() || "yjz8521@gmail.com";
