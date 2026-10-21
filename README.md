@@ -18,7 +18,7 @@ npm run build && npm start   # 生产构建
 
 | 变量 | 说明 |
 |------|------|
-| `NEXT_PUBLIC_SITE_URL` | 本站公开 URL（sitemap / OG）。Vercel 填 `https://….vercel.app`；默认 `https://yin-yuan-geo.pages.dev`（Pages 镜像也以 Vercel 为 canonical） |
+| `NEXT_PUBLIC_SITE_URL` | 本站公开 URL（sitemap / OG）。Vercel 填 `https://….vercel.app`；默认 `https://yin-yuan-geo.pages.dev` |
 | `BASE_PATH` / `NEXT_PUBLIC_BASE_PATH` | Vercel / 本地根路径留空；GitHub project Pages 设为 `/yin-yuan-geo-landing` |
 | `NEXT_PUBLIC_APP_URL` | 上线后的 geo-platform 产品地址。**留空则不展示产品入口**，避免虚构 demo URL |
 | `NEXT_PUBLIC_CHECKOUT_STARTER` / `_PRO` / `_PRO_QUARTERLY` | Lemon Squeezy 结账链接覆盖（默认值写在 `src/lib/site.ts`） |

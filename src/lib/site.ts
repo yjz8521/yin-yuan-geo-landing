@@ -3,9 +3,9 @@ export const siteConfig = {
   name: "引源 GEO",
   nameEn: "YinYuan GEO",
   productFull: "引源 GEO 投放台",
-  /** Homepage headline (owner picked option 3 of 3). */
-  taglineZh: "两岸 AI 都查得到你：给台湾品牌与台商的 GEO 工具",
-  taglineEn: "Be found by AI on both sides of the Strait: GEO for Taiwan brands and Taiwanese businesses",
+  /** Homepage headline (owner-approved question form). */
+  taglineZh: "两岸 AI 查得到你吗？给台湾品牌与台商的 GEO 工具",
+  taglineEn: "Can AI on both sides of the Strait find you? GEO for Taiwan brands and Taiwanese businesses",
   owner: "Kinnv",
   engines: ["豆包", "DeepSeek", "智谱清言", "百度文心／文小言", "通义千问"] as const,
   /** Connected today and running prompts automatically. */
