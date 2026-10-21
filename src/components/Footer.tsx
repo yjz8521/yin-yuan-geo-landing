@@ -5,7 +5,7 @@ import { useI18n } from "@/lib/i18n";
 import { siteBasePath, siteConfig } from "@/lib/site";
 
 export function Footer() {
-  const { t } = useI18n();
+  const { t, p: lpath } = useI18n();
   return (
     <footer className="border-t border-zinc-200 bg-zinc-50">
       <div className="mx-auto flex max-w-6xl flex-col gap-6 px-4 py-12 sm:px-6 md:flex-row md:items-start md:justify-between">
@@ -22,25 +22,25 @@ export function Footer() {
           </p>
         </div>
         <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-zinc-600">
-          <Link href="/pricing/" className="hover:text-white">
+          <Link href={lpath("/pricing/")} className="hover:text-zinc-950">
             {t("方案", "Pricing")}
           </Link>
-          <Link href="/sponsor/" className="hover:text-white">
+          <Link href={lpath("/sponsor/")} className="hover:text-zinc-950">
             {t("赞助", "Sponsor")}
           </Link>
-          <Link href="/guide/" className="hover:text-white">
+          <Link href={lpath("/guide/")} className="hover:text-zinc-950">
             {t("GEO 指南", "Guide")}
           </Link>
-          <Link href="/faq/" className="hover:text-white">
+          <Link href={lpath("/faq/")} className="hover:text-zinc-950">
             FAQ
           </Link>
-          <Link href="/demo/" className="hover:text-white">
+          <Link href={lpath("/demo/")} className="hover:text-zinc-950">
             {t("试用", "Demo")}
           </Link>
-          <Link href="/about/" className="hover:text-white">
+          <Link href={lpath("/about/")} className="hover:text-zinc-950">
             {t("关于", "About")}
           </Link>
-          <a href={`${siteBasePath}/llms.txt`} className="hover:text-white">
+          <a href={`${siteBasePath}/llms.txt`} className="hover:text-zinc-950">
             llms.txt
           </a>
         </div>

@@ -1,69 +1,621 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://yin-yuan-geo-landing.vercel.app/</loc>
     <lastmod>2026-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo-landing.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yin-yuan-geo-landing.vercel.app/zh-hans/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yin-yuan-geo-landing.vercel.app/en/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://yin-yuan-geo-landing.vercel.app/ms/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://yin-yuan-geo-landing.vercel.app/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://yin-yuan-geo-landing.vercel.app/ko/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo-landing.vercel.app/"/>
+  </url>
+  <url>
+    <loc>https://yin-yuan-geo-landing.vercel.app/zh-hans/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo-landing.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yin-yuan-geo-landing.vercel.app/zh-hans/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yin-yuan-geo-landing.vercel.app/en/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://yin-yuan-geo-landing.vercel.app/ms/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://yin-yuan-geo-landing.vercel.app/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://yin-yuan-geo-landing.vercel.app/ko/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo-landing.vercel.app/"/>
+  </url>
+  <url>
+    <loc>https://yin-yuan-geo-landing.vercel.app/en/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo-landing.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yin-yuan-geo-landing.vercel.app/zh-hans/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yin-yuan-geo-landing.vercel.app/en/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://yin-yuan-geo-landing.vercel.app/ms/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://yin-yuan-geo-landing.vercel.app/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://yin-yuan-geo-landing.vercel.app/ko/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo-landing.vercel.app/"/>
+  </url>
+  <url>
+    <loc>https://yin-yuan-geo-landing.vercel.app/ms/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo-landing.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yin-yuan-geo-landing.vercel.app/zh-hans/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yin-yuan-geo-landing.vercel.app/en/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://yin-yuan-geo-landing.vercel.app/ms/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://yin-yuan-geo-landing.vercel.app/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://yin-yuan-geo-landing.vercel.app/ko/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo-landing.vercel.app/"/>
+  </url>
+  <url>
+    <loc>https://yin-yuan-geo-landing.vercel.app/ja/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo-landing.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yin-yuan-geo-landing.vercel.app/zh-hans/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yin-yuan-geo-landing.vercel.app/en/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://yin-yuan-geo-landing.vercel.app/ms/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://yin-yuan-geo-landing.vercel.app/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://yin-yuan-geo-landing.vercel.app/ko/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo-landing.vercel.app/"/>
+  </url>
+  <url>
+    <loc>https://yin-yuan-geo-landing.vercel.app/ko/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo-landing.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yin-yuan-geo-landing.vercel.app/zh-hans/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yin-yuan-geo-landing.vercel.app/en/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://yin-yuan-geo-landing.vercel.app/ms/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://yin-yuan-geo-landing.vercel.app/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://yin-yuan-geo-landing.vercel.app/ko/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo-landing.vercel.app/"/>
   </url>
   <url>
     <loc>https://yin-yuan-geo-landing.vercel.app/pricing/</loc>
     <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo-landing.vercel.app/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yin-yuan-geo-landing.vercel.app/zh-hans/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yin-yuan-geo-landing.vercel.app/en/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://yin-yuan-geo-landing.vercel.app/ms/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://yin-yuan-geo-landing.vercel.app/ja/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://yin-yuan-geo-landing.vercel.app/ko/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo-landing.vercel.app/pricing/"/>
+  </url>
+  <url>
+    <loc>https://yin-yuan-geo-landing.vercel.app/zh-hans/pricing/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo-landing.vercel.app/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yin-yuan-geo-landing.vercel.app/zh-hans/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yin-yuan-geo-landing.vercel.app/en/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://yin-yuan-geo-landing.vercel.app/ms/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://yin-yuan-geo-landing.vercel.app/ja/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://yin-yuan-geo-landing.vercel.app/ko/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo-landing.vercel.app/pricing/"/>
+  </url>
+  <url>
+    <loc>https://yin-yuan-geo-landing.vercel.app/en/pricing/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo-landing.vercel.app/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yin-yuan-geo-landing.vercel.app/zh-hans/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yin-yuan-geo-landing.vercel.app/en/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://yin-yuan-geo-landing.vercel.app/ms/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://yin-yuan-geo-landing.vercel.app/ja/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://yin-yuan-geo-landing.vercel.app/ko/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo-landing.vercel.app/pricing/"/>
+  </url>
+  <url>
+    <loc>https://yin-yuan-geo-landing.vercel.app/ms/pricing/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo-landing.vercel.app/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yin-yuan-geo-landing.vercel.app/zh-hans/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yin-yuan-geo-landing.vercel.app/en/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://yin-yuan-geo-landing.vercel.app/ms/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://yin-yuan-geo-landing.vercel.app/ja/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://yin-yuan-geo-landing.vercel.app/ko/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo-landing.vercel.app/pricing/"/>
+  </url>
+  <url>
+    <loc>https://yin-yuan-geo-landing.vercel.app/ja/pricing/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo-landing.vercel.app/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yin-yuan-geo-landing.vercel.app/zh-hans/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yin-yuan-geo-landing.vercel.app/en/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://yin-yuan-geo-landing.vercel.app/ms/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://yin-yuan-geo-landing.vercel.app/ja/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://yin-yuan-geo-landing.vercel.app/ko/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo-landing.vercel.app/pricing/"/>
+  </url>
+  <url>
+    <loc>https://yin-yuan-geo-landing.vercel.app/ko/pricing/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo-landing.vercel.app/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yin-yuan-geo-landing.vercel.app/zh-hans/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yin-yuan-geo-landing.vercel.app/en/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://yin-yuan-geo-landing.vercel.app/ms/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://yin-yuan-geo-landing.vercel.app/ja/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://yin-yuan-geo-landing.vercel.app/ko/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo-landing.vercel.app/pricing/"/>
   </url>
   <url>
     <loc>https://yin-yuan-geo-landing.vercel.app/faq/</loc>
     <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo-landing.vercel.app/faq/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yin-yuan-geo-landing.vercel.app/zh-hans/faq/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yin-yuan-geo-landing.vercel.app/en/faq/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://yin-yuan-geo-landing.vercel.app/ms/faq/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://yin-yuan-geo-landing.vercel.app/ja/faq/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://yin-yuan-geo-landing.vercel.app/ko/faq/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo-landing.vercel.app/faq/"/>
+  </url>
+  <url>
+    <loc>https://yin-yuan-geo-landing.vercel.app/zh-hans/faq/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo-landing.vercel.app/faq/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yin-yuan-geo-landing.vercel.app/zh-hans/faq/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yin-yuan-geo-landing.vercel.app/en/faq/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://yin-yuan-geo-landing.vercel.app/ms/faq/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://yin-yuan-geo-landing.vercel.app/ja/faq/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://yin-yuan-geo-landing.vercel.app/ko/faq/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo-landing.vercel.app/faq/"/>
+  </url>
+  <url>
+    <loc>https://yin-yuan-geo-landing.vercel.app/en/faq/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo-landing.vercel.app/faq/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yin-yuan-geo-landing.vercel.app/zh-hans/faq/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yin-yuan-geo-landing.vercel.app/en/faq/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://yin-yuan-geo-landing.vercel.app/ms/faq/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://yin-yuan-geo-landing.vercel.app/ja/faq/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://yin-yuan-geo-landing.vercel.app/ko/faq/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo-landing.vercel.app/faq/"/>
+  </url>
+  <url>
+    <loc>https://yin-yuan-geo-landing.vercel.app/ms/faq/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo-landing.vercel.app/faq/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yin-yuan-geo-landing.vercel.app/zh-hans/faq/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yin-yuan-geo-landing.vercel.app/en/faq/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://yin-yuan-geo-landing.vercel.app/ms/faq/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://yin-yuan-geo-landing.vercel.app/ja/faq/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://yin-yuan-geo-landing.vercel.app/ko/faq/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo-landing.vercel.app/faq/"/>
+  </url>
+  <url>
+    <loc>https://yin-yuan-geo-landing.vercel.app/ja/faq/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo-landing.vercel.app/faq/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yin-yuan-geo-landing.vercel.app/zh-hans/faq/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yin-yuan-geo-landing.vercel.app/en/faq/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://yin-yuan-geo-landing.vercel.app/ms/faq/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://yin-yuan-geo-landing.vercel.app/ja/faq/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://yin-yuan-geo-landing.vercel.app/ko/faq/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo-landing.vercel.app/faq/"/>
+  </url>
+  <url>
+    <loc>https://yin-yuan-geo-landing.vercel.app/ko/faq/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo-landing.vercel.app/faq/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yin-yuan-geo-landing.vercel.app/zh-hans/faq/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yin-yuan-geo-landing.vercel.app/en/faq/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://yin-yuan-geo-landing.vercel.app/ms/faq/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://yin-yuan-geo-landing.vercel.app/ja/faq/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://yin-yuan-geo-landing.vercel.app/ko/faq/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo-landing.vercel.app/faq/"/>
   </url>
   <url>
     <loc>https://yin-yuan-geo-landing.vercel.app/guide/</loc>
     <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo-landing.vercel.app/guide/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yin-yuan-geo-landing.vercel.app/zh-hans/guide/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yin-yuan-geo-landing.vercel.app/en/guide/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://yin-yuan-geo-landing.vercel.app/ms/guide/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://yin-yuan-geo-landing.vercel.app/ja/guide/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://yin-yuan-geo-landing.vercel.app/ko/guide/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo-landing.vercel.app/guide/"/>
   </url>
   <url>
-    <loc>https://yin-yuan-geo-landing.vercel.app/guide/geo-intro/</loc>
+    <loc>https://yin-yuan-geo-landing.vercel.app/zh-hans/guide/</loc>
     <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo-landing.vercel.app/guide/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yin-yuan-geo-landing.vercel.app/zh-hans/guide/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yin-yuan-geo-landing.vercel.app/en/guide/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://yin-yuan-geo-landing.vercel.app/ms/guide/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://yin-yuan-geo-landing.vercel.app/ja/guide/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://yin-yuan-geo-landing.vercel.app/ko/guide/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo-landing.vercel.app/guide/"/>
   </url>
   <url>
-    <loc>https://yin-yuan-geo-landing.vercel.app/guide/entity-card/</loc>
+    <loc>https://yin-yuan-geo-landing.vercel.app/en/guide/</loc>
     <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo-landing.vercel.app/guide/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yin-yuan-geo-landing.vercel.app/zh-hans/guide/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yin-yuan-geo-landing.vercel.app/en/guide/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://yin-yuan-geo-landing.vercel.app/ms/guide/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://yin-yuan-geo-landing.vercel.app/ja/guide/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://yin-yuan-geo-landing.vercel.app/ko/guide/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo-landing.vercel.app/guide/"/>
   </url>
   <url>
-    <loc>https://yin-yuan-geo-landing.vercel.app/guide/monitor-ai-mentions/</loc>
+    <loc>https://yin-yuan-geo-landing.vercel.app/ms/guide/</loc>
     <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo-landing.vercel.app/guide/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yin-yuan-geo-landing.vercel.app/zh-hans/guide/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yin-yuan-geo-landing.vercel.app/en/guide/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://yin-yuan-geo-landing.vercel.app/ms/guide/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://yin-yuan-geo-landing.vercel.app/ja/guide/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://yin-yuan-geo-landing.vercel.app/ko/guide/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo-landing.vercel.app/guide/"/>
   </url>
   <url>
-    <loc>https://yin-yuan-geo-landing.vercel.app/guide/deepseek-self-check/</loc>
+    <loc>https://yin-yuan-geo-landing.vercel.app/ja/guide/</loc>
     <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo-landing.vercel.app/guide/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yin-yuan-geo-landing.vercel.app/zh-hans/guide/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yin-yuan-geo-landing.vercel.app/en/guide/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://yin-yuan-geo-landing.vercel.app/ms/guide/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://yin-yuan-geo-landing.vercel.app/ja/guide/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://yin-yuan-geo-landing.vercel.app/ko/guide/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo-landing.vercel.app/guide/"/>
+  </url>
+  <url>
+    <loc>https://yin-yuan-geo-landing.vercel.app/ko/guide/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo-landing.vercel.app/guide/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yin-yuan-geo-landing.vercel.app/zh-hans/guide/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yin-yuan-geo-landing.vercel.app/en/guide/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://yin-yuan-geo-landing.vercel.app/ms/guide/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://yin-yuan-geo-landing.vercel.app/ja/guide/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://yin-yuan-geo-landing.vercel.app/ko/guide/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo-landing.vercel.app/guide/"/>
   </url>
   <url>
     <loc>https://yin-yuan-geo-landing.vercel.app/sponsor/</loc>
     <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo-landing.vercel.app/sponsor/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yin-yuan-geo-landing.vercel.app/zh-hans/sponsor/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yin-yuan-geo-landing.vercel.app/en/sponsor/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://yin-yuan-geo-landing.vercel.app/ms/sponsor/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://yin-yuan-geo-landing.vercel.app/ja/sponsor/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://yin-yuan-geo-landing.vercel.app/ko/sponsor/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo-landing.vercel.app/sponsor/"/>
+  </url>
+  <url>
+    <loc>https://yin-yuan-geo-landing.vercel.app/zh-hans/sponsor/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo-landing.vercel.app/sponsor/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yin-yuan-geo-landing.vercel.app/zh-hans/sponsor/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yin-yuan-geo-landing.vercel.app/en/sponsor/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://yin-yuan-geo-landing.vercel.app/ms/sponsor/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://yin-yuan-geo-landing.vercel.app/ja/sponsor/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://yin-yuan-geo-landing.vercel.app/ko/sponsor/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo-landing.vercel.app/sponsor/"/>
+  </url>
+  <url>
+    <loc>https://yin-yuan-geo-landing.vercel.app/en/sponsor/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo-landing.vercel.app/sponsor/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yin-yuan-geo-landing.vercel.app/zh-hans/sponsor/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yin-yuan-geo-landing.vercel.app/en/sponsor/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://yin-yuan-geo-landing.vercel.app/ms/sponsor/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://yin-yuan-geo-landing.vercel.app/ja/sponsor/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://yin-yuan-geo-landing.vercel.app/ko/sponsor/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo-landing.vercel.app/sponsor/"/>
+  </url>
+  <url>
+    <loc>https://yin-yuan-geo-landing.vercel.app/ms/sponsor/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo-landing.vercel.app/sponsor/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yin-yuan-geo-landing.vercel.app/zh-hans/sponsor/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yin-yuan-geo-landing.vercel.app/en/sponsor/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://yin-yuan-geo-landing.vercel.app/ms/sponsor/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://yin-yuan-geo-landing.vercel.app/ja/sponsor/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://yin-yuan-geo-landing.vercel.app/ko/sponsor/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo-landing.vercel.app/sponsor/"/>
+  </url>
+  <url>
+    <loc>https://yin-yuan-geo-landing.vercel.app/ja/sponsor/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo-landing.vercel.app/sponsor/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yin-yuan-geo-landing.vercel.app/zh-hans/sponsor/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yin-yuan-geo-landing.vercel.app/en/sponsor/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://yin-yuan-geo-landing.vercel.app/ms/sponsor/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://yin-yuan-geo-landing.vercel.app/ja/sponsor/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://yin-yuan-geo-landing.vercel.app/ko/sponsor/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo-landing.vercel.app/sponsor/"/>
+  </url>
+  <url>
+    <loc>https://yin-yuan-geo-landing.vercel.app/ko/sponsor/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo-landing.vercel.app/sponsor/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yin-yuan-geo-landing.vercel.app/zh-hans/sponsor/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yin-yuan-geo-landing.vercel.app/en/sponsor/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://yin-yuan-geo-landing.vercel.app/ms/sponsor/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://yin-yuan-geo-landing.vercel.app/ja/sponsor/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://yin-yuan-geo-landing.vercel.app/ko/sponsor/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo-landing.vercel.app/sponsor/"/>
   </url>
   <url>
     <loc>https://yin-yuan-geo-landing.vercel.app/demo/</loc>
     <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo-landing.vercel.app/demo/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yin-yuan-geo-landing.vercel.app/zh-hans/demo/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yin-yuan-geo-landing.vercel.app/en/demo/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://yin-yuan-geo-landing.vercel.app/ms/demo/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://yin-yuan-geo-landing.vercel.app/ja/demo/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://yin-yuan-geo-landing.vercel.app/ko/demo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo-landing.vercel.app/demo/"/>
+  </url>
+  <url>
+    <loc>https://yin-yuan-geo-landing.vercel.app/zh-hans/demo/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo-landing.vercel.app/demo/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yin-yuan-geo-landing.vercel.app/zh-hans/demo/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yin-yuan-geo-landing.vercel.app/en/demo/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://yin-yuan-geo-landing.vercel.app/ms/demo/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://yin-yuan-geo-landing.vercel.app/ja/demo/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://yin-yuan-geo-landing.vercel.app/ko/demo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo-landing.vercel.app/demo/"/>
+  </url>
+  <url>
+    <loc>https://yin-yuan-geo-landing.vercel.app/en/demo/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo-landing.vercel.app/demo/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yin-yuan-geo-landing.vercel.app/zh-hans/demo/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yin-yuan-geo-landing.vercel.app/en/demo/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://yin-yuan-geo-landing.vercel.app/ms/demo/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://yin-yuan-geo-landing.vercel.app/ja/demo/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://yin-yuan-geo-landing.vercel.app/ko/demo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo-landing.vercel.app/demo/"/>
+  </url>
+  <url>
+    <loc>https://yin-yuan-geo-landing.vercel.app/ms/demo/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo-landing.vercel.app/demo/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yin-yuan-geo-landing.vercel.app/zh-hans/demo/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yin-yuan-geo-landing.vercel.app/en/demo/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://yin-yuan-geo-landing.vercel.app/ms/demo/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://yin-yuan-geo-landing.vercel.app/ja/demo/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://yin-yuan-geo-landing.vercel.app/ko/demo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo-landing.vercel.app/demo/"/>
+  </url>
+  <url>
+    <loc>https://yin-yuan-geo-landing.vercel.app/ja/demo/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo-landing.vercel.app/demo/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yin-yuan-geo-landing.vercel.app/zh-hans/demo/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yin-yuan-geo-landing.vercel.app/en/demo/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://yin-yuan-geo-landing.vercel.app/ms/demo/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://yin-yuan-geo-landing.vercel.app/ja/demo/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://yin-yuan-geo-landing.vercel.app/ko/demo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo-landing.vercel.app/demo/"/>
+  </url>
+  <url>
+    <loc>https://yin-yuan-geo-landing.vercel.app/ko/demo/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo-landing.vercel.app/demo/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yin-yuan-geo-landing.vercel.app/zh-hans/demo/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yin-yuan-geo-landing.vercel.app/en/demo/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://yin-yuan-geo-landing.vercel.app/ms/demo/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://yin-yuan-geo-landing.vercel.app/ja/demo/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://yin-yuan-geo-landing.vercel.app/ko/demo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo-landing.vercel.app/demo/"/>
   </url>
   <url>
     <loc>https://yin-yuan-geo-landing.vercel.app/about/</loc>
     <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo-landing.vercel.app/about/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yin-yuan-geo-landing.vercel.app/zh-hans/about/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yin-yuan-geo-landing.vercel.app/en/about/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://yin-yuan-geo-landing.vercel.app/ms/about/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://yin-yuan-geo-landing.vercel.app/ja/about/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://yin-yuan-geo-landing.vercel.app/ko/about/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo-landing.vercel.app/about/"/>
+  </url>
+  <url>
+    <loc>https://yin-yuan-geo-landing.vercel.app/zh-hans/about/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo-landing.vercel.app/about/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yin-yuan-geo-landing.vercel.app/zh-hans/about/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yin-yuan-geo-landing.vercel.app/en/about/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://yin-yuan-geo-landing.vercel.app/ms/about/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://yin-yuan-geo-landing.vercel.app/ja/about/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://yin-yuan-geo-landing.vercel.app/ko/about/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo-landing.vercel.app/about/"/>
+  </url>
+  <url>
+    <loc>https://yin-yuan-geo-landing.vercel.app/en/about/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo-landing.vercel.app/about/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yin-yuan-geo-landing.vercel.app/zh-hans/about/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yin-yuan-geo-landing.vercel.app/en/about/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://yin-yuan-geo-landing.vercel.app/ms/about/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://yin-yuan-geo-landing.vercel.app/ja/about/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://yin-yuan-geo-landing.vercel.app/ko/about/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo-landing.vercel.app/about/"/>
+  </url>
+  <url>
+    <loc>https://yin-yuan-geo-landing.vercel.app/ms/about/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo-landing.vercel.app/about/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yin-yuan-geo-landing.vercel.app/zh-hans/about/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yin-yuan-geo-landing.vercel.app/en/about/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://yin-yuan-geo-landing.vercel.app/ms/about/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://yin-yuan-geo-landing.vercel.app/ja/about/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://yin-yuan-geo-landing.vercel.app/ko/about/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo-landing.vercel.app/about/"/>
+  </url>
+  <url>
+    <loc>https://yin-yuan-geo-landing.vercel.app/ja/about/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo-landing.vercel.app/about/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yin-yuan-geo-landing.vercel.app/zh-hans/about/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yin-yuan-geo-landing.vercel.app/en/about/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://yin-yuan-geo-landing.vercel.app/ms/about/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://yin-yuan-geo-landing.vercel.app/ja/about/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://yin-yuan-geo-landing.vercel.app/ko/about/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo-landing.vercel.app/about/"/>
+  </url>
+  <url>
+    <loc>https://yin-yuan-geo-landing.vercel.app/ko/about/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo-landing.vercel.app/about/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yin-yuan-geo-landing.vercel.app/zh-hans/about/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yin-yuan-geo-landing.vercel.app/en/about/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://yin-yuan-geo-landing.vercel.app/ms/about/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://yin-yuan-geo-landing.vercel.app/ja/about/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://yin-yuan-geo-landing.vercel.app/ko/about/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo-landing.vercel.app/about/"/>
+  </url>
+  <url>
+    <loc>https://yin-yuan-geo-landing.vercel.app/guide/geo-intro/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo-landing.vercel.app/guide/geo-intro/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yin-yuan-geo-landing.vercel.app/zh-hans/guide/geo-intro/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo-landing.vercel.app/guide/geo-intro/"/>
+  </url>
+  <url>
+    <loc>https://yin-yuan-geo-landing.vercel.app/zh-hans/guide/geo-intro/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo-landing.vercel.app/guide/geo-intro/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yin-yuan-geo-landing.vercel.app/zh-hans/guide/geo-intro/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo-landing.vercel.app/guide/geo-intro/"/>
+  </url>
+  <url>
+    <loc>https://yin-yuan-geo-landing.vercel.app/guide/entity-card/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo-landing.vercel.app/guide/entity-card/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yin-yuan-geo-landing.vercel.app/zh-hans/guide/entity-card/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo-landing.vercel.app/guide/entity-card/"/>
+  </url>
+  <url>
+    <loc>https://yin-yuan-geo-landing.vercel.app/zh-hans/guide/entity-card/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo-landing.vercel.app/guide/entity-card/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yin-yuan-geo-landing.vercel.app/zh-hans/guide/entity-card/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo-landing.vercel.app/guide/entity-card/"/>
+  </url>
+  <url>
+    <loc>https://yin-yuan-geo-landing.vercel.app/guide/monitor-ai-mentions/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo-landing.vercel.app/guide/monitor-ai-mentions/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yin-yuan-geo-landing.vercel.app/zh-hans/guide/monitor-ai-mentions/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo-landing.vercel.app/guide/monitor-ai-mentions/"/>
+  </url>
+  <url>
+    <loc>https://yin-yuan-geo-landing.vercel.app/zh-hans/guide/monitor-ai-mentions/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo-landing.vercel.app/guide/monitor-ai-mentions/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yin-yuan-geo-landing.vercel.app/zh-hans/guide/monitor-ai-mentions/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo-landing.vercel.app/guide/monitor-ai-mentions/"/>
+  </url>
+  <url>
+    <loc>https://yin-yuan-geo-landing.vercel.app/guide/deepseek-self-check/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo-landing.vercel.app/guide/deepseek-self-check/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yin-yuan-geo-landing.vercel.app/zh-hans/guide/deepseek-self-check/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo-landing.vercel.app/guide/deepseek-self-check/"/>
+  </url>
+  <url>
+    <loc>https://yin-yuan-geo-landing.vercel.app/zh-hans/guide/deepseek-self-check/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo-landing.vercel.app/guide/deepseek-self-check/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yin-yuan-geo-landing.vercel.app/zh-hans/guide/deepseek-self-check/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo-landing.vercel.app/guide/deepseek-self-check/"/>
   </url>
 </urlset>

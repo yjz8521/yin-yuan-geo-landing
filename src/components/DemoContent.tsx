@@ -25,7 +25,7 @@ const includes = [
 ];
 
 export function DemoContent() {
-  const { t, locale } = useI18n();
+  const { t, locale, p: lpath } = useI18n();
   const email = getDemoEmail();
   const appUrl = getAppUrl();
   const [name, setName] = useState("");
@@ -37,9 +37,9 @@ export function DemoContent() {
   function onSubmit(e: FormEvent) {
     e.preventDefault();
     const subject =
-      locale === "zh" ? "引源 GEO 试用申请" : "YinYuan GEO demo request";
+      locale.startsWith("zh") ? "引源 GEO 试用申请" : "YinYuan GEO demo request";
     const body =
-      locale === "zh"
+      locale.startsWith("zh")
         ? `姓名 / 称呼：${name}\n公司 / 品牌：${company || "（未填）"}\n联系方式（微信／电话，选填）：${contact || "（未填）"}\n需求：\n${note || "（未填）"}`
         : `Name: ${name}\nCompany / brand: ${company || "(not provided)"}\nOther contact (optional): ${contact || "(not provided)"}\nNotes:\n${note || "(not provided)"}`;
     window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject + (company ? ` · ${company}` : ""))}&body=${encodeURIComponent(body)}`;
@@ -141,7 +141,7 @@ export function DemoContent() {
           </p>
         ) : null}
         <p className="text-center text-xs text-zinc-400">
-          <a href={`mailto:${email}?subject=${encodeURIComponent(locale === "zh" ? "引源 GEO 试用申请" : "YinYuan GEO demo request")}`} className="hover:text-zinc-950">
+          <a href={`mailto:${email}?subject=${encodeURIComponent(locale.startsWith("zh") ? "引源 GEO 试用申请" : "YinYuan GEO demo request")}`} className="hover:text-zinc-950">
             {t("或直接写信", "Or email directly")}: {email}
           </a>
         </p>

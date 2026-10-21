@@ -1,3 +1,4 @@
+import { LOCALE_META, alternates, lp, tr, type Locale } from "./locales";
 export const siteConfig = {
   name: "引源 GEO",
   nameEn: "YinYuan GEO",
@@ -31,14 +32,17 @@ export const CANONICAL_ORIGIN = "https://yin-yuan-geo-landing.vercel.app";
  */
 export const PAYMENTS_LIVE = false;
 
-/** Per-page metadata: canonical + Open Graph URL/title/description. */
-export function pageMeta(path: string, title: string, description: string) {
+/** Per-page metadata: canonical + hreflang + Open Graph URL/title/description (localised). */
+export function pageMeta(l: Locale, path: string, title: string, description: string, only?: readonly Locale[]) {
+  const T = tr(l, title);
+  const D = tr(l, description);
+  const url = lp(l, path);
   return {
-    title,
-    description,
-    alternates: { canonical: path },
-    openGraph: { type: "website" as const, url: path, siteName: "引源 GEO", locale: "zh_TW", title: `${title} · 引源 GEO`, description, images: [{ url: "/og.png", width: 1200, height: 630, alt: "引源 GEO" }] },
-    twitter: { card: "summary_large_image" as const, title: `${title} · 引源 GEO`, description, images: ["/og.png"] },
+    title: T,
+    description: D,
+    alternates: alternates(l, path, only),
+    openGraph: { type: "website" as const, url, siteName: tr(l, "引源 GEO"), locale: LOCALE_META[l].og, title: `${T} · ${tr(l, "引源 GEO")}`, description: D, images: [{ url: "/og.png", width: 1200, height: 630, alt: "引源 GEO" }] },
+    twitter: { card: "summary_large_image" as const, title: `${T} · ${tr(l, "引源 GEO")}`, description: D, images: ["/og.png"] },
   };
 }
 
@@ -76,7 +80,7 @@ export const draftPlans = [
     nameZh: "Free",
     nameEn: "Free",
     priceZh: "NT$0",
-    priceEn: "$0",
+    priceEn: "NT$0",
     periodZh: "/ 月",
     periodEn: "/ mo",
     blurbZh: "试用工作流与基础监测",
@@ -101,7 +105,7 @@ export const draftPlans = [
     nameZh: "Starter",
     nameEn: "Starter",
     priceZh: "NT$1,990",
-    priceEn: "~$62",
+    priceEn: "NT$1,990",
     periodZh: "/ 月",
     periodEn: "/ mo",
     blurbZh: "小团队起步投放与 API",
@@ -128,7 +132,7 @@ export const draftPlans = [
     nameZh: "Pro",
     nameEn: "Pro",
     priceZh: "NT$3,900",
-    priceEn: "~$122",
+    priceEn: "NT$3,900",
     periodZh: "/ 月",
     periodEn: "/ mo",
     blurbZh: "完整情报、Webhook 与归因",

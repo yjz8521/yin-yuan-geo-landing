@@ -6,12 +6,12 @@ import { useI18n } from "@/lib/i18n";
 import { CHECKOUT_PRO_QUARTERLY, PAYMENTS_LIVE, draftPlans, checkoutLinks, getDemoEmail } from "@/lib/site";
 
 export function PricingContent() {
-  const { t, locale } = useI18n();
+  const { t, locale, p: lpath } = useI18n();
   const email = getDemoEmail();
   const mailto = `mailto:${email}?subject=${encodeURIComponent(
-    locale === "zh" ? "引源 GEO 方案咨询" : "YinYuan GEO plan inquiry",
+    locale.startsWith("zh") ? "引源 GEO 方案咨询" : "YinYuan GEO plan inquiry",
   )}&body=${encodeURIComponent(
-    locale === "zh"
+    locale.startsWith("zh")
       ? "您好，我想了解引源 GEO 方案。\n公司／品牌：\n团队规模：\n想监测的引擎／品类：\n"
       : "Hi, I'd like to learn about YinYuan GEO plans.\nCompany / brand:\nTeam size:\nEngines / category to monitor:\n",
   )}`;
@@ -35,7 +35,7 @@ export function PricingContent() {
             "线上付款通道正在审核开通中，暂时可能无法完成刷卡。想现在开通，请点「联系开通」来信，我们会人工报价并开通。",
             "Online checkout is pending approval and may not accept cards yet. To start now, use “contact to activate” and we will set you up manually.",
           )}{" "}
-          <a href={mailto} className="underline underline-offset-4 hover:text-white">{email}</a>
+          <a href={mailto} className="underline underline-offset-4 hover:text-zinc-950">{email}</a>
         </p>
       )}
 
@@ -46,7 +46,7 @@ export function PricingContent() {
             ? checkoutLinks[p.code as "starter" | "pro"]
             : p.code === "enterprise"
               ? mailto
-              : "/demo/";
+              : lpath("/demo/");
           const ctaLabel = paid
             ? t("信用卡／PayPal 订阅", "Subscribe (card / PayPal)")
             : p.code === "enterprise"
@@ -70,7 +70,7 @@ export function PricingContent() {
             >
               <div className="flex items-center justify-between">
                 <h3 className="text-lg font-semibold text-zinc-950">
-                  {locale === "zh" ? p.nameZh : p.nameEn}
+                  {t(p.nameZh, p.nameEn)}
                 </h3>
                 {p.featured ? (
                   <span className="rounded-full bg-zinc-100 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-zinc-950">
@@ -79,16 +79,16 @@ export function PricingContent() {
                 ) : null}
               </div>
               <p className="mt-3 text-3xl font-semibold tracking-tight text-zinc-950">
-                {locale === "zh" ? p.priceZh : p.priceEn}
+                {t(p.priceZh, p.priceEn)}
                 <span className="text-sm font-normal text-zinc-500">
-                  {locale === "zh" ? p.periodZh : p.periodEn}
+                  {t(p.periodZh, p.periodEn)}
                 </span>
               </p>
               <p className="mt-2 text-sm text-zinc-600">
-                {locale === "zh" ? p.blurbZh : p.blurbEn}
+                {t(p.blurbZh, p.blurbEn)}
               </p>
               <ul className="mt-5 flex-1 space-y-2.5 text-sm text-zinc-600">
-                {(locale === "zh" ? p.highlightsZh : p.highlightsEn).map((h) => (
+                {t(p.highlightsZh, p.highlightsEn).map((h) => (
                   <li key={h} className="flex gap-2">
                     <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-950" />
                     {h}

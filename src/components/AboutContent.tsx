@@ -6,7 +6,7 @@ import { useI18n } from "@/lib/i18n";
 import { getAppUrl, siteConfig } from "@/lib/site";
 
 export function AboutContent() {
-  const { t } = useI18n();
+  const { t, p: lpath } = useI18n();
   const appUrl = getAppUrl();
 
   return (
@@ -75,13 +75,13 @@ export function AboutContent() {
 
       <div className="mt-8 flex flex-wrap gap-3">
         <Link
-          href="/demo/"
+          href={lpath("/demo/")}
           className="rounded-full bg-zinc-950 px-5 py-2 text-sm font-semibold text-white"
         >
           {t("申请试用", "Request demo")}
         </Link>
         <Link
-          href="/pricing/"
+          href={lpath("/pricing/")}
           className="rounded-full border border-zinc-200 px-5 py-2 text-sm text-zinc-700"
         >
           {t("方案", "Pricing")}

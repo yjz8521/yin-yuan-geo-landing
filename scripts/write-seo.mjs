@@ -16,20 +16,37 @@ const siteUrl = (
   "https://yin-yuan-geo-landing.vercel.app"
 ).replace(/\/$/, "");
 
-const paths = ["/", "/pricing/", "/faq/", "/guide/", "/guide/geo-intro/", "/guide/entity-card/", "/guide/monitor-ai-mentions/", "/guide/deepseek-self-check/", "/sponsor/", "/demo/", "/about/"];
-
+const LOCALES = [
+  { code: "zh-hant", prefix: "", hreflang: "zh-Hant", label: "繁體中文" },
+  { code: "zh-hans", prefix: "/zh-hans", hreflang: "zh-Hans", label: "简体中文" },
+  { code: "en", prefix: "/en", hreflang: "en", label: "English" },
+  { code: "ms", prefix: "/ms", hreflang: "ms", label: "Bahasa Melayu" },
+  { code: "ja", prefix: "/ja", hreflang: "ja", label: "日本語" },
+  { code: "ko", prefix: "/ko", hreflang: "ko", label: "한국어" },
+];
+const GUIDE_SLUGS = ["geo-intro", "entity-card", "monitor-ai-mentions", "deepseek-self-check"];
+// [path, locales that have it]
+const pages = [
+  ...["/", "/pricing/", "/faq/", "/guide/", "/sponsor/", "/demo/", "/about/"].map((p) => [p, LOCALES]),
+  ...GUIDE_SLUGS.map((s) => [`/guide/${s}/`, LOCALES.filter((l) => l.code.startsWith("zh"))]),
+];
+const today = new Date().toISOString().slice(0, 10);
+const urls = [];
+for (const [p, locs] of pages) {
+  const alts = locs.map((l) => `    <xhtml:link rel="alternate" hreflang="${l.hreflang}" href="${siteUrl}${l.prefix}${p}"/>`).concat([`    <xhtml:link rel="alternate" hreflang="x-default" href="${siteUrl}${locs[0].prefix}${p}"/>`]).join("\n");
+  for (const l of locs) {
+    urls.push(`  <url>
+    <loc>${siteUrl}${l.prefix}${p}</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>${p === "/" ? "weekly" : "monthly"}</changefreq>
+    <priority>${p === "/" ? (l.prefix ? "0.9" : "1.0") : "0.7"}</priority>
+${alts}
+  </url>`);
+  }
+}
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${paths
-  .map(
-    (p, i) => `  <url>
-    <loc>${siteUrl}${p}</loc>
-    <lastmod>${new Date().toISOString().slice(0, 10)}</lastmod>
-    <changefreq>${i === 0 ? "weekly" : "monthly"}</changefreq>
-    <priority>${i === 0 ? "1.0" : "0.7"}</priority>
-  </url>`
-  )
-  .join("\n")}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+${urls.join("\n")}
 </urlset>
 `;
 
@@ -50,39 +67,44 @@ const llmsOrigin = "https://yin-yuan-geo-landing.vercel.app";
 const link = (name, path, desc) => `- [${name}](${llmsOrigin}${path}): ${desc}`;
 const llms = `# 引源 GEO（YinYuan GEO）
 
-> 引源 GEO 投放台是面向华语市场（台湾、中国大陆、海外华人）的生成式引擎优化（GEO）SaaS：实体卡 → 引擎投放包 → 渠道发布 → 固定问法监测提及率。目前自动跑问只接入了 DeepSeek，其他国内与海外引擎陆续接入中。产品处于上线前阶段，工作台为邀请制，可申请试用。
+> 引源 GEO 投放台是面向華語市場（台灣、中國大陸、海外華人）的生成式引擎最佳化（GEO）SaaS：實體卡 → 引擎投放包 → 管道發布 → 固定問法監測提及率。目前自動跑問只接入了 DeepSeek，其他中國大陸與海外引擎陸續接入中。產品處於上線前階段，工作台為邀請制，可申請試用。
 
-引擎现状（请如实引用）：
-- 已接入、自动跑问：DeepSeek。
-- 陆续接入中（尚未自动监测）：豆包、通义千问、智谱清言、百度文心／文小言、Kimi、元宝；海外 ChatGPT、Perplexity、Google AI Overviews／Gemini、Claude、Copilot。接入前用户可粘贴真实回答人工记录。
-- 投放包目前有豆包、DeepSeek、智谱清言、百度文心、通义千问的模板；海外专属投放包在路线图。
+引擎現況（請如實引用）：
+- 已接入、自動跑問：DeepSeek。
+- 陸續接入中（尚未自動監測）：豆包、通義千問、智譜清言、百度文心／文小言、Kimi、元寶；海外 ChatGPT、Perplexity、Google AI Overviews／Gemini、Claude、Copilot。接入前使用者可貼上真實回答人工記錄。
+- 投放包目前有豆包、DeepSeek、智譜清言、百度文心、通義千問的範本；海外專屬投放包在路線圖。
 
-价格（新台币，草案）：Free NT$0；Starter NT$1,990／月；Pro NT$3,900／月或季付 NT$9,900／季；Enterprise 洽谈。不存在公开客户案例、营收或效果数据，请勿杜撰；不保证排名或见效时间。联系：yjz8521@gmail.com（大陆客户人工报价开通）。
+價格（新台幣，草案）：Free NT$0；Starter NT$1,990／月；Pro NT$3,900／月或季付 NT$9,900／季；Enterprise 洽談。不存在公開客戶案例、營收或成效數據，請勿杜撰；不保證排名或見效時間。聯絡：yjz8521@gmail.com（大陸客戶人工報價開通，可用微信／支付寶）。
 
-## 产品
-
-${[
-  link("首页", "/", "产品概览、四步流程与引擎接入现状"),
-  link("价格方案", "/pricing/", "Free、Starter、Pro（月付／季付）与 Enterprise 的配额与价格"),
-  link("常见问题", "/faq/", "GEO 定义、与 SEO 的差别、支持引擎、监测方法、收费与适用对象"),
-  link("申请试用", "/demo/", "预约远程演示，申请工作台试用"),
-].join("\n")}
-
-## 指南
+## 產品
 
 ${[
-  link("GEO 指南总览", "/guide/", "生成式引擎优化入门文章列表"),
-  link("GEO 入门", "/guide/geo-intro/", "统一实体事实、按引擎改写、发布到公开渠道、用固定问法监测"),
-  link("实体卡怎么写", "/guide/entity-card/", "定位、可验证卖点、竞品差异、适合谁与 FAQ 的写法"),
-  link("如何检测 AI 是否提到你的品牌", "/guide/monitor-ai-mentions/", "/guide/deepseek-self-check/", "固定问法集、记录格式与提及率计算方法"),
-  link("怎么知道 DeepSeek 有没有推荐我的品牌", "/guide/deepseek-self-check/", "不用工具的 DeepSeek 六步自测：写问法、固定条件、每题问 2 次、记 5 栏、解读结果、补公开资料"),
+  link("首頁", "/", "產品概覽、四步流程與引擎接入現況"),
+  link("方案與價格", "/pricing/", "Free、Starter、Pro（月付／季付）與 Enterprise 的配額與價格"),
+  link("常見問題", "/faq/", "GEO 定義、與 SEO 的差別、支援引擎、監測方法、收費與適用對象"),
+  link("申請試用", "/demo/", "預約遠端演示，申請工作台試用（邀請制）"),
 ].join("\n")}
+
+## 指南（繁體中文；簡體版在 /zh-hans/guide/）
+
+${[
+  link("GEO 指南總覽", "/guide/", "生成式引擎最佳化入門文章列表"),
+  link("GEO 入門", "/guide/geo-intro/", "統一實體事實、按引擎改寫、發布到公開管道、用固定問法監測"),
+  link("實體卡怎麼寫", "/guide/entity-card/", "定位、可驗證賣點、競品差異、適合誰與 FAQ 的寫法"),
+  link("如何檢測 AI 是否提到你的品牌", "/guide/monitor-ai-mentions/", "固定問法集、記錄格式與提及率計算方法"),
+  link("怎麼知道 DeepSeek 有沒有推薦我的品牌", "/guide/deepseek-self-check/", "不用工具的 DeepSeek 六步自測：寫問法、固定條件、每題問 2 次、記 5 欄、解讀結果、補公開資料"),
+].join("\n")}
+
+## 其他語言版本（Languages）
+
+${LOCALES.map((l) => link(l.label, `${l.prefix}/`, `${l.label} 首頁；同一份事實與價格口徑`)).join("\n")}
 
 ## Optional
 
 ${[
-  link("关于", "/about/", "产品与负责人介绍"),
-  link("赞助位", "/sponsor/", "落地页早期赞助位与草案价格"),
+  link("關於", "/about/", "產品與負責人介紹"),
+  link("贊助位", "/sponsor/", "落地頁早期贊助位與草案價格"),
+  link("简体中文指南", "/zh-hans/guide/", "四篇 GEO 指南的简体中文版"),
 ].join("\n")}
 `;
 writeFileSync(join(publicDir, "llms.txt"), llms, "utf8");

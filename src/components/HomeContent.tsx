@@ -52,7 +52,7 @@ const problems = [
 ];
 
 export function HomeContent() {
-  const { t, locale } = useI18n();
+  const { t, p: lpath } = useI18n();
   const appUrl = getAppUrl();
   const teaser = draftPlans.filter((p) => p.code === "starter" || p.code === "pro");
 
@@ -83,13 +83,13 @@ export function HomeContent() {
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <Link
-              href="/demo/"
+              href={lpath("/demo/")}
               className="rounded-full bg-zinc-950 px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-zinc-800"
             >
               {t("申请试用", "Request a demo")}
             </Link>
             <Link
-              href="/pricing/"
+              href={lpath("/pricing/")}
               className="rounded-full border border-zinc-200 bg-white px-6 py-2.5 text-sm font-medium text-zinc-700 transition hover:bg-zinc-100"
             >
               {t("查看方案", "View pricing")}
@@ -221,7 +221,7 @@ export function HomeContent() {
             </li>
           ))}
         </ul>
-        <Link href="/demo/" className="mt-6 inline-flex text-sm font-medium text-zinc-950 hover:underline">
+        <Link href={lpath("/demo/")} className="mt-6 inline-flex text-sm font-medium text-zinc-950 hover:underline">
           {t("申请成为合作品牌", "Apply as a partner brand")} →
         </Link>
       </Section>
@@ -250,7 +250,7 @@ export function HomeContent() {
             >
               <div className="flex items-baseline justify-between gap-2">
                 <h3 className="text-lg font-semibold text-zinc-950">
-                  {locale === "zh" ? p.nameZh : p.nameEn}
+                  {t(p.nameZh, p.nameEn)}
                 </h3>
                 {p.featured ? (
                   <span className="text-xs font-medium text-zinc-950">
@@ -259,19 +259,19 @@ export function HomeContent() {
                 ) : null}
               </div>
               <p className="mt-2 text-2xl font-semibold text-zinc-950">
-                {locale === "zh" ? p.priceZh : p.priceEn}
+                {t(p.priceZh, p.priceEn)}
                 <span className="text-sm font-normal text-zinc-500">
-                  {locale === "zh" ? p.periodZh : p.periodEn}
+                  {t(p.periodZh, p.periodEn)}
                 </span>
               </p>
               <p className="mt-2 text-sm text-zinc-600">
-                {locale === "zh" ? p.blurbZh : p.blurbEn}
+                {t(p.blurbZh, p.blurbEn)}
               </p>
             </div>
           ))}
         </div>
         <Link
-          href="/pricing/"
+          href={lpath("/pricing/")}
           className="mt-6 inline-flex text-sm font-medium text-zinc-950 hover:underline"
         >
           {t("看完整方案", "Full pricing")} →
@@ -292,13 +292,13 @@ export function HomeContent() {
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Link
-              href="/demo/"
+              href={lpath("/demo/")}
               className="rounded-full bg-zinc-950 px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-zinc-800"
             >
               {t("申请试用", "Request demo")}
             </Link>
             <Link
-              href="/sponsor/"
+              href={lpath("/sponsor/")}
               className="rounded-full border border-zinc-200 px-6 py-2.5 text-sm font-medium text-zinc-700 transition hover:bg-zinc-100"
             >
               {t("赞助位", "Sponsor slots")}

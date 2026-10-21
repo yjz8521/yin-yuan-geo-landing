@@ -5,7 +5,7 @@ import { useI18n } from "@/lib/i18n";
 import { getDemoEmail, sponsorSlots } from "@/lib/site";
 
 export function SponsorContent() {
-  const { t, locale } = useI18n();
+  const { t, locale, p: lpath } = useI18n();
   const email = getDemoEmail();
 
   return (
@@ -24,11 +24,11 @@ export function SponsorContent() {
       <div className="mt-10 grid gap-5 md:grid-cols-2">
         {sponsorSlots.map((s) => {
           const subject =
-            locale === "zh"
+            locale.startsWith("zh")
               ? `引源 GEO 赞助咨询 · ${s.nameZh}`
               : `YinYuan GEO sponsor · ${s.nameEn}`;
           const body =
-            locale === "zh"
+            locale.startsWith("zh")
               ? `您好，我想预订「${s.nameZh}」（${s.priceZh}）。\n品牌：\n网址：\n希望的开始日期／周数：\n一句标语：\n`
               : `Hi, I'd like to book "${s.nameEn}" (${s.priceEn}).\nBrand:\nURL:\nPreferred start date / weeks:\nOne-line blurb:\n`;
           const mailto = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
@@ -38,13 +38,13 @@ export function SponsorContent() {
               className="rounded-2xl border border-zinc-200 bg-white p-6"
             >
               <h3 className="text-lg font-semibold text-zinc-950">
-                {locale === "zh" ? s.nameZh : s.nameEn}
+                {t(s.nameZh, s.nameEn)}
               </h3>
               <p className="mt-2 text-2xl font-semibold text-zinc-950">
-                {locale === "zh" ? s.priceZh : s.priceEn}
+                {t(s.priceZh, s.priceEn)}
               </p>
               <p className="mt-3 text-sm leading-relaxed text-zinc-600">
-                {locale === "zh" ? s.descZh : s.descEn}
+                {t(s.descZh, s.descEn)}
               </p>
               <a
                 href={mailto}

@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { LocaleToggle } from "./LocaleToggle";
 import { useI18n } from "@/lib/i18n";
 import { siteConfig } from "@/lib/site";
+import { PREFIXED } from "@/lib/locales";
 
 const links = [
   { href: "/", zh: "首页", en: "Home" },
@@ -18,19 +19,20 @@ const links = [
 
 /** usePathname() has no basePath; normalise trailing slash and treat /guide/* as Guide. */
 function isActive(pathname: string | null, href: string) {
-  const p = (pathname || "/").replace(/\/?$/, "/");
+  let p = (pathname || "/").replace(/\/?$/, "/");
+  for (const l of PREFIXED) if (p === `/${l}/` || p.startsWith(`/${l}/`)) { p = p.slice(l.length + 1); break; }
   if (href === "/") return p === "/";
   return p === href || p.startsWith(href);
 }
 
 export function Header() {
   const pathname = usePathname();
-  const { t } = useI18n();
+  const { t, p: lpath } = useI18n();
 
   return (
     <header className="sticky top-0 z-50 border-b border-zinc-200 bg-white/80 backdrop-blur-xl">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
-        <Link href="/" className="group flex items-center gap-2.5">
+        <Link href={lpath("/")} className="group flex items-center gap-2.5">
           <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-zinc-950 text-sm font-bold text-white">
             引
           </span>
@@ -45,7 +47,7 @@ export function Header() {
             return (
               <Link
                 key={l.href}
-                href={l.href}
+                href={lpath(l.href)}
                 aria-current={active ? "page" : undefined}
                 className={`rounded-lg px-3 py-1.5 text-sm transition ${
                   active
@@ -62,7 +64,7 @@ export function Header() {
         <div className="flex items-center gap-2 sm:gap-3">
           <LocaleToggle />
           <Link
-            href="/demo/"
+            href={lpath("/demo/")}
             className="whitespace-nowrap rounded-full bg-zinc-950 px-3.5 py-1.5 text-xs font-semibold text-white transition hover:bg-zinc-800 sm:text-sm"
           >
             {t("申请试用", "Request demo")}
@@ -76,7 +78,7 @@ export function Header() {
           return (
             <Link
               key={l.href}
-              href={l.href}
+              href={lpath(l.href)}
               aria-current={active ? "page" : undefined}
               className={`shrink-0 rounded-full px-3 py-1 text-xs ${
                 active
