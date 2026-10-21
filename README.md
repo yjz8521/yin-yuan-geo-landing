@@ -22,7 +22,7 @@ npm run build && npm start   # 生产构建
 | `BASE_PATH` / `NEXT_PUBLIC_BASE_PATH` | Vercel / 本地根路径留空；GitHub project Pages 设为 `/yin-yuan-geo-landing` |
 | `NEXT_PUBLIC_APP_URL` | 上线后的 geo-platform 产品地址。**留空则不展示产品入口**，避免虚构 demo URL |
 | `NEXT_PUBLIC_CHECKOUT_STARTER` / `_PRO` / `_PRO_QUARTERLY` | Lemon Squeezy 结账链接覆盖（默认值写在 `src/lib/site.ts`） |
-| `NEXT_PUBLIC_DEMO_EMAIL` | 试用 / 赞助联系邮箱，默认 `yjz8521@gmail.com` |
+| `NEXT_PUBLIC_DEMO_EMAIL` | 试用联系邮箱，默认 `yjz8521@gmail.com` |
 
 不要把 Lemon Squeezy API key、Webhook secret 或数据库凭证放进本仓。
 
@@ -42,15 +42,10 @@ Do not commit Lemon Squeezy API keys, webhook secrets, or DB credentials.
 Stripe 不支持台湾，改用 Lemon Squeezy（信用卡／PayPal，新台币）。结账链接在 `src/lib/site.ts`：Starter、Pro、Pro 季付。
 商店目前为 **Test mode**（审核中）。审核通过并切到 Live 后：把 `PAYMENTS_LIVE` 改为 `true`（移除定价页「付款通道审核中」提示），并确认 Live 模式下的结账链接是否变更。
 
-### 3. 赞助位
-
-`/sponsor` 目前用 mailto 预订。有稳定流量后可改为 Lemon Squeezy 商品或手动发票。
-
 ## 路由 / Routes
 
 - `/` — 首页
 - `/pricing` — 方案草案
-- `/sponsor` — 早期赞助
 - `/demo` — 试用申请
 - `/about` — 关于
 - `/llms.txt`、`/robots.txt`、`/sitemap.xml` — SEO / GEO

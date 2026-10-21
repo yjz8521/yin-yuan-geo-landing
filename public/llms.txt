@@ -29,12 +29,8 @@
 - [繁體中文](https://yin-yuan-geo-landing.vercel.app/): 繁體中文 首頁；同一份事實與價格口徑
 - [简体中文](https://yin-yuan-geo-landing.vercel.app/zh-hans/): 简体中文 首頁；同一份事實與價格口徑
 - [English](https://yin-yuan-geo-landing.vercel.app/en/): English 首頁；同一份事實與價格口徑
-- [Bahasa Melayu](https://yin-yuan-geo-landing.vercel.app/ms/): Bahasa Melayu 首頁；同一份事實與價格口徑
-- [日本語](https://yin-yuan-geo-landing.vercel.app/ja/): 日本語 首頁；同一份事實與價格口徑
-- [한국어](https://yin-yuan-geo-landing.vercel.app/ko/): 한국어 首頁；同一份事實與價格口徑
 
 ## Optional
 
 - [關於](https://yin-yuan-geo-landing.vercel.app/about/): 產品與負責人介紹
-- [贊助位](https://yin-yuan-geo-landing.vercel.app/sponsor/): 落地頁早期贊助位與草案價格
 - [简体中文指南](https://yin-yuan-geo-landing.vercel.app/zh-hans/guide/): 四篇 GEO 指南的简体中文版

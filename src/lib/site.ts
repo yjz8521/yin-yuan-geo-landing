@@ -180,24 +180,3 @@ export const draftPlans = [
     featured: false,
   },
 ];
-
-export const sponsorSlots = [
-  {
-    id: "homepage-hero",
-    nameZh: "首页主赞助",
-    nameEn: "Homepage hero sponsor",
-    priceZh: "US$250 / 周（草案）",
-    priceEn: "$250 / week (draft)",
-    descZh: "落地页首页显眼位置，带链接与一句标语。适合工具、云服务、创作者品牌。",
-    descEn: "Prime homepage placement with link + one-line blurb. For tools, cloud, and creator brands.",
-  },
-  {
-    id: "engines-strip",
-    nameZh: "引擎区条幅",
-    nameEn: "Engines strip",
-    priceZh: "US$150 / 周（草案）",
-    priceEn: "$150 / week (draft)",
-    descZh: "出现在「覆盖引擎」区块旁，触达关心国内生成式引擎的 B2B 访客。",
-    descEn: "Sits beside the engines section — reaches B2B visitors focused on CN generative engines.",
-  },
-];
