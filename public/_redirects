@@ -1,0 +1,13 @@
+# Cloudflare Pages redirects (mirrors vercel.json). 301 = permanent.
+/ms /en/ 301
+/ms/* /en/:splat 301
+/ja /en/ 301
+/ja/* /en/:splat 301
+/ko /en/ 301
+/ko/* /en/:splat 301
+/sponsor / 301
+/sponsor/ / 301
+/zh-hans/sponsor /zh-hans/ 301
+/zh-hans/sponsor/ /zh-hans/ 301
+/en/sponsor /en/ 301
+/en/sponsor/ /en/ 301

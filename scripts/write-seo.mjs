@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Writes public/sitemap.xml, public/robots.txt and public/llms.txt from NEXT_PUBLIC_SITE_URL.
+ * Writes public/sitemap.xml, public/robots.txt and public/llms.txt from SITE_URL (or NEXT_PUBLIC_SITE_URL).
  * Default keeps GitHub Pages URLs so Pages rebuilds stay correct without env.
  */
 import { writeFileSync, mkdirSync } from "node:fs";
@@ -12,6 +12,7 @@ const root = join(__dirname, "..");
 const publicDir = join(root, "public");
 
 const siteUrl = (
+  process.env.SITE_URL ||
   process.env.NEXT_PUBLIC_SITE_URL ||
   "https://yin-yuan-geo-landing.vercel.app"
 ).replace(/\/$/, "");
@@ -60,7 +61,7 @@ writeFileSync(join(publicDir, "sitemap.xml"), sitemap, "utf8");
 writeFileSync(join(publicDir, "robots.txt"), robots, "utf8");
 // llms.txt follows the llmstxt.org proposal: H1, blockquote summary, prose, then H2 sections of
 // "- [Name](absolute-url): description" links. Links always use the canonical Vercel origin.
-const llmsOrigin = "https://yin-yuan-geo-landing.vercel.app";
+const llmsOrigin = siteUrl;
 const link = (name, path, desc) => `- [${name}](${llmsOrigin}${path}): ${desc}`;
 const llms = `# 引源 GEO（YinYuan GEO）
 

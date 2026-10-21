@@ -24,7 +24,7 @@ export function getSiteUrl(): string {
 }
 
 /** Canonical production origin (Vercel). GitHub Pages mirror canonicalises here to avoid duplicate content. */
-export const CANONICAL_ORIGIN = "https://yin-yuan-geo-landing.vercel.app";
+export const CANONICAL_ORIGIN = getSiteUrl();
 
 /**
  * Lemon Squeezy store is still in Test mode (application under review).
