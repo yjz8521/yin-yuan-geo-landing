@@ -21,7 +21,8 @@
 - [GEO 指南总览](https://yin-yuan-geo-landing.vercel.app/guide/): 生成式引擎优化入门文章列表
 - [GEO 入门](https://yin-yuan-geo-landing.vercel.app/guide/geo-intro/): 统一实体事实、按引擎改写、发布到公开渠道、用固定问法监测
 - [实体卡怎么写](https://yin-yuan-geo-landing.vercel.app/guide/entity-card/): 定位、可验证卖点、竞品差异、适合谁与 FAQ 的写法
-- [如何检测 AI 是否提到你的品牌](https://yin-yuan-geo-landing.vercel.app/guide/monitor-ai-mentions/): 固定问法集、记录格式与提及率计算方法
+- [如何检测 AI 是否提到你的品牌](https://yin-yuan-geo-landing.vercel.app/guide/monitor-ai-mentions/): /guide/deepseek-self-check/
+- [怎么知道 DeepSeek 有没有推荐我的品牌](https://yin-yuan-geo-landing.vercel.app/guide/deepseek-self-check/): 不用工具的 DeepSeek 六步自测：写问法、固定条件、每题问 2 次、记 5 栏、解读结果、补公开资料
 
 ## Optional
 

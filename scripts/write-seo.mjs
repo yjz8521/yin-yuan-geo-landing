@@ -16,7 +16,7 @@ const siteUrl = (
   "https://yin-yuan-geo-landing.vercel.app"
 ).replace(/\/$/, "");
 
-const paths = ["/", "/pricing/", "/faq/", "/guide/", "/guide/geo-intro/", "/guide/entity-card/", "/guide/monitor-ai-mentions/", "/sponsor/", "/demo/", "/about/"];
+const paths = ["/", "/pricing/", "/faq/", "/guide/", "/guide/geo-intro/", "/guide/entity-card/", "/guide/monitor-ai-mentions/", "/guide/deepseek-self-check/", "/sponsor/", "/demo/", "/about/"];
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -33,7 +33,7 @@ ${paths
 </urlset>
 `;
 
-const bots = ["GPTBot", "OAI-SearchBot", "ChatGPT-User", "ClaudeBot", "anthropic-ai", "PerplexityBot", "Google-Extended", "Googlebot", "Bingbot", "Bytespider", "Baiduspider", "Sogou web spider", "360Spider", "YisouSpider", "CCBot", "Applebot-Extended", "DuckAssistBot"];
+const bots = ["GPTBot", "OAI-SearchBot", "ChatGPT-User", "ClaudeBot", "anthropic-ai", "PerplexityBot", "Google-Extended", "Googlebot", "Bingbot", "Bytespider", "Baiduspider", "Sogou web spider", "360Spider", "YisouSpider", "CCBot", "Applebot-Extended", "DuckAssistBot", "Meta-ExternalAgent", "meta-externalfetcher", "FacebookBot", "facebookexternalhit", "Claude-User", "Claude-SearchBot", "Perplexity-User", "Amazonbot", "YandexBot"];
 const robots = `${bots.map((b) => `User-Agent: ${b}\nAllow: /\n`).join("\n")}
 User-Agent: *
 Allow: /
@@ -74,7 +74,8 @@ ${[
   link("GEO 指南总览", "/guide/", "生成式引擎优化入门文章列表"),
   link("GEO 入门", "/guide/geo-intro/", "统一实体事实、按引擎改写、发布到公开渠道、用固定问法监测"),
   link("实体卡怎么写", "/guide/entity-card/", "定位、可验证卖点、竞品差异、适合谁与 FAQ 的写法"),
-  link("如何检测 AI 是否提到你的品牌", "/guide/monitor-ai-mentions/", "固定问法集、记录格式与提及率计算方法"),
+  link("如何检测 AI 是否提到你的品牌", "/guide/monitor-ai-mentions/", "/guide/deepseek-self-check/", "固定问法集、记录格式与提及率计算方法"),
+  link("怎么知道 DeepSeek 有没有推荐我的品牌", "/guide/deepseek-self-check/", "不用工具的 DeepSeek 六步自测：写问法、固定条件、每题问 2 次、记 5 栏、解读结果、补公开资料"),
 ].join("\n")}
 
 ## Optional
