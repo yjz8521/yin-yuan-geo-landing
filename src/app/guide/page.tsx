@@ -13,12 +13,12 @@ export const metadata: Metadata = {
 export default function GuideIndex() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6">
-      <h1 className="text-3xl font-bold text-white">GEO 指南</h1>
+      <h1 className="text-3xl font-bold text-zinc-950">GEO 指南</h1>
       <ul className="mt-8 space-y-6">
         {guides.map((g) => (
           <li key={g.slug}>
-            <Link href={`/guide/${g.slug}/`} className="text-lg font-semibold text-cyan-300 hover:underline">{g.title}</Link>
-            <p className="mt-1 text-zinc-400">{g.description}</p>
+            <Link href={`/guide/${g.slug}/`} className="text-lg font-semibold text-zinc-950 hover:underline">{g.title}</Link>
+            <p className="mt-1 text-zinc-600">{g.description}</p>
           </li>
         ))}
       </ul>

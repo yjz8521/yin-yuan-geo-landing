@@ -28,13 +28,13 @@ export function Header() {
   const { t } = useI18n();
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/5 bg-[#070b12]/80 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-zinc-200 bg-white/80 backdrop-blur-xl">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
         <Link href="/" className="group flex items-center gap-2.5">
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-cyan-400 to-violet-500 text-sm font-bold text-[#070b12] shadow-[0_0_24px_rgba(34,211,238,0.35)]">
+          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-zinc-950 text-sm font-bold text-white">
             引
           </span>
-          <span className="text-sm font-semibold tracking-tight text-white sm:text-base">
+          <span className="text-sm font-semibold tracking-tight text-zinc-950 sm:text-base">
             {t(siteConfig.name, siteConfig.nameEn)}
           </span>
         </Link>
@@ -49,8 +49,8 @@ export function Header() {
                 aria-current={active ? "page" : undefined}
                 className={`rounded-lg px-3 py-1.5 text-sm transition ${
                   active
-                    ? "bg-white/10 text-white"
-                    : "text-zinc-400 hover:bg-white/5 hover:text-zinc-100"
+                    ? "bg-zinc-100 text-zinc-950"
+                    : "text-zinc-600 hover:bg-zinc-100 hover:text-zinc-950"
                 }`}
               >
                 {t(l.zh, l.en)}
@@ -63,14 +63,14 @@ export function Header() {
           <LocaleToggle />
           <Link
             href="/demo/"
-            className="whitespace-nowrap rounded-full bg-gradient-to-r from-cyan-400 to-violet-500 px-3.5 py-1.5 text-xs font-semibold text-[#070b12] shadow-[0_0_20px_rgba(34,211,238,0.25)] transition hover:brightness-110 sm:text-sm"
+            className="whitespace-nowrap rounded-full bg-zinc-950 px-3.5 py-1.5 text-xs font-semibold text-white transition hover:bg-zinc-800 sm:text-sm"
           >
             {t("申请试用", "Request demo")}
           </Link>
         </div>
       </div>
 
-      <nav aria-label="主导航（手机）" className="flex gap-1 overflow-x-auto border-t border-white/5 px-4 py-2 md:hidden">
+      <nav aria-label="主导航（手机）" className="flex gap-1 overflow-x-auto border-t border-zinc-200 px-4 py-2 md:hidden">
         {links.map((l) => {
           const active = isActive(pathname, l.href);
           return (
@@ -80,8 +80,8 @@ export function Header() {
               aria-current={active ? "page" : undefined}
               className={`shrink-0 rounded-full px-3 py-1 text-xs ${
                 active
-                  ? "bg-white/10 text-white"
-                  : "text-zinc-400 hover:text-zinc-200"
+                  ? "bg-zinc-100 text-zinc-950"
+                  : "text-zinc-600 hover:text-zinc-950"
               }`}
             >
               {t(l.zh, l.en)}

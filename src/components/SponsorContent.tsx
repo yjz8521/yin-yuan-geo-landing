@@ -35,20 +35,20 @@ export function SponsorContent() {
           return (
             <article
               key={s.id}
-              className="rounded-2xl border border-white/8 bg-[#0c121c] p-6"
+              className="rounded-2xl border border-zinc-200 bg-white p-6"
             >
-              <h3 className="text-lg font-semibold text-white">
+              <h3 className="text-lg font-semibold text-zinc-950">
                 {locale === "zh" ? s.nameZh : s.nameEn}
               </h3>
-              <p className="mt-2 text-2xl font-semibold text-cyan-200">
+              <p className="mt-2 text-2xl font-semibold text-zinc-950">
                 {locale === "zh" ? s.priceZh : s.priceEn}
               </p>
-              <p className="mt-3 text-sm leading-relaxed text-zinc-400">
+              <p className="mt-3 text-sm leading-relaxed text-zinc-600">
                 {locale === "zh" ? s.descZh : s.descEn}
               </p>
               <a
                 href={mailto}
-                className="mt-6 inline-flex rounded-full bg-gradient-to-r from-cyan-400 to-violet-500 px-5 py-2 text-sm font-semibold text-[#070b12] transition hover:brightness-110"
+                className="mt-6 inline-flex rounded-full bg-zinc-950 px-5 py-2 text-sm font-semibold text-white transition hover:bg-zinc-800"
               >
                 {t("邮件预订", "Email to book")}
               </a>
@@ -57,8 +57,8 @@ export function SponsorContent() {
         })}
       </div>
 
-      <div className="mt-10 rounded-2xl border border-dashed border-white/10 bg-white/[0.02] p-6 text-sm text-zinc-400">
-        <p className="font-medium text-zinc-200">
+      <div className="mt-10 rounded-2xl border border-dashed border-zinc-200 bg-white/[0.02] p-6 text-sm text-zinc-600">
+        <p className="font-medium text-zinc-700">
           {t("包含什么", "What you get")}
         </p>
         <ul className="mt-3 list-inside list-disc space-y-1.5">

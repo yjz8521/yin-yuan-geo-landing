@@ -59,23 +59,23 @@ export function HomeContent() {
   return (
     <>
       {/* Hero */}
-      <div className="relative overflow-hidden border-b border-white/5">
+      <div className="relative overflow-hidden border-b border-zinc-200">
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(34,211,238,0.18),transparent),radial-gradient(ellipse_60%_40%_at_80%_20%,rgba(139,92,246,0.12),transparent)]"
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(#e4e4e7_1px,transparent_1px)] bg-[size:22px_22px]"
         />
         <div className="relative mx-auto max-w-6xl px-4 pb-20 pt-16 sm:px-6 sm:pb-28 sm:pt-24">
-          <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-400/5 px-3 py-1 text-xs font-medium text-cyan-200/90">
-            <span className="h-1.5 w-1.5 rounded-full bg-cyan-400" />
+          <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-zinc-300 bg-zinc-50 px-3 py-1 text-xs font-medium text-zinc-950">
+            <span className="h-1.5 w-1.5 rounded-full bg-zinc-950" />
             {t("Generative Engine Optimization · 国内＋海外", "GEO for CN + global generative AI")}
           </p>
-          <h1 className="max-w-3xl text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
+          <h1 className="max-w-3xl text-4xl font-semibold tracking-tight text-zinc-950 sm:text-5xl lg:text-6xl">
             {t(siteConfig.name, siteConfig.nameEn)}
-            <span className="mt-2 block bg-gradient-to-r from-cyan-300 via-sky-200 to-violet-300 bg-clip-text text-transparent">
+            <span className="mt-2 block text-zinc-600">
               {t(siteConfig.taglineZh, siteConfig.taglineEn)}
             </span>
           </h1>
-          <p className="mt-6 max-w-2xl text-base leading-relaxed text-zinc-400 sm:text-lg">
+          <p className="mt-6 max-w-2xl text-base leading-relaxed text-zinc-600 sm:text-lg">
             {t(
               "实体卡 → 引擎投放包 → 渠道发布 → 提及率监测。给品牌与增长团队一套可复盘的 GEO 工作流。",
               "Entity card → engine packs → publish → mention monitoring. A measurable GEO workflow for brand and growth teams.",
@@ -84,27 +84,27 @@ export function HomeContent() {
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <Link
               href="/demo/"
-              className="rounded-full bg-gradient-to-r from-cyan-400 to-violet-500 px-6 py-2.5 text-sm font-semibold text-[#070b12] shadow-[0_0_28px_rgba(34,211,238,0.3)] transition hover:brightness-110"
+              className="rounded-full bg-zinc-950 px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-zinc-800"
             >
               {t("申请试用", "Request a demo")}
             </Link>
             <Link
               href="/pricing/"
-              className="rounded-full border border-white/15 bg-white/5 px-6 py-2.5 text-sm font-medium text-zinc-200 transition hover:bg-white/10"
+              className="rounded-full border border-zinc-200 bg-white px-6 py-2.5 text-sm font-medium text-zinc-700 transition hover:bg-zinc-100"
             >
               {t("查看方案", "View pricing")}
             </Link>
             {appUrl ? (
               <a
                 href={appUrl}
-                className="text-sm text-cyan-300/90 underline-offset-4 hover:underline"
+                className="text-sm text-zinc-950 underline-offset-4 hover:underline"
                 rel="noopener noreferrer"
               >
                 {t("进入产品", "Open product")} →
               </a>
             ) : null}
           </div>
-          <p className="mt-4 text-xs text-zinc-600">
+          <p className="mt-4 text-xs text-zinc-400">
             {t(
               "Starter NT$1,990／月 · Pro NT$3,900／月（季付 NT$9,900）· 信用卡／PayPal；大陆客户可人工开通。",
               "Starter NT$1,990/mo · Pro NT$3,900/mo (NT$9,900/quarter) · card / PayPal; manual activation for mainland China.",
@@ -132,16 +132,16 @@ export function HomeContent() {
           {problems.map((p) => (
             <li
               key={p.en}
-              className="rounded-2xl border border-white/8 bg-gradient-to-b from-white/[0.06] to-transparent p-5"
+              className="rounded-2xl border border-zinc-200 /[0.06] p-5"
             >
-              <p className="text-sm leading-relaxed text-zinc-200">{t(p.zh, p.en)}</p>
+              <p className="text-sm leading-relaxed text-zinc-700">{t(p.zh, p.en)}</p>
             </li>
           ))}
         </ul>
       </Section>
 
       {/* How it works */}
-      <Section className="border-y border-white/5 bg-[#060a10]/50">
+      <Section className="border-y border-zinc-200 bg-zinc-50">
         <SectionLabel>{t("怎么做", "How it works")}</SectionLabel>
         <SectionTitle>{t("四步闭环", "Four-step loop")}</SectionTitle>
         <SectionLead>
@@ -154,11 +154,11 @@ export function HomeContent() {
           {steps.map((s) => (
             <li
               key={s.n}
-              className="rounded-2xl border border-white/8 bg-[#0c121c] p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]"
+              className="rounded-2xl border border-zinc-200 bg-white p-5 shadow-sm"
             >
-              <span className="font-mono text-xs text-cyan-400/70">{s.n}</span>
-              <h3 className="mt-2 text-base font-semibold text-white">{t(s.zh, s.en)}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-zinc-400">{t(s.dZh, s.dEn)}</p>
+              <span className="font-mono text-xs text-zinc-500">{s.n}</span>
+              <h3 className="mt-2 text-base font-semibold text-zinc-950">{t(s.zh, s.en)}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-zinc-600">{t(s.dZh, s.dEn)}</p>
             </li>
           ))}
         </ol>
@@ -179,27 +179,27 @@ export function HomeContent() {
         <p className="mt-6 text-xs font-medium uppercase tracking-wide text-zinc-500">{t("已接入（自动跑问）", "Live (auto prompts)")}</p>
         <div className="mt-2 flex flex-wrap gap-3">
           {siteConfig.enginesLive.map((e) => (
-            <span key={e} className="rounded-full border border-cyan-400/20 bg-cyan-400/5 px-4 py-2 text-sm font-medium text-cyan-100">{e}</span>
+            <span key={e} className="rounded-full border border-zinc-300 bg-zinc-50 px-4 py-2 text-sm font-medium text-zinc-950">{e}</span>
           ))}
         </div>
         <p className="mt-6 text-xs font-medium uppercase tracking-wide text-zinc-500">{t("国内（陆续接入中）", "CN (coming)")}</p>
         <div className="mt-2 flex flex-wrap gap-3">
           {siteConfig.enginesDomesticComing.map((e) => (
-            <span key={e} className="rounded-full border border-violet-400/20 bg-violet-400/5 px-4 py-2 text-sm font-medium text-violet-100">
-              {e}<span className="ml-1.5 text-xs text-violet-300/60">{t("接入中", "coming")}</span>
+            <span key={e} className="rounded-full border border-zinc-200 bg-zinc-50 px-4 py-2 text-sm font-medium text-zinc-500">
+              {e}<span className="ml-1.5 text-xs text-zinc-500">{t("接入中", "coming")}</span>
             </span>
           ))}
         </div>
         <p className="mt-6 text-xs font-medium uppercase tracking-wide text-zinc-500">{t("海外（陆续接入中 · 投放包路线图）", "Global (coming · packs on roadmap)")}</p>
         <div className="mt-2 flex flex-wrap gap-3">
           {siteConfig.enginesOverseas.map((e) => (
-            <span key={e} className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-sm font-medium text-zinc-200">{e}</span>
+            <span key={e} className="rounded-full border border-zinc-200 bg-white px-4 py-2 text-sm font-medium text-zinc-700">{e}</span>
           ))}
         </div>
       </Section>
 
       {/* Early access (no invented social proof) */}
-      <Section className="border-y border-white/5">
+      <Section className="border-y border-zinc-200">
         <SectionLabel>{t("早期合作", "Early access")}</SectionLabel>
         <SectionTitle>
           {t("招募首批合作品牌", "Looking for our first partner brands")}
@@ -216,12 +216,12 @@ export function HomeContent() {
             { zh: "协助填写实体卡与第一批投放包", en: "Help with your entity card and first packs" },
             { zh: "按周追踪提及率变化，方法公开可复核", en: "Track mention rate weekly with an open, repeatable method" },
           ].map((x) => (
-            <li key={x.en} className="rounded-2xl border border-white/8 bg-[#0c121c] p-5 text-sm leading-relaxed text-zinc-200">
+            <li key={x.en} className="rounded-2xl border border-zinc-200 bg-white p-5 text-sm leading-relaxed text-zinc-700">
               {t(x.zh, x.en)}
             </li>
           ))}
         </ul>
-        <Link href="/demo/" className="mt-6 inline-flex text-sm font-medium text-cyan-300 hover:underline">
+        <Link href="/demo/" className="mt-6 inline-flex text-sm font-medium text-zinc-950 hover:underline">
           {t("申请成为合作品牌", "Apply as a partner brand")} →
         </Link>
       </Section>
@@ -244,27 +244,27 @@ export function HomeContent() {
               key={p.code}
               className={`rounded-2xl border p-6 ${
                 p.featured
-                  ? "border-cyan-400/30 bg-gradient-to-b from-cyan-400/10 to-transparent"
-                  : "border-white/8 bg-[#0c121c]"
+                  ? "border-zinc-300   "
+                  : "border-zinc-200 bg-white"
               }`}
             >
               <div className="flex items-baseline justify-between gap-2">
-                <h3 className="text-lg font-semibold text-white">
+                <h3 className="text-lg font-semibold text-zinc-950">
                   {locale === "zh" ? p.nameZh : p.nameEn}
                 </h3>
                 {p.featured ? (
-                  <span className="text-xs font-medium text-cyan-300">
+                  <span className="text-xs font-medium text-zinc-950">
                     {t("推荐", "Popular")}
                   </span>
                 ) : null}
               </div>
-              <p className="mt-2 text-2xl font-semibold text-white">
+              <p className="mt-2 text-2xl font-semibold text-zinc-950">
                 {locale === "zh" ? p.priceZh : p.priceEn}
                 <span className="text-sm font-normal text-zinc-500">
                   {locale === "zh" ? p.periodZh : p.periodEn}
                 </span>
               </p>
-              <p className="mt-2 text-sm text-zinc-400">
+              <p className="mt-2 text-sm text-zinc-600">
                 {locale === "zh" ? p.blurbZh : p.blurbEn}
               </p>
             </div>
@@ -272,7 +272,7 @@ export function HomeContent() {
         </div>
         <Link
           href="/pricing/"
-          className="mt-6 inline-flex text-sm font-medium text-cyan-300 hover:underline"
+          className="mt-6 inline-flex text-sm font-medium text-zinc-950 hover:underline"
         >
           {t("看完整方案", "Full pricing")} →
         </Link>
@@ -280,11 +280,11 @@ export function HomeContent() {
 
       {/* CTA */}
       <Section className="pb-24">
-        <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-cyan-500/10 via-[#0c121c] to-violet-500/10 p-8 text-center sm:p-12">
-          <h2 className="text-2xl font-semibold text-white sm:text-3xl">
+        <div className="rounded-3xl border border-zinc-200 p-8 text-center sm:p-12">
+          <h2 className="text-2xl font-semibold text-zinc-950 sm:text-3xl">
             {t("准备让品牌被点名？", "Ready to get named?")}
           </h2>
-          <p className="mx-auto mt-3 max-w-xl text-zinc-400">
+          <p className="mx-auto mt-3 max-w-xl text-zinc-600">
             {t(
               "申请试用，或在 SaaS 爬坡期先预订首页赞助位。",
               "Request a trial, or book a homepage sponsor slot while SaaS ramps.",
@@ -293,13 +293,13 @@ export function HomeContent() {
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Link
               href="/demo/"
-              className="rounded-full bg-white px-6 py-2.5 text-sm font-semibold text-[#070b12] transition hover:bg-zinc-200"
+              className="rounded-full bg-zinc-950 px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-zinc-800"
             >
               {t("申请试用", "Request demo")}
             </Link>
             <Link
               href="/sponsor/"
-              className="rounded-full border border-white/20 px-6 py-2.5 text-sm font-medium text-zinc-200 transition hover:bg-white/5"
+              className="rounded-full border border-zinc-200 px-6 py-2.5 text-sm font-medium text-zinc-700 transition hover:bg-zinc-100"
             >
               {t("赞助位", "Sponsor slots")}
             </Link>

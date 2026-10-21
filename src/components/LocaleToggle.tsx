@@ -6,7 +6,7 @@ export function LocaleToggle() {
   const { locale, setLocale } = useI18n();
   return (
     <div
-      className="inline-flex rounded-full border border-white/10 bg-white/5 p-0.5 text-xs font-medium"
+      className="inline-flex rounded-full border border-zinc-200 bg-white p-0.5 text-xs font-medium"
       role="group"
       aria-label="Language"
     >
@@ -15,8 +15,8 @@ export function LocaleToggle() {
         onClick={() => setLocale("zh")}
         className={`rounded-full px-2.5 py-1 transition ${
           locale === "zh"
-            ? "bg-cyan-500/20 text-cyan-200"
-            : "text-zinc-400 hover:text-zinc-200"
+            ? "bg-zinc-100 text-zinc-950"
+            : "text-zinc-600 hover:text-zinc-950"
         }`}
       >
         中文
@@ -26,8 +26,8 @@ export function LocaleToggle() {
         onClick={() => setLocale("en")}
         className={`rounded-full px-2.5 py-1 transition ${
           locale === "en"
-            ? "bg-cyan-500/20 text-cyan-200"
-            : "text-zinc-400 hover:text-zinc-200"
+            ? "bg-zinc-100 text-zinc-950"
+            : "text-zinc-600 hover:text-zinc-950"
         }`}
       >
         EN
