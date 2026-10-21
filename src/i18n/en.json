@@ -61,8 +61,7 @@
  "你要提供": "What you provide",
  "我们会做": "What we do",
  "用 10 个固定问法去问 DeepSeek（自动），其他 AI（豆包、ChatGPT 等）由人工查询记录，整理成一份报告：有没有提到你、提到哪些竞争对手、建议先补哪些公开资料。": "We ask DeepSeek 10 fixed questions (automated) and check other AI (Doubao, ChatGPT and more) manually, then send you a report: whether you are mentioned, which competitors are mentioned, and which public information to add first.",
- "交付时间：": "Delivery: within ",
- " 个工作天内": " working days",
+ " 个工作天内": " business days",
  "免费、不绑约": "Free, no commitment",
  "不保证排名或见效时间": "No guarantee of rankings or timing",
  "联系方式": "Contact",
@@ -85,5 +84,6 @@
  "通义千问": "Qwen",
  "智谱清言": "Zhipu Qingyan",
  "百度文心／文小言": "Baidu ERNIE / Wenxiaoyan",
- "元宝": "Yuanbao"
+ "元宝": "Yuanbao",
+ "交付时间：约 ": "Delivery: within about "
 }

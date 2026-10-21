@@ -107,7 +107,7 @@ function HealthCheck() {
       </div>
 
       <ul className="mt-6 grid gap-3 text-sm sm:grid-cols-3">
-        <li className="rounded-xl border border-zinc-200 bg-zinc-50 px-4 py-3 text-zinc-700">{t("交付时间：", "Delivery: within ")}{days}{t(" 个工作天内", " working days")}</li>
+        <li className="rounded-xl border border-zinc-200 bg-zinc-50 px-4 py-3 text-zinc-700">{t("交付时间：约 ", "Delivery: within about ")}{days}{t(" 个工作天内", " business days")}</li>
         <li className="rounded-xl border border-zinc-200 bg-zinc-50 px-4 py-3 text-zinc-700">{t("免费、不绑约", "Free, no commitment")}</li>
         <li className="rounded-xl border border-zinc-200 bg-zinc-50 px-4 py-3 text-zinc-700">{t("不保证排名或见效时间", "No guarantee of rankings or timing")}</li>
       </ul>

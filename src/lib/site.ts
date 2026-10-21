@@ -83,8 +83,8 @@ export const contactIds = {
   wechat: process.env.NEXT_PUBLIC_CONTACT_WECHAT_ID?.trim() || "",
 };
 
-/** Free AI-visibility check: delivery time in working days. ＿＿ = waiting for the owner. */
-export const checkDeliveryDays = process.env.NEXT_PUBLIC_CHECK_DELIVERY_DAYS?.trim() || "＿＿";
+/** Free AI-visibility check: delivery time in working days (owner confirmed ~2). */
+export const checkDeliveryDays = process.env.NEXT_PUBLIC_CHECK_DELIVERY_DAYS?.trim() || "2";
 
 export function getDemoEmail(): string {
   return process.env.NEXT_PUBLIC_DEMO_EMAIL?.trim() || "yjz8521@gmail.com";
