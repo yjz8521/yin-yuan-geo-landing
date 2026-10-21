@@ -1,0 +1,82 @@
+User-Agent: GPTBot
+Allow: /
+
+User-Agent: OAI-SearchBot
+Allow: /
+
+User-Agent: ChatGPT-User
+Allow: /
+
+User-Agent: ClaudeBot
+Allow: /
+
+User-Agent: anthropic-ai
+Allow: /
+
+User-Agent: PerplexityBot
+Allow: /
+
+User-Agent: Google-Extended
+Allow: /
+
+User-Agent: Googlebot
+Allow: /
+
+User-Agent: Bingbot
+Allow: /
+
+User-Agent: Bytespider
+Allow: /
+
+User-Agent: Baiduspider
+Allow: /
+
+User-Agent: Sogou web spider
+Allow: /
+
+User-Agent: 360Spider
+Allow: /
+
+User-Agent: YisouSpider
+Allow: /
+
+User-Agent: CCBot
+Allow: /
+
+User-Agent: Applebot-Extended
+Allow: /
+
+User-Agent: DuckAssistBot
+Allow: /
+
+User-Agent: Meta-ExternalAgent
+Allow: /
+
+User-Agent: meta-externalfetcher
+Allow: /
+
+User-Agent: FacebookBot
+Allow: /
+
+User-Agent: facebookexternalhit
+Allow: /
+
+User-Agent: Claude-User
+Allow: /
+
+User-Agent: Claude-SearchBot
+Allow: /
+
+User-Agent: Perplexity-User
+Allow: /
+
+User-Agent: Amazonbot
+Allow: /
+
+User-Agent: YandexBot
+Allow: /
+
+User-Agent: *
+Allow: /
+
+Sitemap: https://yin-yuan-geo-landing.vercel.app/sitemap.xml

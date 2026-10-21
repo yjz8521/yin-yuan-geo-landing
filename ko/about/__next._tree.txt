@@ -1,0 +1,7 @@
+:HL["/yin-yuan-geo-landing/_next/static/chunks/0m_fi-47ht95l.css","style"]
+:HL["/yin-yuan-geo-landing/_next/static/media/797e433ab948586e-s.p.0r6juujl39pe6.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/yin-yuan-geo-landing/_next/static/media/caa3a2e1cccd8315-s.p.0wgildi0cnwt9.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+3:[["children",{"s":"__PAGE__","h":160}]]
+2:[["children",{"s":"about","h":96,"c":"$Q3"}]]
+1:[["children",{"s":{"n":"lang","t":"d","k":"ko","s":["about","demo","faq","guide","pricing","sponsor"]},"h":65648,"c":"$Q2"}]]
+0:{"b":"C7QVggn8kz6hVK6aJ_9-6","t":{"t":{"s":"","h":131152,"c":"$Q1"}}}

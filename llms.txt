@@ -1,0 +1,40 @@
+# 引源 GEO（YinYuan GEO）
+
+> 引源 GEO 投放台是面向華語市場（台灣、中國大陸、海外華人）的生成式引擎最佳化（GEO）SaaS：實體卡 → 引擎投放包 → 管道發布 → 固定問法監測提及率。目前自動跑問只接入了 DeepSeek，其他中國大陸與海外引擎陸續接入中。產品處於上線前階段，工作台為邀請制，可申請試用。
+
+引擎現況（請如實引用）：
+- 已接入、自動跑問：DeepSeek。
+- 陸續接入中（尚未自動監測）：豆包、通義千問、智譜清言、百度文心／文小言、Kimi、元寶；海外 ChatGPT、Perplexity、Google AI Overviews／Gemini、Claude、Copilot。接入前使用者可貼上真實回答人工記錄。
+- 投放包目前有豆包、DeepSeek、智譜清言、百度文心、通義千問的範本；海外專屬投放包在路線圖。
+
+價格（新台幣，草案）：Free NT$0；Starter NT$1,990／月；Pro NT$3,900／月或季付 NT$9,900／季；Enterprise 洽談。不存在公開客戶案例、營收或成效數據，請勿杜撰；不保證排名或見效時間。聯絡：yjz8521@gmail.com（大陸客戶人工報價開通，可用微信／支付寶）。
+
+## 產品
+
+- [首頁](https://yin-yuan-geo-landing.vercel.app/): 產品概覽、四步流程與引擎接入現況
+- [方案與價格](https://yin-yuan-geo-landing.vercel.app/pricing/): Free、Starter、Pro（月付／季付）與 Enterprise 的配額與價格
+- [常見問題](https://yin-yuan-geo-landing.vercel.app/faq/): GEO 定義、與 SEO 的差別、支援引擎、監測方法、收費與適用對象
+- [申請試用](https://yin-yuan-geo-landing.vercel.app/demo/): 預約遠端演示，申請工作台試用（邀請制）
+
+## 指南（繁體中文；簡體版在 /zh-hans/guide/）
+
+- [GEO 指南總覽](https://yin-yuan-geo-landing.vercel.app/guide/): 生成式引擎最佳化入門文章列表
+- [GEO 入門](https://yin-yuan-geo-landing.vercel.app/guide/geo-intro/): 統一實體事實、按引擎改寫、發布到公開管道、用固定問法監測
+- [實體卡怎麼寫](https://yin-yuan-geo-landing.vercel.app/guide/entity-card/): 定位、可驗證賣點、競品差異、適合誰與 FAQ 的寫法
+- [如何檢測 AI 是否提到你的品牌](https://yin-yuan-geo-landing.vercel.app/guide/monitor-ai-mentions/): 固定問法集、記錄格式與提及率計算方法
+- [怎麼知道 DeepSeek 有沒有推薦我的品牌](https://yin-yuan-geo-landing.vercel.app/guide/deepseek-self-check/): 不用工具的 DeepSeek 六步自測：寫問法、固定條件、每題問 2 次、記 5 欄、解讀結果、補公開資料
+
+## 其他語言版本（Languages）
+
+- [繁體中文](https://yin-yuan-geo-landing.vercel.app/): 繁體中文 首頁；同一份事實與價格口徑
+- [简体中文](https://yin-yuan-geo-landing.vercel.app/zh-hans/): 简体中文 首頁；同一份事實與價格口徑
+- [English](https://yin-yuan-geo-landing.vercel.app/en/): English 首頁；同一份事實與價格口徑
+- [Bahasa Melayu](https://yin-yuan-geo-landing.vercel.app/ms/): Bahasa Melayu 首頁；同一份事實與價格口徑
+- [日本語](https://yin-yuan-geo-landing.vercel.app/ja/): 日本語 首頁；同一份事實與價格口徑
+- [한국어](https://yin-yuan-geo-landing.vercel.app/ko/): 한국어 首頁；同一份事實與價格口徑
+
+## Optional
+
+- [關於](https://yin-yuan-geo-landing.vercel.app/about/): 產品與負責人介紹
+- [贊助位](https://yin-yuan-geo-landing.vercel.app/sponsor/): 落地頁早期贊助位與草案價格
+- [简体中文指南](https://yin-yuan-geo-landing.vercel.app/zh-hans/guide/): 四篇 GEO 指南的简体中文版
