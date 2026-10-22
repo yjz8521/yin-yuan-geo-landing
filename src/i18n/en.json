@@ -93,5 +93,9 @@
  "送出申请": "Submit",
  "送出中…": "Sending…",
  "已收到申请，我们会尽快用 Email 联系你。": "Thanks — we got your request and will reply by email soon.",
- "送出失败，请改用下方邮件或联系方式。": "Something went wrong. Please use email or the contacts below."
+ "送出失败，请改用下方邮件或联系方式。": "Something went wrong. Please use email or the contacts below.",
+ "台湾品牌怎么让大陆 AI 找得到你：繁简、用语与渠道的五个检查点": "How Taiwan brands get found by mainland Chinese AI: five checks on script, wording and channels",
+ "有些台湾品牌在 ChatGPT 查得到，在 DeepSeek、豆包却查不到。常见原因是繁简与用语不同、资料只放在大陆 AI 较少读取的渠道。五个检查点，照着做就能自己排查。": "Some Taiwan brands show up in ChatGPT but not in DeepSeek or Doubao. Common causes: Traditional vs. Simplified script, different vocabulary, and information that lives only on channels mainland AI rarely reads. Five checks you can run yourself.",
+ "B2B 设备与工业品怎么做 GEO：让采购问 AI 时看到你": "GEO for B2B equipment and industrial products: be seen when buyers ask AI",
+ "采购与工程师也会先问 AI「XX 设备有哪些厂家」。B2B 品牌要准备的不是广告文，而是规格、应用场景、服务范围与选型 FAQ 这类可被引用的事实。": "Buyers and engineers also ask AI which suppliers make a given machine. B2B brands need citable facts — specs, applications, service coverage and selection FAQs — not ad copy."
 }

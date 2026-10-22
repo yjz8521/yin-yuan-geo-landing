@@ -152,7 +152,7 @@
   </url>
   <url>
     <loc>https://yin-yuan-geo.pages.dev/guide/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo.pages.dev/guide/"/>
@@ -162,7 +162,7 @@
   </url>
   <url>
     <loc>https://yin-yuan-geo.pages.dev/zh-hans/guide/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo.pages.dev/guide/"/>
@@ -172,7 +172,7 @@
   </url>
   <url>
     <loc>https://yin-yuan-geo.pages.dev/en/guide/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo.pages.dev/guide/"/>
@@ -251,5 +251,41 @@
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo.pages.dev/guide/deepseek-self-check/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yin-yuan-geo.pages.dev/zh-hans/guide/deepseek-self-check/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo.pages.dev/guide/deepseek-self-check/"/>
+  </url>
+  <url>
+    <loc>https://yin-yuan-geo.pages.dev/guide/taiwan-brand-mainland-ai/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo.pages.dev/guide/taiwan-brand-mainland-ai/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yin-yuan-geo.pages.dev/zh-hans/guide/taiwan-brand-mainland-ai/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo.pages.dev/guide/taiwan-brand-mainland-ai/"/>
+  </url>
+  <url>
+    <loc>https://yin-yuan-geo.pages.dev/zh-hans/guide/taiwan-brand-mainland-ai/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo.pages.dev/guide/taiwan-brand-mainland-ai/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yin-yuan-geo.pages.dev/zh-hans/guide/taiwan-brand-mainland-ai/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo.pages.dev/guide/taiwan-brand-mainland-ai/"/>
+  </url>
+  <url>
+    <loc>https://yin-yuan-geo.pages.dev/guide/b2b-equipment-geo/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo.pages.dev/guide/b2b-equipment-geo/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yin-yuan-geo.pages.dev/zh-hans/guide/b2b-equipment-geo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo.pages.dev/guide/b2b-equipment-geo/"/>
+  </url>
+  <url>
+    <loc>https://yin-yuan-geo.pages.dev/zh-hans/guide/b2b-equipment-geo/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo.pages.dev/guide/b2b-equipment-geo/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yin-yuan-geo.pages.dev/zh-hans/guide/b2b-equipment-geo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo.pages.dev/guide/b2b-equipment-geo/"/>
   </url>
 </urlset>
