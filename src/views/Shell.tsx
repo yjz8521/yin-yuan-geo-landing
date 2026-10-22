@@ -37,7 +37,7 @@ function ld(l: Locale) {
   return {
     "@context": "https://schema.org",
     "@graph": [
-      { "@type": "Organization", "@id": orgId, name: siteConfig.name, alternateName: [siteConfig.nameEn, siteConfig.productFull], url: siteUrl, email: getDemoEmail(), founder: { "@type": "Person", name: siteConfig.owner }, areaServed: ["TW", "CN", "MY", "SG", "JP", "KR", "Worldwide"] },
+      { "@type": "Organization", "@id": orgId, name: siteConfig.name, alternateName: [siteConfig.nameEn, siteConfig.productFull], url: siteUrl, logo: `${siteUrl}/logo.png`, email: getDemoEmail(), founder: { "@type": "Person", name: siteConfig.owner }, areaServed: ["TW", "CN", "MY", "SG", "JP", "KR", "Worldwide"] },
       { "@type": "WebSite", "@id": `${siteUrl}/#website`, name: siteConfig.name, url: siteUrl, inLanguage: ["zh-Hant", "zh-Hans", "en"], publisher: { "@id": orgId } },
       { "@type": "WebPage", "@id": `${siteUrl}${lp(l, "/")}#webpage`, url: `${siteUrl}${lp(l, "/")}`, inLanguage, isPartOf: { "@id": `${siteUrl}/#website` } },
       {
