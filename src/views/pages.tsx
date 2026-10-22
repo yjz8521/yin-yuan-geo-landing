@@ -21,7 +21,7 @@ export const Home = () => <HomeContent guides={latestGuides} />;
 export const pricingMeta = (l: Locale): Metadata => pageMeta(l, "/pricing/", "方案与价格 Pricing", "引源 GEO 价格：Free NT$0；Starter NT$1,990／月；Pro NT$3,900／月或季付 NT$9,900／季；Enterprise 洽谈。台湾与海外可用信用卡／PayPal，大陆客户可联系人工开通。");
 export const Pricing = () => <PricingContent />;
 
-export const aboutMeta = (l: Locale): Metadata => pageMeta(l, "/about/", "关于 About", "引源 GEO：面向华语市场、以国内与海外生成式 AI 为目标的 GEO SaaS（自动监测已接入 DeepSeek，其他引擎陆续接入中），产品负责人 Kinnv。");
+export const aboutMeta = (l: Locale): Metadata => pageMeta(l, "/about/", "关于 About", "引源 GEO：面向华语市场、以国内与海外生成式 AI 为目标的 GEO SaaS（自动监测已接入 {LIVE}，其他引擎陆续接入中），产品负责人 Kinnv。");
 export const About = () => <AboutContent />;
 
 export const demoMeta = (l: Locale): Metadata => pageMeta(l, "/demo/", "免费 AI 能见度健检", "免费 AI 能见度健检：用 10 个固定问法问 DeepSeek（自动），其他 AI 人工查询，整理成报告：有没有提到你、提到哪些竞争对手、建议先补哪些公开资料。免费、不绑约，不保证排名或见效时间。也可申请试用／远程演示。");

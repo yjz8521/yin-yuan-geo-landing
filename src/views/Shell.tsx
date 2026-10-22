@@ -12,8 +12,8 @@ const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 const siteUrl = getSiteUrl();
 
-const DESC = "引源 GEO：面向华语市场的 GEO SaaS。自动监测目前已接入 DeepSeek；豆包、通义千问、智谱、百度文心／文小言、Kimi、元宝与海外 ChatGPT、Perplexity、Google AI Overviews／Gemini、Claude、Copilot 陆续接入中。实体卡 → 投放包 → 发布 → 提及监测。";
-const APP_DESC = "生成式引擎优化（GEO）工作台：实体卡、引擎投放包、渠道发布与提及监测。自动监测已接入 DeepSeek；豆包、智谱清言、百度文心／文小言、通义千问、元宝、Kimi 及海外 ChatGPT、Perplexity、Google AI Overviews／Gemini、Claude、Copilot 陆续接入中（海外专属投放包路线图）。";
+const DESC = "引源 GEO：面向华语市场的 GEO SaaS。自动监测目前已接入 {LIVE}；{COMING_CN}与海外 {COMING_GLOBAL} 陆续接入中。实体卡 → 投放包 → 发布 → 提及监测。";
+const APP_DESC = "生成式引擎优化（GEO）工作台：实体卡、引擎投放包、渠道发布与提及监测。自动监测已接入 {LIVE}；{COMING_CN}及海外 {COMING_GLOBAL} 陆续接入中（海外专属投放包路线图）。";
 
 export function rootMetadata(l: Locale): Metadata {
   const title = `${tr(l, siteConfig.name)} · ${tr(l, siteConfig.taglineZh, siteConfig.taglineEn)}`;

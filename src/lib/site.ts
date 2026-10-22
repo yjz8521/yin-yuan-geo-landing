@@ -9,13 +9,6 @@ export const siteConfig = {
   taglineZh: "两岸 AI 都查得到你：给台湾品牌与台商的 GEO 工具",
   taglineEn: "Be found by AI on both sides of the Strait: GEO for Taiwan brands and Taiwanese businesses",
   owner: "Kinnv",
-  engines: ["豆包", "DeepSeek", "智谱清言", "百度文心／文小言", "通义千问"] as const,
-  /** Connected today and running prompts automatically. */
-  enginesLive: ["DeepSeek"] as const,
-  /** 陆续接入中 — not monitored automatically yet. */
-  enginesDomesticComing: ["豆包", "通义千问", "智谱清言", "百度文心／文小言", "Kimi", "元宝"] as const,
-  /** 陆续接入中 — not monitored automatically yet; dedicated packs on roadmap. */
-  enginesOverseas: ["ChatGPT", "Perplexity", "Google AI Overviews／Gemini", "Claude", "Copilot"] as const,
 };
 
 export function getSiteUrl(): string {
@@ -131,14 +124,14 @@ export const draftPlans = [
       "每月 1,000 次监测",
       "每月 500 次 AI 请求",
       "API 存取 · 多工作区",
-      "DeepSeek 自动监测（其他引擎陆续接入中）",
+      "{LIVE} 自动监测（其他引擎陆续接入中）",
     ],
     highlightsEn: [
       "Up to 10 projects · 3 workspaces",
       "1,000 monitor runs / month",
       "500 AI requests / month",
       "API access · multi-workspace",
-      "DeepSeek auto-monitoring (more engines coming)",
+      "{LIVE} auto-monitoring (more engines coming)",
     ],
     cta: "checkout" as const,
     featured: false,
@@ -158,14 +151,14 @@ export const draftPlans = [
       "每月 5,000 次监测",
       "Webhook · 排程报表 · 进阶归因",
       "自定义报表",
-      "DeepSeek 自动监测（其他引擎陆续接入中）",
+      "{LIVE} 自动监测（其他引擎陆续接入中）",
     ],
     highlightsEn: [
       "Up to 50 projects · 10 workspaces",
       "5,000 monitor runs / month",
       "Webhooks · scheduled reports · advanced attribution",
       "Custom reports",
-      "DeepSeek auto-monitoring (more engines coming)",
+      "{LIVE} auto-monitoring (more engines coming)",
     ],
     cta: "checkout" as const,
     featured: true,
