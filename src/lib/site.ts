@@ -2,7 +2,9 @@ import { LOCALE_META, alternates, lp, tr, type Locale } from "./locales";
 export const siteConfig = {
   name: "引源 GEO",
   nameEn: "YinYuan GEO",
-  productFull: "引源 GEO 投放台",
+  productFull: "引源 GEO",
+  /** Former product name; kept in JSON-LD / llms.txt so AI links old mentions to the same entity. */
+  legacyName: "引源 GEO 投放台",
   /** Homepage headline (owner picked option 3 of 3). */
   taglineZh: "两岸 AI 都查得到你：给台湾品牌与台商的 GEO 工具",
   taglineEn: "Be found by AI on both sides of the Strait: GEO for Taiwan brands and Taiwanese businesses",
