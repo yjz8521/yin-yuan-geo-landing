@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { LocaleToggle } from "./LocaleToggle";
+import { Logo } from "./Logo";
 import { useI18n } from "@/lib/i18n";
 import { siteConfig } from "@/lib/site";
 import { PREFIXED } from "@/lib/locales";
@@ -32,9 +33,7 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-zinc-200 bg-white/80 backdrop-blur-xl">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
         <Link href={lpath("/")} className="group flex items-center gap-2.5">
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-zinc-950 text-sm font-bold text-white">
-            引
-          </span>
+          <Logo className="h-8 w-8" />
           <span className="text-sm font-semibold tracking-tight text-zinc-950 sm:text-base">
             {t(siteConfig.name, siteConfig.nameEn)}
           </span>

@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://yin-yuan-geo.pages.dev/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo.pages.dev/"/>
@@ -12,7 +12,7 @@
   </url>
   <url>
     <loc>https://yin-yuan-geo.pages.dev/zh-hans/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo.pages.dev/"/>
@@ -22,7 +22,7 @@
   </url>
   <url>
     <loc>https://yin-yuan-geo.pages.dev/en/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo.pages.dev/"/>
@@ -32,7 +32,7 @@
   </url>
   <url>
     <loc>https://yin-yuan-geo.pages.dev/pricing/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo.pages.dev/pricing/"/>
@@ -42,7 +42,7 @@
   </url>
   <url>
     <loc>https://yin-yuan-geo.pages.dev/zh-hans/pricing/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo.pages.dev/pricing/"/>
@@ -52,7 +52,7 @@
   </url>
   <url>
     <loc>https://yin-yuan-geo.pages.dev/en/pricing/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo.pages.dev/pricing/"/>
@@ -62,7 +62,7 @@
   </url>
   <url>
     <loc>https://yin-yuan-geo.pages.dev/faq/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo.pages.dev/faq/"/>
@@ -72,7 +72,7 @@
   </url>
   <url>
     <loc>https://yin-yuan-geo.pages.dev/zh-hans/faq/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo.pages.dev/faq/"/>
@@ -82,7 +82,7 @@
   </url>
   <url>
     <loc>https://yin-yuan-geo.pages.dev/en/faq/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo.pages.dev/faq/"/>
@@ -91,38 +91,8 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo.pages.dev/faq/"/>
   </url>
   <url>
-    <loc>https://yin-yuan-geo.pages.dev/guide/</loc>
-    <lastmod>2026-10-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo.pages.dev/guide/"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yin-yuan-geo.pages.dev/zh-hans/guide/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://yin-yuan-geo.pages.dev/en/guide/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo.pages.dev/guide/"/>
-  </url>
-  <url>
-    <loc>https://yin-yuan-geo.pages.dev/zh-hans/guide/</loc>
-    <lastmod>2026-10-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo.pages.dev/guide/"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yin-yuan-geo.pages.dev/zh-hans/guide/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://yin-yuan-geo.pages.dev/en/guide/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo.pages.dev/guide/"/>
-  </url>
-  <url>
-    <loc>https://yin-yuan-geo.pages.dev/en/guide/</loc>
-    <lastmod>2026-10-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo.pages.dev/guide/"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yin-yuan-geo.pages.dev/zh-hans/guide/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://yin-yuan-geo.pages.dev/en/guide/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo.pages.dev/guide/"/>
-  </url>
-  <url>
     <loc>https://yin-yuan-geo.pages.dev/demo/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo.pages.dev/demo/"/>
@@ -132,7 +102,7 @@
   </url>
   <url>
     <loc>https://yin-yuan-geo.pages.dev/zh-hans/demo/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo.pages.dev/demo/"/>
@@ -142,7 +112,7 @@
   </url>
   <url>
     <loc>https://yin-yuan-geo.pages.dev/en/demo/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo.pages.dev/demo/"/>
@@ -152,7 +122,7 @@
   </url>
   <url>
     <loc>https://yin-yuan-geo.pages.dev/about/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo.pages.dev/about/"/>
@@ -162,7 +132,7 @@
   </url>
   <url>
     <loc>https://yin-yuan-geo.pages.dev/zh-hans/about/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo.pages.dev/about/"/>
@@ -172,7 +142,7 @@
   </url>
   <url>
     <loc>https://yin-yuan-geo.pages.dev/en/about/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo.pages.dev/about/"/>
@@ -181,8 +151,38 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo.pages.dev/about/"/>
   </url>
   <url>
+    <loc>https://yin-yuan-geo.pages.dev/guide/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo.pages.dev/guide/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yin-yuan-geo.pages.dev/zh-hans/guide/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yin-yuan-geo.pages.dev/en/guide/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo.pages.dev/guide/"/>
+  </url>
+  <url>
+    <loc>https://yin-yuan-geo.pages.dev/zh-hans/guide/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo.pages.dev/guide/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yin-yuan-geo.pages.dev/zh-hans/guide/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yin-yuan-geo.pages.dev/en/guide/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo.pages.dev/guide/"/>
+  </url>
+  <url>
+    <loc>https://yin-yuan-geo.pages.dev/en/guide/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo.pages.dev/guide/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yin-yuan-geo.pages.dev/zh-hans/guide/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yin-yuan-geo.pages.dev/en/guide/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo.pages.dev/guide/"/>
+  </url>
+  <url>
     <loc>https://yin-yuan-geo.pages.dev/guide/geo-intro/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo.pages.dev/guide/geo-intro/"/>
@@ -191,7 +191,7 @@
   </url>
   <url>
     <loc>https://yin-yuan-geo.pages.dev/zh-hans/guide/geo-intro/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo.pages.dev/guide/geo-intro/"/>
@@ -200,7 +200,7 @@
   </url>
   <url>
     <loc>https://yin-yuan-geo.pages.dev/guide/entity-card/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo.pages.dev/guide/entity-card/"/>
@@ -209,7 +209,7 @@
   </url>
   <url>
     <loc>https://yin-yuan-geo.pages.dev/zh-hans/guide/entity-card/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo.pages.dev/guide/entity-card/"/>
@@ -218,7 +218,7 @@
   </url>
   <url>
     <loc>https://yin-yuan-geo.pages.dev/guide/monitor-ai-mentions/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo.pages.dev/guide/monitor-ai-mentions/"/>
@@ -227,7 +227,7 @@
   </url>
   <url>
     <loc>https://yin-yuan-geo.pages.dev/zh-hans/guide/monitor-ai-mentions/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo.pages.dev/guide/monitor-ai-mentions/"/>
@@ -251,5 +251,41 @@
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo.pages.dev/guide/deepseek-self-check/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yin-yuan-geo.pages.dev/zh-hans/guide/deepseek-self-check/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo.pages.dev/guide/deepseek-self-check/"/>
+  </url>
+  <url>
+    <loc>https://yin-yuan-geo.pages.dev/guide/taiwan-brand-mainland-ai/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo.pages.dev/guide/taiwan-brand-mainland-ai/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yin-yuan-geo.pages.dev/zh-hans/guide/taiwan-brand-mainland-ai/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo.pages.dev/guide/taiwan-brand-mainland-ai/"/>
+  </url>
+  <url>
+    <loc>https://yin-yuan-geo.pages.dev/zh-hans/guide/taiwan-brand-mainland-ai/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo.pages.dev/guide/taiwan-brand-mainland-ai/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yin-yuan-geo.pages.dev/zh-hans/guide/taiwan-brand-mainland-ai/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo.pages.dev/guide/taiwan-brand-mainland-ai/"/>
+  </url>
+  <url>
+    <loc>https://yin-yuan-geo.pages.dev/guide/b2b-equipment-geo/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo.pages.dev/guide/b2b-equipment-geo/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yin-yuan-geo.pages.dev/zh-hans/guide/b2b-equipment-geo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo.pages.dev/guide/b2b-equipment-geo/"/>
+  </url>
+  <url>
+    <loc>https://yin-yuan-geo.pages.dev/zh-hans/guide/b2b-equipment-geo/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://yin-yuan-geo.pages.dev/guide/b2b-equipment-geo/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://yin-yuan-geo.pages.dev/zh-hans/guide/b2b-equipment-geo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yin-yuan-geo.pages.dev/guide/b2b-equipment-geo/"/>
   </url>
 </urlset>

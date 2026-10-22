@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { Section, SectionLabel, SectionLead, SectionTitle } from "./Section";
+import { PageHero, Section, SectionLabel, SectionLead, SectionTitle } from "./Section";
 import { useI18n } from "@/lib/i18n";
 import { FORMSPREE_ENDPOINT, checkDeliveryDays, contactIds, getAppUrl, getDemoEmail } from "@/lib/site";
 
@@ -32,6 +32,14 @@ const provide = [
   { zh: "主要市场（台湾／大陆／海外）", en: "Main market (Taiwan / mainland China / overseas)" },
 ];
 
+function Check({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden className={className} fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="m5 12 5 5L20 7" />
+    </svg>
+  );
+}
+
 function CopyButton({ value, label, done }: { value: string; label: string; done: string }) {
   const [ok, setOk] = useState(false);
   return (
@@ -53,8 +61,11 @@ function CopyButton({ value, label, done }: { value: string; label: string; done
   );
 }
 
-function FormspreeForm({ endpoint }: { endpoint: string }) {
-  const { t } = useI18n();
+type Field = { name: string; label: string; required?: boolean; type?: string; multiline?: boolean };
+
+/** Online form via Formspree. `_gotcha` is Formspree's honeypot; bots that fill it are dropped silently. */
+function FormspreeForm({ endpoint, title, subject, fields, submit, fallback }: { endpoint: string; title: string; subject: string; fields: Field[]; submit: string; fallback: string }) {
+  const { t, locale } = useI18n();
   const [state, setState] = useState<"idle" | "sending" | "ok" | "err">("idle");
   const input = "mt-1.5 w-full rounded-lg border border-zinc-200 bg-zinc-50 px-3 py-2 text-zinc-800 outline-none focus:border-zinc-950";
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
@@ -71,19 +82,30 @@ function FormspreeForm({ endpoint }: { endpoint: string }) {
     return <p role="status" className="rounded-2xl border border-zinc-300 bg-zinc-50 p-6 text-sm text-zinc-950">{t("已收到申请，我们会尽快用 Email 联系你。", "Thanks — we got your request and will reply by email soon.")}</p>;
   }
   return (
-    <form onSubmit={onSubmit} className="space-y-3 rounded-2xl border border-zinc-200 bg-white p-6">
-      <p className="text-sm font-medium text-zinc-950">{t("在线申请健检", "Apply online")}</p>
-      <input type="hidden" name="_subject" value="免费 AI 能见度健检申请" />
-      <label className="block text-sm text-zinc-600">{t("品牌名", "Brand name")}<input required name="brand" className={input} /></label>
-      <label className="block text-sm text-zinc-600">{t("网站", "Website")}<input name="website" className={input} /></label>
-      <label className="block text-sm text-zinc-600">{t("产业", "Industry")}<input name="industry" className={input} /></label>
-      <label className="block text-sm text-zinc-600">{t("主要产品", "Main products")}<input name="product" className={input} /></label>
-      <label className="block text-sm text-zinc-600">{t("主要市场（台湾／大陆／海外）", "Main market (Taiwan / mainland China / overseas)")}<input name="market" className={input} /></label>
-      <label className="block text-sm text-zinc-600">Email<input required type="email" name="email" className={input} /></label>
+    <form onSubmit={onSubmit} className="space-y-3 rounded-2xl border border-zinc-200 bg-white p-6 shadow-lg shadow-zinc-900/5 sm:p-7">
+      <p className="text-base font-semibold text-zinc-950">{title}</p>
+      <input type="hidden" name="_subject" value={subject} />
+      <input type="hidden" name="locale" value={locale} />
+      <input type="text" name="_gotcha" tabIndex={-1} autoComplete="off" aria-hidden className="hidden" />
+      {fields.map((f) => (
+        <label key={f.name} className="block text-sm text-zinc-600">
+          {f.label}
+          {f.multiline ? (
+            <textarea name={f.name} required={f.required} rows={4} className={input} />
+          ) : (
+            <input name={f.name} required={f.required} type={f.type ?? "text"} className={input} />
+          )}
+        </label>
+      ))}
       <button type="submit" disabled={state === "sending"} className="w-full rounded-full bg-zinc-950 py-2.5 text-sm font-semibold text-white transition hover:bg-zinc-800 disabled:opacity-60">
-        {state === "sending" ? t("送出中…", "Sending…") : t("送出申请", "Submit")}
+        {state === "sending" ? t("送出中…", "Sending…") : submit}
       </button>
-      {state === "err" ? <p role="alert" className="text-xs text-red-700">{t("送出失败，请改用下方邮件或联系方式。", "Something went wrong. Please use email or the contacts below.")}</p> : null}
+      {state === "err" ? (
+        <p role="alert" className="text-xs text-red-700">
+          {t("送出失败，请改用下方邮件或联系方式。", "Something went wrong. Please use email or the contacts below.")}{" "}
+          <a href={fallback} className="underline underline-offset-4">{t("改用邮件申请", "Apply by email instead")}</a>
+        </p>
+      ) : null}
     </form>
   );
 }
@@ -112,71 +134,103 @@ function HealthCheck() {
   }
 
   const input = "mt-1.5 w-full rounded-lg border border-zinc-200 bg-zinc-50 px-3 py-2 text-zinc-800 outline-none focus:border-zinc-950";
+  const steps = [
+    { h: t("填写资料", "Send your details"), body: <ul className="mt-2 space-y-1 text-sm text-zinc-600">{provide.map((x) => <li key={x.en}>· {t(x.zh, x.en)}</li>)}</ul> },
+    {
+      h: t("我们实际去问 AI", "We ask the AI"),
+      body: <p className="mt-2 text-sm leading-relaxed text-zinc-600">{t(
+        "用 10 个固定问法去问 DeepSeek（自动），其他 AI（豆包、ChatGPT 等）由人工查询记录，整理成一份报告：有没有提到你、提到哪些竞争对手、建议先补哪些公开资料。",
+        "We ask DeepSeek 10 fixed questions (automated) and check other AI (Doubao, ChatGPT and more) manually, then send you a report: whether you are mentioned, which competitors are mentioned, and which public information to add first.",
+      )}</p>,
+    },
+    {
+      h: `${t("收到报告", "Get the report")} · ${t("交付时间：约 ", "Delivery: within about ")}${days}${t(" 个工作天内", " business days")}`,
+      body: <ul className="mt-2 grid gap-1.5 text-sm text-zinc-600 sm:grid-cols-2">{[t("有没有提到你、排第几", "Whether you are named, and where"), t("提到了哪些竞争对手", "Which competitors are named"), t("描述有没有讲错", "Whether the description is accurate"), t("建议先补哪些公开资料", "Which public information to add first")].map((x) => <li key={x} className="flex gap-1.5"><Check className="mt-0.5 h-4 w-4 shrink-0 text-blue-600" />{x}</li>)}</ul>,
+    },
+  ];
   return (
     <>
-      <SectionLabel>{t("免费健检", "Free check")}</SectionLabel>
-      <SectionTitle as="h1">{t("免费 AI 能见度健检", "Free AI visibility check")}</SectionTitle>
-      <SectionLead>
-        {t(
+      <PageHero
+        label={t("免费健检", "Free check")}
+        title={t("免费 AI 能见度健检", "Free AI visibility check")}
+        lead={t(
           "看看 DeepSeek 等 AI 现在回答你的品类时，有没有提到你。免费、不绑约；不保证排名或见效时间。",
           "See whether DeepSeek and other AI mention you when answering questions in your category. Free, no commitment; no guarantee of rankings or timing.",
         )}
-      </SectionLead>
+      >
+        <ul className="mt-6 flex flex-wrap gap-2 text-sm">
+          {[`${t("交付时间：约 ", "Delivery: within about ")}${days}${t(" 个工作天内", " business days")}`, t("免费、不绑约", "Free, no commitment"), t("不保证排名或见效时间", "No guarantee of rankings or timing")].map((x) => (
+            <li key={x} className="inline-flex items-center gap-1.5 rounded-full border border-zinc-200 bg-white px-3.5 py-1.5 text-zinc-700 shadow-sm">
+              <Check className="h-4 w-4 text-emerald-600" />
+              {x}
+            </li>
+          ))}
+        </ul>
+      </PageHero>
 
-      <div className="mt-10 grid gap-6 md:grid-cols-2">
-        <div className="rounded-2xl border border-zinc-200 bg-white p-6">
-          <h2 className="text-base font-semibold text-zinc-950">{t("你要提供", "What you provide")}</h2>
-          <ul className="mt-3 space-y-2 text-sm text-zinc-600">
-            {provide.map((x) => <li key={x.en}>· {t(x.zh, x.en)}</li>)}
-          </ul>
-        </div>
-        <div className="rounded-2xl border border-zinc-200 bg-white p-6">
-          <h2 className="text-base font-semibold text-zinc-950">{t("我们会做", "What we do")}</h2>
-          <p className="mt-3 text-sm leading-relaxed text-zinc-600">
-            {t(
-              "用 10 个固定问法去问 DeepSeek（自动），其他 AI（豆包、ChatGPT 等）由人工查询记录，整理成一份报告：有没有提到你、提到哪些竞争对手、建议先补哪些公开资料。",
-              "We ask DeepSeek 10 fixed questions (automated) and check other AI (Doubao, ChatGPT and more) manually, then send you a report: whether you are mentioned, which competitors are mentioned, and which public information to add first.",
+      <Section className="pt-12 sm:pt-14">
+        <div className="grid items-start gap-8 lg:grid-cols-[1.1fr_1fr]">
+          <ol className="relative space-y-6 lg:col-start-1 lg:row-start-1 rounded-2xl border border-zinc-200 bg-white p-6 sm:p-8">
+              <span aria-hidden className="absolute bottom-12 left-[2.65rem] top-12 w-px bg-blue-100 sm:left-[3.15rem]" />
+              {steps.map((st, i) => (
+                <li key={i} className="relative flex gap-4">
+                  <span className="z-10 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-blue-600 text-sm font-semibold text-white shadow-sm shadow-blue-600/30">{i + 1}</span>
+                  <div className="min-w-0 pt-1">
+                    <h2 className="font-semibold text-zinc-950">{st.h}</h2>
+                    {st.body}
+                  </div>
+                </li>
+              ))}
+            </ol>
+
+          <div className="lg:sticky lg:top-24 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:self-start">
+            {FORMSPREE_ENDPOINT ? (
+              <FormspreeForm
+                endpoint={FORMSPREE_ENDPOINT}
+                title={t("在线申请健检", "Apply online")}
+                subject={zh ? "免费 AI 能见度健检申请" : "Free AI visibility check request"}
+                fields={[
+                  { name: "brand", label: t("公司／品牌名称", "Company / brand name"), required: true },
+                  { name: "website", label: t("网站", "Website") },
+                  { name: "industry", label: t("产业", "Industry") },
+                  { name: "product", label: t("主要产品或服务", "Main products or services") },
+                  { name: "market", label: t("主要市场（台湾／大陆／海外）", "Main market (Taiwan / mainland China / overseas)") },
+                  { name: "email", label: "Email", required: true, type: "email" },
+                ]}
+                submit={t("送出申请", "Submit")}
+                fallback={`mailto:${email}?subject=${encodeURIComponent(zh ? "免费 AI 能见度健检申请" : "Free AI visibility check request")}`}
+              />
+            ) : (
+              <form onSubmit={onSubmit} className="space-y-3 rounded-2xl border border-zinc-200 bg-white p-6 shadow-lg shadow-zinc-900/5">
+                <p className="text-sm font-medium text-zinc-950">{t("或用邮件申请（会打开你的邮件程序）", "Or apply by email (opens your mail app)")}</p>
+                <label className="block text-sm text-zinc-600">{t("公司／品牌名称", "Company / brand name")}<input required value={f.company} onChange={set("company")} className={input} /></label>
+                <label className="block text-sm text-zinc-600">{t("网站", "Website")}<input value={f.website} onChange={set("website")} className={input} /></label>
+                <label className="block text-sm text-zinc-600">{t("产业", "Industry")}<input value={f.industry} onChange={set("industry")} className={input} /></label>
+                <label className="block text-sm text-zinc-600">{t("主要产品或服务", "Main products or services")}<input value={f.product} onChange={set("product")} className={input} /></label>
+                <label className="block text-sm text-zinc-600">{t("主要市场（台湾／大陆／海外）", "Main market (Taiwan / mainland China / overseas)")}<input value={f.market} onChange={set("market")} className={input} /></label>
+                <button type="submit" className="w-full rounded-full bg-zinc-950 py-2.5 text-sm font-semibold text-white transition hover:bg-zinc-800">
+                  {t("用邮件申请健检", "Apply by email")}
+                </button>
+              </form>
             )}
-          </p>
+          </div>
+            <div className="rounded-2xl border border-zinc-200 bg-zinc-50 p-6 lg:col-start-1">
+              <h2 className="font-semibold text-zinc-950">{t("联系方式", "Contact")}</h2>
+              <p className="mt-1 text-sm text-zinc-500">{t("把上面的资料传给我们即可申请。", "Send us the details above to apply.")}</p>
+              <ul className="mt-4 grid gap-3">
+                {contacts.map((c) => (
+                  <li key={c.k} className="flex items-center justify-between gap-3 rounded-xl border border-zinc-200 bg-white px-4 py-3">
+                    <span className="min-w-0 text-sm">
+                      <span className="block text-xs text-zinc-500">{c.k}</span>
+                      <span className="block break-all font-medium text-zinc-950">{c.v}</span>
+                    </span>
+                    <CopyButton value={c.v} label={t("复制", "Copy")} done={t("已复制", "Copied")} />
+                  </li>
+                ))}
+              </ul>
+            </div>
         </div>
-      </div>
-
-      <ul className="mt-6 grid gap-3 text-sm sm:grid-cols-3">
-        <li className="rounded-xl border border-zinc-200 bg-zinc-50 px-4 py-3 text-zinc-700">{t("交付时间：约 ", "Delivery: within about ")}{days}{t(" 个工作天内", " business days")}</li>
-        <li className="rounded-xl border border-zinc-200 bg-zinc-50 px-4 py-3 text-zinc-700">{t("免费、不绑约", "Free, no commitment")}</li>
-        <li className="rounded-xl border border-zinc-200 bg-zinc-50 px-4 py-3 text-zinc-700">{t("不保证排名或见效时间", "No guarantee of rankings or timing")}</li>
-      </ul>
-
-      <div className="mt-10 grid gap-6 md:grid-cols-2">
-        <div className="rounded-2xl border border-zinc-200 bg-white p-6">
-          <h2 className="text-base font-semibold text-zinc-950">{t("联系方式", "Contact")}</h2>
-          <p className="mt-1 text-sm text-zinc-500">{t("把上面的资料传给我们即可申请。", "Send us the details above to apply.")}</p>
-          <ul className="mt-4 space-y-3">
-            {contacts.map((c) => (
-              <li key={c.k} className="flex items-center justify-between gap-3 rounded-xl border border-zinc-200 px-4 py-3">
-                <span className="min-w-0 text-sm">
-                  <span className="block text-xs text-zinc-500">{c.k}</span>
-                  <span className="block break-all font-medium text-zinc-950">{c.v}</span>
-                </span>
-                <CopyButton value={c.v} label={t("复制", "Copy")} done={t("已复制", "Copied")} />
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {FORMSPREE_ENDPOINT ? <FormspreeForm endpoint={FORMSPREE_ENDPOINT} /> : null}
-        <form onSubmit={onSubmit} className={`space-y-3 rounded-2xl border border-zinc-200 bg-white p-6 ${FORMSPREE_ENDPOINT ? "md:col-span-2" : ""}`}>
-          <p className="text-sm font-medium text-zinc-950">{t("或用邮件申请（会打开你的邮件程序）", "Or apply by email (opens your mail app)")}</p>
-          <label className="block text-sm text-zinc-600">{t("公司／品牌名称", "Company / brand name")}<input required value={f.company} onChange={set("company")} className={input} /></label>
-          <label className="block text-sm text-zinc-600">{t("网站", "Website")}<input value={f.website} onChange={set("website")} className={input} /></label>
-          <label className="block text-sm text-zinc-600">{t("产业", "Industry")}<input value={f.industry} onChange={set("industry")} className={input} /></label>
-          <label className="block text-sm text-zinc-600">{t("主要产品或服务", "Main products or services")}<input value={f.product} onChange={set("product")} className={input} /></label>
-          <label className="block text-sm text-zinc-600">{t("主要市场（台湾／大陆／海外）", "Main market (Taiwan / mainland China / overseas)")}<input value={f.market} onChange={set("market")} className={input} /></label>
-          <button type="submit" className="w-full rounded-full bg-zinc-950 py-2.5 text-sm font-semibold text-white transition hover:bg-zinc-800">
-            {t("用邮件申请健检", "Apply by email")}
-          </button>
-        </form>
-      </div>
+      </Section>
     </>
   );
 }
@@ -191,10 +245,11 @@ export function DemoContent() {
   const [contact, setContact] = useState("");
   const [sent, setSent] = useState(false);
 
+  const trialSubject = locale.startsWith("zh") ? "引源 GEO 试用申请" : "YinYuan GEO demo request";
+
   function onSubmit(e: FormEvent) {
     e.preventDefault();
-    const subject =
-      locale.startsWith("zh") ? "引源 GEO 试用申请" : "YinYuan GEO demo request";
+    const subject = trialSubject;
     const body =
       locale.startsWith("zh")
         ? `姓名 / 称呼：${name}\n公司 / 品牌：${company || "（未填）"}\n联系方式（微信／电话，选填）：${contact || "（未填）"}\n需求：\n${note || "（未填）"}`
@@ -205,10 +260,11 @@ export function DemoContent() {
 
   return (
     <>
-    <Section className="pt-12 sm:pt-16">
-      <HealthCheck />
-    </Section>
-    <Section id="demo" className="border-t border-zinc-200">
+    <HealthCheck />
+    <div className="border-t border-zinc-200 bg-zinc-50">
+    <Section id="demo">
+      <div className="grid items-start gap-10 lg:grid-cols-[1.1fr_1fr]">
+      <div>
       <SectionLabel>{t("试用", "Demo")}</SectionLabel>
       <SectionTitle>
         {t("申请试用：演示包含什么", "Request a demo: what it includes")}
@@ -224,8 +280,9 @@ export function DemoContent() {
         {includes.map((item) => (
           <li
             key={item.en}
-            className="rounded-xl border border-zinc-200 bg-white px-4 py-3 text-sm text-zinc-700"
+            className="flex items-start gap-2.5 rounded-xl border border-zinc-200 bg-white px-4 py-3 text-sm text-zinc-700"
           >
+            <Check className="mt-0.5 h-4 w-4 shrink-0 text-blue-600" />
             {t(item.zh, item.en)}
           </li>
         ))}
@@ -246,68 +303,95 @@ export function DemoContent() {
         </p>
       )}
 
-      <form
-        onSubmit={onSubmit}
-        className="mt-10 max-w-lg space-y-4 rounded-2xl border border-zinc-200 bg-white p-6"
-      >
-        <p className="text-sm font-medium text-zinc-950">
-          {t("填写后会打开你的邮件程序，按「发送」即完成申请", "Opens your mail app — press Send to submit")}
-        </p>
-        <label className="block text-sm text-zinc-600">
-          {t("称呼", "Name")}
-          <input
-            required
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            className="mt-1.5 w-full rounded-lg border border-zinc-200 bg-zinc-50 px-3 py-2 text-zinc-800 outline-none focus:border-zinc-950"
+      </div>
+      {FORMSPREE_ENDPOINT ? (
+        <div>
+          <FormspreeForm
+            endpoint={FORMSPREE_ENDPOINT}
+            title={t("在线预约演示", "Book a demo online")}
+            subject={trialSubject}
+            fields={[
+              { name: "name", label: t("称呼", "Name"), required: true },
+              { name: "email", label: "Email", required: true, type: "email" },
+              { name: "company", label: t("公司 / 品牌", "Company / brand") },
+              { name: "contact", label: t("微信／电话（选填）", "WeChat / phone (optional)") },
+              { name: "note", label: t("想看什么", "What you want to see"), multiline: true },
+            ]}
+            submit={t("送出预约", "Send request")}
+            fallback={`mailto:${email}?subject=${encodeURIComponent(trialSubject)}`}
           />
-        </label>
-        <label className="block text-sm text-zinc-600">
-          {t("公司 / 品牌", "Company / brand")}
-          <input
-            value={company}
-            onChange={(e) => setCompany(e.target.value)}
-            className="mt-1.5 w-full rounded-lg border border-zinc-200 bg-zinc-50 px-3 py-2 text-zinc-800 outline-none focus:border-zinc-950"
-          />
-        </label>
-        <label className="block text-sm text-zinc-600">
-          {t("微信／电话（选填）", "WeChat / phone (optional)")}
-          <input
-            value={contact}
-            onChange={(e) => setContact(e.target.value)}
-            className="mt-1.5 w-full rounded-lg border border-zinc-200 bg-zinc-50 px-3 py-2 text-zinc-800 outline-none focus:border-zinc-950"
-          />
-        </label>
-        <label className="block text-sm text-zinc-600">
-          {t("想看什么", "What you want to see")}
-          <textarea
-            rows={4}
-            value={note}
-            onChange={(e) => setNote(e.target.value)}
-            className="mt-1.5 w-full rounded-lg border border-zinc-200 bg-zinc-50 px-3 py-2 text-zinc-800 outline-none focus:border-zinc-950"
-          />
-        </label>
-        <button
-          type="submit"
-          className="w-full rounded-full bg-zinc-950 py-2.5 text-sm font-semibold text-white transition hover:bg-zinc-800"
-        >
-          {t(`发送至 ${email}`, `Send to ${email}`)}
-        </button>
-        {sent ? (
-          <p role="status" className="rounded-lg border border-zinc-300 bg-zinc-50 px-3 py-2 text-xs text-zinc-950">
-            {t(
-              `若邮件程序没有自动打开，请直接写信到 ${email}，并附上上面填写的内容。`,
-              `If your mail app did not open, email ${email} directly with the details above.`,
-            )}
+          <p className="mt-3 text-center text-xs text-zinc-400">
+            <a href={`mailto:${email}?subject=${encodeURIComponent(trialSubject)}`} className="hover:text-zinc-950">
+              {t("或直接写信", "Or email directly")}: {email}
+            </a>
           </p>
-        ) : null}
-        <p className="text-center text-xs text-zinc-400">
-          <a href={`mailto:${email}?subject=${encodeURIComponent(locale.startsWith("zh") ? "引源 GEO 试用申请" : "YinYuan GEO demo request")}`} className="hover:text-zinc-950">
-            {t("或直接写信", "Or email directly")}: {email}
-          </a>
-        </p>
-      </form>
+        </div>
+      ) : (
+        <form
+          onSubmit={onSubmit}
+          className="space-y-4 rounded-2xl border border-zinc-200 bg-white p-6 shadow-lg shadow-zinc-900/5"
+        >
+          <p className="text-sm font-medium text-zinc-950">
+            {t("填写后会打开你的邮件程序，按「发送」即完成申请", "Opens your mail app — press Send to submit")}
+          </p>
+          <label className="block text-sm text-zinc-600">
+            {t("称呼", "Name")}
+            <input
+              required
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className="mt-1.5 w-full rounded-lg border border-zinc-200 bg-zinc-50 px-3 py-2 text-zinc-800 outline-none focus:border-zinc-950"
+            />
+          </label>
+          <label className="block text-sm text-zinc-600">
+            {t("公司 / 品牌", "Company / brand")}
+            <input
+              value={company}
+              onChange={(e) => setCompany(e.target.value)}
+              className="mt-1.5 w-full rounded-lg border border-zinc-200 bg-zinc-50 px-3 py-2 text-zinc-800 outline-none focus:border-zinc-950"
+            />
+          </label>
+          <label className="block text-sm text-zinc-600">
+            {t("微信／电话（选填）", "WeChat / phone (optional)")}
+            <input
+              value={contact}
+              onChange={(e) => setContact(e.target.value)}
+              className="mt-1.5 w-full rounded-lg border border-zinc-200 bg-zinc-50 px-3 py-2 text-zinc-800 outline-none focus:border-zinc-950"
+            />
+          </label>
+          <label className="block text-sm text-zinc-600">
+            {t("想看什么", "What you want to see")}
+            <textarea
+              rows={4}
+              value={note}
+              onChange={(e) => setNote(e.target.value)}
+              className="mt-1.5 w-full rounded-lg border border-zinc-200 bg-zinc-50 px-3 py-2 text-zinc-800 outline-none focus:border-zinc-950"
+            />
+          </label>
+          <button
+            type="submit"
+            className="w-full rounded-full bg-zinc-950 py-2.5 text-sm font-semibold text-white transition hover:bg-zinc-800"
+          >
+            {t(`发送至 ${email}`, `Send to ${email}`)}
+          </button>
+          {sent ? (
+            <p role="status" className="rounded-lg border border-zinc-300 bg-zinc-50 px-3 py-2 text-xs text-zinc-950">
+              {t(
+                `若邮件程序没有自动打开，请直接写信到 ${email}，并附上上面填写的内容。`,
+                `If your mail app did not open, email ${email} directly with the details above.`,
+              )}
+            </p>
+          ) : null}
+          <p className="text-center text-xs text-zinc-400">
+            <a href={`mailto:${email}?subject=${encodeURIComponent(trialSubject)}`} className="hover:text-zinc-950">
+              {t("或直接写信", "Or email directly")}: {email}
+            </a>
+          </p>
+        </form>
+      )}
+      </div>
     </Section>
+    </div>
     </>
   );
 }

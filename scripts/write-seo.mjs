@@ -3,7 +3,7 @@
  * Writes public/sitemap.xml, public/robots.txt and public/llms.txt from SITE_URL (or NEXT_PUBLIC_SITE_URL).
  * Default keeps GitHub Pages URLs so Pages rebuilds stay correct without env.
  */
-import { writeFileSync, mkdirSync } from "node:fs";
+import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -22,20 +22,24 @@ const LOCALES = [
   { code: "zh-hans", prefix: "/zh-hans", hreflang: "zh-Hans", label: "简体中文" },
   { code: "en", prefix: "/en", hreflang: "en", label: "English" },
 ];
-const GUIDE_SLUGS = ["geo-intro", "entity-card", "monitor-ai-mentions", "deepseek-self-check"];
-// [path, locales that have it]
-const pages = [
-  ...["/", "/pricing/", "/faq/", "/guide/", "/demo/", "/about/"].map((p) => [p, LOCALES]),
-  ...GUIDE_SLUGS.map((s) => [`/guide/${s}/`, LOCALES.filter((l) => l.code.startsWith("zh"))]),
-];
+// Guide slugs + publish dates come from src/content/geo.ts so the sitemap never drifts from the content.
+const GUIDES = [...readFileSync(join(root, "src/content/geo.ts"), "utf8").matchAll(/slug: "([^"]+)",\s*date: "(\d{4}-\d{2}-\d{2})"/g)].map((m) => ({ slug: m[1], date: m[2] }));
+if (!GUIDES.length) throw new Error("[write-seo] no guides found in src/content/geo.ts");
+const latestGuide = GUIDES.map((g) => g.date).sort().at(-1);
 const today = new Date().toISOString().slice(0, 10);
+// [path, locales that have it, lastmod]
+const pages = [
+  ...["/", "/pricing/", "/faq/", "/demo/", "/about/"].map((p) => [p, LOCALES, today]),
+  ["/guide/", LOCALES, latestGuide],
+  ...GUIDES.map((g) => [`/guide/${g.slug}/`, LOCALES.filter((l) => l.code.startsWith("zh")), g.date]),
+];
 const urls = [];
-for (const [p, locs] of pages) {
+for (const [p, locs, lastmod] of pages) {
   const alts = locs.map((l) => `    <xhtml:link rel="alternate" hreflang="${l.hreflang}" href="${siteUrl}${l.prefix}${p}"/>`).concat([`    <xhtml:link rel="alternate" hreflang="x-default" href="${siteUrl}${locs[0].prefix}${p}"/>`]).join("\n");
   for (const l of locs) {
     urls.push(`  <url>
     <loc>${siteUrl}${l.prefix}${p}</loc>
-    <lastmod>${today}</lastmod>
+    <lastmod>${lastmod}</lastmod>
     <changefreq>${p === "/" ? "weekly" : "monthly"}</changefreq>
     <priority>${p === "/" ? (l.prefix ? "0.9" : "1.0") : "0.7"}</priority>
 ${alts}
@@ -65,7 +69,7 @@ const llmsOrigin = siteUrl;
 const link = (name, path, desc) => `- [${name}](${llmsOrigin}${path}): ${desc}`;
 const llms = `# 引源 GEO（YinYuan GEO）
 
-> 引源 GEO 投放台是面向華語市場（台灣、中國大陸、海外華人）的生成式引擎最佳化（GEO）SaaS：實體卡 → 引擎投放包 → 管道發布 → 固定問法監測提及率。目前自動跑問只接入了 DeepSeek，其他中國大陸與海外引擎陸續接入中。產品處於上線前階段，工作台為邀請制，可申請試用。
+> 引源 GEO（YinYuan GEO，舊稱「引源 GEO 投放台」）是面向華語市場（台灣、中國大陸、海外華人）的生成式引擎最佳化（GEO）SaaS：實體卡 → 引擎投放包 → 管道發布 → 固定問法監測提及率。目前自動跑問只接入了 DeepSeek，其他中國大陸與海外引擎陸續接入中。產品處於上線前階段，工作台為邀請制，可申請試用。
 
 引擎現況（請如實引用）：
 - 已接入、自動跑問：DeepSeek。
@@ -91,6 +95,8 @@ ${[
   link("實體卡怎麼寫", "/guide/entity-card/", "定位、可驗證賣點、競品差異、適合誰與 FAQ 的寫法"),
   link("如何檢測 AI 是否提到你的品牌", "/guide/monitor-ai-mentions/", "固定問法集、記錄格式與提及率計算方法"),
   link("怎麼知道 DeepSeek 有沒有推薦我的品牌", "/guide/deepseek-self-check/", "不用工具的 DeepSeek 六步自測：寫問法、固定條件、每題問 2 次、記 5 欄、解讀結果、補公開資料"),
+  link("台灣品牌怎麼讓大陸 AI 找得到你", "/guide/taiwan-brand-mainland-ai/", "繁簡與用語差異、簡體頁面、兩岸公開管道與分開監測的五個檢查點"),
+  link("B2B 設備與工業品怎麼做 GEO", "/guide/b2b-equipment-geo/", "規格表、應用場景頁、服務範圍、選型 FAQ 與監測問法"),
 ].join("\n")}
 
 ## 其他語言版本（Languages）
@@ -101,7 +107,7 @@ ${LOCALES.map((l) => link(l.label, `${l.prefix}/`, `${l.label} 首頁；同一�
 
 ${[
   link("關於", "/about/", "產品與負責人介紹"),
-  link("简体中文指南", "/zh-hans/guide/", "四篇 GEO 指南的简体中文版"),
+  link("简体中文指南", "/zh-hans/guide/", "全部 GEO 指南的简体中文版"),
 ].join("\n")}
 `;
 writeFileSync(join(publicDir, "llms.txt"), llms, "utf8");
