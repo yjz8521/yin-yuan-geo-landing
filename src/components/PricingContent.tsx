@@ -64,7 +64,7 @@ export function PricingContent() {
               key={p.code}
               className={`flex flex-col rounded-2xl border p-6 ${
                 p.featured
-                  ? "border-zinc-950    "
+                  ? "border-zinc-950 bg-white shadow-sm"
                   : "border-zinc-200 bg-white"
               }`}
             >

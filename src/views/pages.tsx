@@ -77,11 +77,18 @@ export function guideMeta(l: Locale, slug: string): Metadata {
 export function GuideArticle({ l, slug }: { l: Locale; slug: string }) {
   const g = guides.find((x) => x.slug === slug);
   if (!g) notFound();
-  const url = `${getSiteUrl()}${lp(l, `/guide/${g.slug}/`)}`;
+  const site = getSiteUrl();
+  const url = `${site}${lp(l, `/guide/${g.slug}/`)}`;
   const title = tr(l, g.title), description = tr(l, g.description);
+  const others = guides.filter((x) => x.slug !== g.slug);
   return (
     <article className="mx-auto max-w-3xl px-4 py-16 sm:px-6">
-      <JsonLd data={{ "@context": "https://schema.org", "@type": "Article", headline: title, description, inLanguage: LOCALE_META[l].hreflang, url, mainEntityOfPage: url, author: { "@type": "Organization", name: siteConfig.name }, publisher: { "@type": "Organization", name: siteConfig.name, url: getSiteUrl() }, datePublished: g.date, dateModified: g.date, image: `${getSiteUrl()}/og.png` }} />
+      <JsonLd data={{ "@context": "https://schema.org", "@type": "Article", headline: title, description, inLanguage: LOCALE_META[l].hreflang, url, mainEntityOfPage: url, author: { "@type": "Person", name: siteConfig.owner, url: `${site}${lp(l, "/about/")}` }, publisher: { "@type": "Organization", "@id": `${site}/#org`, name: siteConfig.name, url: site }, datePublished: g.date, dateModified: g.date, image: `${site}/og.png` }} />
+      <JsonLd data={{ "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [
+        { "@type": "ListItem", position: 1, name: tr(l, siteConfig.name), item: `${site}${lp(l, "/")}` },
+        { "@type": "ListItem", position: 2, name: tr(l, "GEO 指南"), item: `${site}${lp(l, "/guide/")}` },
+        { "@type": "ListItem", position: 3, name: title, item: url },
+      ] }} />
       <p className="text-sm text-zinc-500"><Link href={lp(l, "/guide/")} className="hover:underline">{tr(l, "GEO 指南")}</Link></p>
       <h1 className="mt-2 text-3xl font-bold text-zinc-950">{title}</h1>
       <p className="mt-2 text-sm text-zinc-500"><time dateTime={g.date}>{tr(l, "发布于")} {g.date}</time></p>
@@ -93,6 +100,22 @@ export function GuideArticle({ l, slug }: { l: Locale; slug: string }) {
         </section>
       ))}
       <p className="mt-12 text-zinc-600">{tr(l, "引源 GEO 投放台把以上流程做成工作台：实体卡 → 引擎投放包 → 渠道发布 → 提及监测。")}<Link href={lp(l, "/faq/")} className="text-zinc-950 hover:underline">{tr(l, "常见问题")}</Link> · <Link href={lp(l, "/demo/")} className="text-zinc-950 hover:underline">{tr(l, "申请试用")}</Link></p>
+      <aside className="mt-10 rounded-2xl border border-zinc-200 bg-zinc-50 p-6">
+        <p className="font-semibold text-zinc-950">{tr(l, "不想自己测？申请免费 AI 能见度健检")}</p>
+        <p className="mt-2 text-sm leading-relaxed text-zinc-600">{tr(l, "我们用固定问法问 DeepSeek 等 AI，整理成报告：有没有提到你、提到哪些竞争对手、建议先补哪些公开资料。免费、不绑约。")}</p>
+        <Link href={lp(l, "/demo/")} className="mt-4 inline-flex rounded-full bg-zinc-950 px-5 py-2 text-sm font-semibold text-white hover:bg-zinc-800">{tr(l, "免费 AI 能见度健检")}</Link>
+      </aside>
+      <nav aria-label={tr(l, "其他指南")} className="mt-10 border-t border-zinc-200 pt-8">
+        <h2 className="text-sm font-semibold uppercase tracking-wider text-zinc-500">{tr(l, "其他指南")}</h2>
+        <ul className="mt-4 space-y-3">
+          {others.map((x) => (
+            <li key={x.slug}>
+              <Link href={lp(l, `/guide/${x.slug}/`)} className="font-medium text-zinc-950 hover:underline">{tr(l, x.title)}</Link>
+              <p className="mt-0.5 text-sm text-zinc-500">{tr(l, x.description)}</p>
+            </li>
+          ))}
+        </ul>
+      </nav>
     </article>
   );
 }

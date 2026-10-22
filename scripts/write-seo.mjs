@@ -3,7 +3,7 @@
  * Writes public/sitemap.xml, public/robots.txt and public/llms.txt from SITE_URL (or NEXT_PUBLIC_SITE_URL).
  * Default keeps GitHub Pages URLs so Pages rebuilds stay correct without env.
  */
-import { writeFileSync, mkdirSync } from "node:fs";
+import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -22,20 +22,24 @@ const LOCALES = [
   { code: "zh-hans", prefix: "/zh-hans", hreflang: "zh-Hans", label: "简体中文" },
   { code: "en", prefix: "/en", hreflang: "en", label: "English" },
 ];
-const GUIDE_SLUGS = ["geo-intro", "entity-card", "monitor-ai-mentions", "deepseek-self-check"];
-// [path, locales that have it]
-const pages = [
-  ...["/", "/pricing/", "/faq/", "/guide/", "/demo/", "/about/"].map((p) => [p, LOCALES]),
-  ...GUIDE_SLUGS.map((s) => [`/guide/${s}/`, LOCALES.filter((l) => l.code.startsWith("zh"))]),
-];
+// Guide slugs + publish dates come from src/content/geo.ts so the sitemap never drifts from the content.
+const GUIDES = [...readFileSync(join(root, "src/content/geo.ts"), "utf8").matchAll(/slug: "([^"]+)",\s*date: "(\d{4}-\d{2}-\d{2})"/g)].map((m) => ({ slug: m[1], date: m[2] }));
+if (!GUIDES.length) throw new Error("[write-seo] no guides found in src/content/geo.ts");
+const latestGuide = GUIDES.map((g) => g.date).sort().at(-1);
 const today = new Date().toISOString().slice(0, 10);
+// [path, locales that have it, lastmod]
+const pages = [
+  ...["/", "/pricing/", "/faq/", "/demo/", "/about/"].map((p) => [p, LOCALES, today]),
+  ["/guide/", LOCALES, latestGuide],
+  ...GUIDES.map((g) => [`/guide/${g.slug}/`, LOCALES.filter((l) => l.code.startsWith("zh")), g.date]),
+];
 const urls = [];
-for (const [p, locs] of pages) {
+for (const [p, locs, lastmod] of pages) {
   const alts = locs.map((l) => `    <xhtml:link rel="alternate" hreflang="${l.hreflang}" href="${siteUrl}${l.prefix}${p}"/>`).concat([`    <xhtml:link rel="alternate" hreflang="x-default" href="${siteUrl}${locs[0].prefix}${p}"/>`]).join("\n");
   for (const l of locs) {
     urls.push(`  <url>
     <loc>${siteUrl}${l.prefix}${p}</loc>
-    <lastmod>${today}</lastmod>
+    <lastmod>${lastmod}</lastmod>
     <changefreq>${p === "/" ? "weekly" : "monthly"}</changefreq>
     <priority>${p === "/" ? (l.prefix ? "0.9" : "1.0") : "0.7"}</priority>
 ${alts}

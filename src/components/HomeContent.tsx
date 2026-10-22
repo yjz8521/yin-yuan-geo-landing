@@ -146,7 +146,7 @@ export function HomeContent() {
           {problems.map((p) => (
             <li
               key={p.en}
-              className="rounded-2xl border border-zinc-200 /[0.06] p-5"
+              className="rounded-2xl border border-zinc-200 bg-white p-5"
             >
               <p className="text-sm leading-relaxed text-zinc-700">{t(p.zh, p.en)}</p>
             </li>
@@ -258,7 +258,7 @@ export function HomeContent() {
               key={p.code}
               className={`rounded-2xl border p-6 ${
                 p.featured
-                  ? "border-zinc-300   "
+                  ? "border-zinc-950 bg-white"
                   : "border-zinc-200 bg-white"
               }`}
             >
