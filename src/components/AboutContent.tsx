@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Section, SectionLabel, SectionLead, SectionTitle } from "./Section";
+import { PageHero, Section } from "./Section";
 import { useI18n } from "@/lib/i18n";
 import { getAppUrl, siteConfig } from "@/lib/site";
 
@@ -10,19 +10,17 @@ export function AboutContent() {
   const appUrl = getAppUrl();
 
   return (
-    <Section className="pt-12 sm:pt-16">
-      <SectionLabel>{t("关于", "About")}</SectionLabel>
-      <SectionTitle as="h1">
-        {t(siteConfig.productFull, `${siteConfig.nameEn} Platform`)}
-      </SectionTitle>
-      <SectionLead>
-        {t(
-          "帮助品牌在国内与海外生成式 AI（豆包、DeepSeek、ChatGPT、Perplexity 等）上被提及、被引用、被推荐的 GEO SaaS。",
-          "A GEO SaaS that helps brands get mentioned, cited, and recommended in Chinese and global generative AI (Doubao, DeepSeek, ChatGPT, Perplexity, and more).",
-        )}
-      </SectionLead>
-
-      <div className="mt-10 max-w-3xl rounded-2xl border border-zinc-200 bg-white p-6 sm:p-8">
+    <>
+    <PageHero
+      label={t("关于", "About")}
+      title={t(siteConfig.productFull, `${siteConfig.nameEn} Platform`)}
+      lead={t(
+        "帮助品牌在国内与海外生成式 AI（豆包、DeepSeek、ChatGPT、Perplexity 等）上被提及、被引用、被推荐的 GEO SaaS。",
+        "A GEO SaaS that helps brands get mentioned, cited, and recommended in Chinese and global generative AI (Doubao, DeepSeek, ChatGPT, Perplexity, and more).",
+      )}
+    />
+    <Section className="pt-12 sm:pt-14">
+      <div className="max-w-3xl rounded-2xl border border-zinc-200 bg-white p-6 sm:p-8">
         <h2 className="text-sm font-semibold uppercase tracking-wider text-zinc-500">
           {t("负责人", "Founder")}
         </h2>
@@ -67,5 +65,6 @@ export function AboutContent() {
         </Link>
       </div>
     </Section>
+    </>
   );
 }

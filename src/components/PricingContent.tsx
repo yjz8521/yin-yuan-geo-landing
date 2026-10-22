@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Section, SectionLabel, SectionLead, SectionTitle } from "./Section";
+import { PageHero, Section } from "./Section";
 import { useI18n } from "@/lib/i18n";
 import { CHECKOUT_PRO_QUARTERLY, PAYMENTS_LIVE, draftPlans, checkoutLinks, getDemoEmail } from "@/lib/site";
 
@@ -18,19 +18,17 @@ export function PricingContent() {
   const cnMailto = `mailto:${email}?subject=${encodeURIComponent("引源 GEO 大陆客户开通咨询（微信／支付宝）")}&body=${encodeURIComponent("您好，我想开通引源 GEO。\n方案（Starter／Pro／Pro 季付）：\n公司／品牌：\n联系方式（微信／电话）：\n付款方式（微信／支付宝）：\n")}`;
 
   return (
-    <Section className="pt-12 sm:pt-16">
-      <SectionLabel>{t("方案", "Pricing")}</SectionLabel>
-      <SectionTitle as="h1">
-        {t("方案与价格：Free / Starter / Pro / Enterprise", "Plans & pricing: Free / Starter / Pro / Enterprise")}
-      </SectionTitle>
-      <SectionLead>
-        {t(
-          "Starter / Pro 支持信用卡与 PayPal 订阅（新台币计价，Pro 另有季付）。大陆客户可联系人工开通（微信／支付宝）。",
-          "Starter / Pro subscriptions via card or PayPal (billed in TWD; Pro also quarterly). Mainland China customers can contact us for manual activation.",
-        )}
-      </SectionLead>
+    <>
+    <PageHero
+      label={t("方案", "Pricing")}
+      title={t("方案与价格：Free / Starter / Pro / Enterprise", "Plans & pricing: Free / Starter / Pro / Enterprise")}
+      lead={t(
+        "Starter / Pro 支持信用卡与 PayPal 订阅（新台币计价，Pro 另有季付）。大陆客户可联系人工开通（微信／支付宝）。",
+        "Starter / Pro subscriptions via card or PayPal (billed in TWD; Pro also quarterly). Mainland China customers can contact us for manual activation.",
+      )}
+    >
       {PAYMENTS_LIVE ? null : (
-        <p className="mt-4 max-w-2xl rounded-xl border border-amber-300 bg-amber-50 px-4 py-3 text-sm leading-relaxed text-amber-800">
+        <p className="mt-6 max-w-2xl rounded-xl border border-amber-300 bg-amber-50 px-4 py-3 text-sm leading-relaxed text-amber-800">
           {t(
             "线上付款通道正在审核开通中，暂时可能无法完成刷卡。想现在开通，请点「联系开通」来信，我们会人工报价并开通。",
             "Online checkout is pending approval and may not accept cards yet. To start now, use “contact to activate” and we will set you up manually.",
@@ -38,8 +36,9 @@ export function PricingContent() {
           <a href={mailto} className="underline underline-offset-4 hover:text-zinc-950">{email}</a>
         </p>
       )}
-
-      <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+    </PageHero>
+    <Section className="pt-12 sm:pt-14">
+      <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
         {draftPlans.map((p) => {
           const paid = p.code === "starter" || p.code === "pro";
           const href = paid
@@ -73,7 +72,7 @@ export function PricingContent() {
                   {t(p.nameZh, p.nameEn)}
                 </h3>
                 {p.featured ? (
-                  <span className="rounded-full bg-zinc-100 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-zinc-950">
+                  <span className="rounded-full bg-blue-600 px-2.5 py-0.5 text-[11px] font-semibold text-white">
                     {t("推荐", "Popular")}
                   </span>
                 ) : null}
@@ -126,5 +125,6 @@ export function PricingContent() {
         )}
       </p>
     </Section>
+    </>
   );
 }
