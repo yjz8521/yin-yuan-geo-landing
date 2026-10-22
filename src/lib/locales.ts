@@ -1,5 +1,6 @@
 import hant from "@/i18n/zh-hant.json";
 import enD from "@/i18n/en.json";
+import { fillEngines } from "./engines";
 
 export const LOCALES = ["zh-hant", "zh-hans", "en"] as const;
 export type Locale = (typeof LOCALES)[number];
@@ -27,8 +28,12 @@ export function lp(l: Locale, path: string) {
 }
 
 const missing = new Set<string>();
-/** Translate a simplified-Chinese source string (with optional English source). */
+/** Translate a simplified-Chinese source string (with optional English source). Engine tokens are filled after lookup. */
 export function tr(l: Locale, zh: string, en?: string): string {
+  return fillEngines(l, lookup(l, zh, en));
+}
+
+function lookup(l: Locale, zh: string, en?: string): string {
   if (l === "zh-hans") return zh;
   const hit = D[l]?.[zh];
   if (hit) return hit;

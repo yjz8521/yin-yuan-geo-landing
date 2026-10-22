@@ -4,8 +4,9 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { Section, SectionLabel, SectionLead, SectionTitle } from "./Section";
 import { useI18n } from "@/lib/i18n";
+import { comingEngines, engineName, liveEngines } from "@/lib/engines";
 import { tr } from "@/lib/locales";
-import { checkDeliveryDays, draftPlans, getAppUrl, siteConfig } from "@/lib/site";
+import { checkDeliveryDays, draftPlans, getAppUrl } from "@/lib/site";
 
 export type GuideCard = { slug: string; title: string; description: string; date: string };
 
@@ -69,18 +70,11 @@ const reasons = [
     icon: "shield",
     zh: "不编造数据",
     en: "No invented numbers",
-    dZh: "没有虚构客户与成效；目前只有 DeepSeek 自动监测，其他引擎如实标示「接入中」。",
-    dEn: "No fictional customers or results. Only DeepSeek is monitored automatically today; other engines are clearly marked as coming.",
+    dZh: "没有虚构客户与成效；目前只有 {LIVE} 自动监测，其他引擎如实标示「接入中」。",
+    dEn: "No fictional customers or results. Automatic monitoring today covers only {LIVE}; other engines are clearly marked as coming.",
   },
 ] as const;
 
-const engineEn: Record<string, string> = {
-  豆包: "Doubao",
-  通义千问: "Qwen",
-  智谱清言: "Zhipu Qingyan",
-  "百度文心／文小言": "Baidu ERNIE / Wenxiaoyan",
-  元宝: "Yuanbao",
-};
 
 const iconPaths: Record<string, ReactNode> = {
   card: <><rect x="3" y="5" width="18" height="14" rx="2" /><path d="M7 10h6M7 14h10" /></>,
@@ -178,7 +172,7 @@ export function HomeContent({ guides = [] }: { guides?: GuideCard[] }) {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
               </span>
-              {t("DeepSeek 已接入自动监测 · 其他引擎陆续接入中", "DeepSeek live · more engines coming")}
+              {t("{LIVE} 已接入自动监测 · 其他引擎陆续接入中", "Live: {LIVE} · more engines coming")}
             </p>
             <h1 className="text-4xl font-bold tracking-tight text-zinc-950 sm:text-5xl lg:text-[3.5rem] lg:leading-[1.1]">
               {t("两岸 AI", "Be found by AI")}
@@ -224,16 +218,16 @@ export function HomeContent({ guides = [] }: { guides?: GuideCard[] }) {
         <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6">
           <p className="text-center text-xs font-medium uppercase tracking-[0.2em] text-zinc-500">{t("覆盖引擎（国内＋海外）", "Engines covered")}</p>
           <div className="mt-5 flex flex-wrap items-center justify-center gap-2.5">
-            {siteConfig.enginesLive.map((e) => (
-              <span key={e} className="inline-flex items-center gap-1.5 rounded-full bg-zinc-950 px-3.5 py-1.5 text-sm font-semibold text-white">
+            {liveEngines.map((e) => (
+              <span key={e.id} className="inline-flex items-center gap-1.5 rounded-full bg-zinc-950 px-3.5 py-1.5 text-sm font-semibold text-white">
                 <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                {e}
+                {engineName(locale, e)}
                 <span className="text-xs font-normal text-zinc-400">{t("已接入", "live")}</span>
               </span>
             ))}
-            {[...siteConfig.enginesDomesticComing, ...siteConfig.enginesOverseas].map((e) => (
-              <span key={e} className="rounded-full border border-zinc-200 bg-white px-3.5 py-1.5 text-sm text-zinc-500">
-                {t(e as string, engineEn[e] ?? e)}
+            {comingEngines.map((e) => (
+              <span key={e.id} className="rounded-full border border-zinc-200 bg-white px-3.5 py-1.5 text-sm text-zinc-500">
+                {engineName(locale, e)}
               </span>
             ))}
           </div>
@@ -354,7 +348,7 @@ export function HomeContent({ guides = [] }: { guides?: GuideCard[] }) {
         <div className="mt-6 flex flex-col items-start justify-between gap-4 rounded-2xl border border-dashed border-zinc-300 bg-zinc-50 p-6 sm:flex-row sm:items-center">
           <div>
             <p className="font-semibold text-zinc-950">{t("招募首批合作品牌", "Looking for our first partner brands")}</p>
-            <p className="mt-1 text-sm text-zinc-600">{t("先用固定问法建立提及率基线（DeepSeek 自动跑问，其他引擎陆续接入）", "Start with a fixed-prompt mention baseline (DeepSeek automated; more engines coming)")}</p>
+            <p className="mt-1 text-sm text-zinc-600">{t("先用固定问法建立提及率基线（{LIVE} 自动跑问，其他引擎陆续接入）", "Start with a fixed-prompt mention baseline ({LIVE} automated; more engines coming)")}</p>
           </div>
           <Link href={lpath("/demo/")} className="shrink-0 text-sm font-semibold text-blue-600 hover:underline">
             {t("申请成为合作品牌", "Apply as a partner brand")} →

@@ -42,6 +42,12 @@ Do not commit Lemon Squeezy API keys, webhook secrets, or DB credentials.
 Stripe 不支持台湾，改用 Lemon Squeezy（信用卡／PayPal，新台币）。结账链接在 `src/lib/site.ts`：Starter、Pro、Pro 季付。
 商店目前为 **Test mode**（审核中）。审核通过并切到 Live 后：把 `PAYMENTS_LIVE` 改为 `true`（移除定价页「付款通道审核中」提示），并确认 Live 模式下的结账链接是否变更。
 
+## 引擎接入狀態 / Engine status
+
+所有「已接入／陸續接入中」的說法都來自 `src/content/engines.json`。某個引擎接上自動跑問後，把它的 `"live"` 改成 `true`，重新 build 即可；首頁、方案、FAQ、指南、JSON-LD、llms.txt 會一起更新。
+
+文案裡用代號表示引擎名單：`{LIVE}`（已接入）、`{COMING_CN}`（國內接入中）、`{COMING_GLOBAL}`（海外接入中），由 `src/lib/engines.ts` 依語言填入名稱。新寫的文案若提到引擎現況，請用這些代號，不要直接寫死引擎名稱。
+
 ## 路由 / Routes
 
 - `/` — 首页

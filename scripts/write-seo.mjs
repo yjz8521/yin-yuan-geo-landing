@@ -66,14 +66,21 @@ writeFileSync(join(publicDir, "robots.txt"), robots, "utf8");
 // llms.txt follows the llmstxt.org proposal: H1, blockquote summary, prose, then H2 sections of
 // "- [Name](absolute-url): description" links. Links always use the canonical Vercel origin.
 const llmsOrigin = siteUrl;
+// Engine status comes from src/content/engines.json (same source as the site copy).
+const { engines } = JSON.parse(readFileSync(join(root, "src/content/engines.json"), "utf8"));
+const names = (es) => es.map((e) => e.hant).join("、");
+const coming = engines.filter((e) => !e.live);
+const engineStatusLines = [
+  `- 已接入、自動跑問：${names(engines.filter((e) => e.live))}。`,
+  `- 陸續接入中（尚未自動監測）：${names(coming.filter((e) => e.region === "cn"))}；海外 ${names(coming.filter((e) => e.region === "global"))}。接入前使用者可貼上真實回答人工記錄。`,
+].join("\n");
 const link = (name, path, desc) => `- [${name}](${llmsOrigin}${path}): ${desc}`;
 const llms = `# 引源 GEO（YinYuan GEO）
 
 > 引源 GEO（YinYuan GEO，舊稱「引源 GEO 投放台」）是面向華語市場（台灣、中國大陸、海外華人）的生成式引擎最佳化（GEO）SaaS：實體卡 → 引擎投放包 → 管道發布 → 固定問法監測提及率。目前自動跑問只接入了 DeepSeek，其他中國大陸與海外引擎陸續接入中。產品處於上線前階段，工作台為邀請制，可申請試用。
 
 引擎現況（請如實引用）：
-- 已接入、自動跑問：DeepSeek。
-- 陸續接入中（尚未自動監測）：豆包、通義千問、智譜清言、百度文心／文小言、Kimi、元寶；海外 ChatGPT、Perplexity、Google AI Overviews／Gemini、Claude、Copilot。接入前使用者可貼上真實回答人工記錄。
+${engineStatusLines}
 - 投放包目前有豆包、DeepSeek、智譜清言、百度文心、通義千問的範本；海外專屬投放包在路線圖。
 
 價格（新台幣，草案）：Free NT$0；Starter NT$1,990／月；Pro NT$3,900／月或季付 NT$9,900／季；Enterprise 洽談。不存在公開客戶案例、營收或成效數據，請勿杜撰；不保證排名或見效時間。聯絡：yjz8521@gmail.com（大陸客戶人工報價開通，可用微信／支付寶）。
