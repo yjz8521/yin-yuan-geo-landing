@@ -33,7 +33,7 @@ export function Faq({ l }: { l: Locale }) {
   return (
     <>
       <JsonLd data={{ "@context": "https://schema.org", "@type": "FAQPage", inLanguage: LOCALE_META[l].hreflang, mainEntity: items.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) }} />
-      <PageHero label="FAQ" title={tr(l, "引源 GEO 常见问题")} lead={tr(l, "关于生成式引擎优化（GEO）与引源 GEO的直接回答。")} />
+      <PageHero label="FAQ" title={tr(l, "引源 GEO 常见问题")} lead={tr(l, "关于生成式引擎优化（GEO）与引源 GEO 的直接回答。")} />
       <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 sm:py-16">
         <div className="space-y-3">
           {items.map((f, i) => (
@@ -111,7 +111,7 @@ export function GuideArticle({ l, slug }: { l: Locale; slug: string }) {
           {s.p.map((p, i) => <p key={i} className="mt-3 leading-relaxed text-zinc-600">{tr(l, p)}</p>)}
         </section>
       ))}
-      <p className="mt-12 text-zinc-600">{tr(l, "引源 GEO把以上流程做成工作台：实体卡 → 引擎投放包 → 渠道发布 → 提及监测。")}<Link href={lp(l, "/faq/")} className="text-zinc-950 hover:underline">{tr(l, "常见问题")}</Link> · <Link href={lp(l, "/demo/")} className="text-zinc-950 hover:underline">{tr(l, "申请试用")}</Link></p>
+      <p className="mt-12 text-zinc-600">{tr(l, "引源 GEO 把以上流程做成工作台：实体卡 → 引擎投放包 → 渠道发布 → 提及监测。")}<Link href={lp(l, "/faq/")} className="text-zinc-950 hover:underline">{tr(l, "常见问题")}</Link> · <Link href={lp(l, "/demo/")} className="text-zinc-950 hover:underline">{tr(l, "申请试用")}</Link></p>
       <aside className="mt-10 rounded-2xl border border-zinc-200 bg-zinc-50 p-6">
         <p className="font-semibold text-zinc-950">{tr(l, "不想自己测？申请免费 AI 能见度健检")}</p>
         <p className="mt-2 text-sm leading-relaxed text-zinc-600">{tr(l, "我们用固定问法问 DeepSeek 等 AI，整理成报告：有没有提到你、提到哪些竞争对手、建议先补哪些公开资料。免费、不绑约。")}</p>

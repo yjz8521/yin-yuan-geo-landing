@@ -41,7 +41,7 @@
  "大陆客户如何付款？": "How can mainland China customers pay?",
  "台湾与海外客户可用信用卡或 PayPal 线上订阅；大陆客户可通过 yjz8521@gmail.com 联系，人工报价并开通。": "Taiwan and overseas customers can subscribe online by card or PayPal; mainland China customers can contact yjz8521@gmail.com for a manual quote and activation.",
  "引源 GEO 常见问题": "YinYuan GEO FAQ",
- "关于生成式引擎优化（GEO）与引源 GEO的直接回答。": "Straight answers about generative engine optimization (GEO) and YinYuan GEO.",
+ "关于生成式引擎优化（GEO）与引源 GEO 的直接回答。": "Straight answers about generative engine optimization (GEO) and YinYuan GEO.",
  "延伸阅读：": "Further reading: ",
  "方案价格": "Pricing",
  "GEO 指南": "GEO guide",
@@ -97,5 +97,11 @@
  "有些台湾品牌在 ChatGPT 查得到，在 DeepSeek、豆包却查不到。常见原因是繁简与用语不同、资料只放在大陆 AI 较少读取的渠道。五个检查点，照着做就能自己排查。": "Some Taiwan brands show up in ChatGPT but not in DeepSeek or Doubao. Common causes: Traditional vs. Simplified script, different vocabulary, and information that lives only on channels mainland AI rarely reads. Five checks you can run yourself.",
  "B2B 设备与工业品怎么做 GEO：让采购问 AI 时看到你": "GEO for B2B equipment and industrial products: be seen when buyers ask AI",
  "采购与工程师也会先问 AI「XX 设备有哪些厂家」。B2B 品牌要准备的不是广告文，而是规格、应用场景、服务范围与选型 FAQ 这类可被引用的事实。": "Buyers and engineers also ask AI which suppliers make a given machine. B2B brands need citable facts — specs, applications, service coverage and selection FAQs — not ad copy.",
- "免费学会自己检测与优化": "Learn to check and improve it yourself — free"
+ "免费学会自己检测与优化": "Learn to check and improve it yourself — free",
+ "餐厅怎么让 AI 推荐你：让「附近哪家好吃」的回答里有你": "How restaurants get recommended by AI: show up when people ask where to eat nearby",
+ "越来越多人会问 AI「信义区适合聚餐的餐厅」。餐厅要准备的是一致的店家资料、读得到的菜单与价格、清楚的用餐场合，以及真实的评价。六个步骤，加上两岸各自要顾的平台。": "More people ask AI things like “good restaurants for a group dinner in Xinyi”. Restaurants need consistent listings, readable menus and prices, clear dining occasions and genuine reviews. Six steps, plus the platforms to cover on each side of the Strait.",
+ "代工厂（OEM／ODM）怎么做 GEO：让海外与大陆采购问 AI 时找到你": "GEO for OEM/ODM manufacturers: be found when overseas and mainland buyers ask AI",
+ "采购找代工厂时，也会先问 ChatGPT 或 DeepSeek「台湾有哪些 XX 代工厂」。代工厂要公开的是制程能力、材料、MOQ、产能、认证与交期，而且要有英文与简体版本。": "Buyers sourcing a manufacturer may start by asking ChatGPT or DeepSeek which Taiwan factories make a product. OEM/ODM makers need public, citable capability facts — processes, materials, MOQ, capacity, certifications, lead times — in English and Simplified Chinese too.",
+ "电商品牌怎么让 AI 推荐你的商品：从商品页到第三方评测": "How e-commerce brands get products recommended by AI: from product pages to third-party reviews",
+ "消费者会问 AI「预算三千有什么推荐的空气清净机」。电商品牌要让商品页读得到、规格比得了，再加上真实的第三方评测，AI 才有理由推荐你。": "Shoppers ask AI things like “best air purifier under NT$3,000”. E-commerce brands need readable product pages, comparable specs and genuine third-party reviews before AI has a reason to recommend them."
 }
