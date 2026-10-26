@@ -8,7 +8,7 @@ export const faqs: { q: string; a: string }[] = [
   { q: "引源 GEO 怎么收费？", a: "价格为草案：Free 免费（2 个专案、每月 50 次监测）；Starter 每月 NT$1,990（10 个专案、每月 1,000 次监测、API 存取）；Pro 每月 NT$3,900，或季付 NT$9,900（约每月 NT$3,300，省 15%）（50 个专案、每月 5,000 次监测、Webhook 与进阶归因）；Enterprise 洽谈。引源 GEO 是自助工具，价格低于代运营；目前自动跑问已接入 {LIVE}，其他引擎陆续接入中。" },
   { q: "引源 GEO 适合谁？", a: "适合希望在国内与海外 AI 回答中被推荐的品牌方、出海或在台湾、大陆、海外华人市场经营的中小企业、内容与市场团队，以及代客户做 GEO 的代理商。不适合期待「保证排名」或只想买流量的团队。" },
   { q: "引源 GEO 和 GEO 代运营有什么不同？", a: "引源 GEO 是自助工具：投放包目前有豆包、DeepSeek、通义千问、智谱清言、百度文心的模板，自动监测目前已接入 {LIVE}；其他国内引擎与海外引擎（{COMING_GLOBAL}）陆续接入中，海外专属投放包在路线图。由你的团队自助操作，价格低于代运营。" },
-  { q: "大陆客户如何付款？", a: "台湾与海外客户可用信用卡或 PayPal 线上订阅；大陆客户可通过 yjz8521@gmail.com 联系，人工报价并开通。" },
+  { q: "大陆客户如何付款？", a: "目前采用联系购买：通过 LINE（a1993391683）、微信（hao_031105）或 yjz8521@gmail.com 联系，确认方案后以微信／支付宝收款码付款，人工开通。" },
 ];
 
 export type Guide = { slug: string; date: string; title: string; description: string; sections: { h: string; p: string[] }[] };
