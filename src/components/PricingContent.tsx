@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { PageHero, Section } from "./Section";
 import { useI18n } from "@/lib/i18n";
-import { CHECKOUT_PRO_QUARTERLY, PAYMENTS_LIVE, draftPlans, checkoutLinks, getDemoEmail } from "@/lib/site";
+import { PAYMENTS_LIVE, contactIds, draftPlans, getDemoEmail } from "@/lib/site";
 
 export function PricingContent() {
   const { t, locale, p: lpath } = useI18n();
@@ -15,7 +15,7 @@ export function PricingContent() {
       ? "您好，我想了解引源 GEO 方案。\n公司／品牌：\n团队规模：\n想监测的引擎／品类：\n"
       : "Hi, I'd like to learn about YinYuan GEO plans.\nCompany / brand:\nTeam size:\nEngines / category to monitor:\n",
   )}`;
-  const cnMailto = `mailto:${email}?subject=${encodeURIComponent("引源 GEO 大陆客户开通咨询（微信／支付宝）")}&body=${encodeURIComponent("您好，我想开通引源 GEO。\n方案（Starter／Pro／Pro 季付）：\n公司／品牌：\n联系方式（微信／电话）：\n付款方式（微信／支付宝）：\n")}`;
+  const cnMailto = `mailto:${email}?subject=${encodeURIComponent("引源 GEO 联系购买（微信／支付宝）")}&body=${encodeURIComponent("您好，我想开通引源 GEO。\n方案（Starter／Pro／Pro 季付）：\n公司／品牌：\n联系方式（微信／电话）：\n付款方式（微信／支付宝）：\n")}`;
 
   return (
     <>
@@ -23,15 +23,15 @@ export function PricingContent() {
       label={t("方案", "Pricing")}
       title={t("方案与价格：Free / Starter / Pro / Enterprise", "Plans & pricing: Free / Starter / Pro / Enterprise")}
       lead={t(
-        "Starter / Pro 支持信用卡与 PayPal 订阅（新台币计价，Pro 另有季付）。大陆客户可联系人工开通（微信／支付宝）。",
-        "Starter / Pro subscriptions via card or PayPal (billed in TWD; Pro also quarterly). Mainland China customers can contact us for manual activation.",
+        "Starter / Pro 采用「联系购买」：通过 LINE、微信或 Email 联系我们，确认方案后提供微信／支付宝收款码，付款后人工开通（新台币计价，Pro 另有季付）。",
+        "Starter / Pro are purchased by contacting us via LINE, WeChat or email. After confirming your plan we send WeChat Pay / Alipay QR payment details and activate your account manually (billed in TWD; Pro also quarterly).",
       )}
     >
       {PAYMENTS_LIVE ? null : (
         <p className="mt-6 max-w-2xl rounded-xl border border-amber-300 bg-amber-50 px-4 py-3 text-sm leading-relaxed text-amber-800">
           {t(
-            "线上付款通道正在审核开通中，暂时可能无法完成刷卡。想现在开通，请点「联系开通」来信，我们会人工报价并开通。",
-            "Online checkout is pending approval and may not accept cards yet. To start now, use “contact to activate” and we will set you up manually.",
+            "目前暂不提供线上刷卡。请通过 LINE、微信或 Email 联系购买，我们会人工报价并开通。",
+            "Online card checkout is not available yet. Please contact us via LINE, WeChat or email to purchase; we will quote and activate manually.",
           )}{" "}
           <a href={mailto} className="underline underline-offset-4 hover:text-zinc-950">{email}</a>
         </p>
@@ -42,12 +42,12 @@ export function PricingContent() {
         {draftPlans.map((p) => {
           const paid = p.code === "starter" || p.code === "pro";
           const href = paid
-            ? checkoutLinks[p.code as "starter" | "pro"]
+            ? "#contact-purchase"
             : p.code === "enterprise"
               ? mailto
               : lpath("/demo/");
           const ctaLabel = paid
-            ? t("信用卡／PayPal 订阅", "Subscribe (card / PayPal)")
+            ? t("联系购买", "Contact to buy")
             : p.code === "enterprise"
               ? t("联系销售", "Contact sales")
               : t("申请试用", "Request demo");
@@ -104,13 +104,8 @@ export function PricingContent() {
                 </a>
               )}
               {p.code === "pro" ? (
-                <a href={CHECKOUT_PRO_QUARTERLY} rel="noopener noreferrer" className="mt-2 block rounded-full border border-zinc-300 py-2 text-center text-xs text-zinc-950 hover:bg-zinc-100">
+                <a href="#contact-purchase" className="mt-2 block rounded-full border border-zinc-300 py-2 text-center text-xs text-zinc-950 hover:bg-zinc-100">
                   {t("季付 NT$9,900／季（约 NT$3,300／月，省 15%）", "Quarterly NT$9,900 (~NT$3,300/mo, save 15%)")}
-                </a>
-              ) : null}
-              {paid ? (
-                <a href={cnMailto} className="mt-2 block rounded-full border border-zinc-200 py-2 text-center text-xs text-zinc-600 hover:bg-zinc-100">
-                  {t("大陆客户／付款问题：联系开通（微信／支付宝）", "Mainland China / payment issues: contact to activate (WeChat Pay / Alipay)")}
                 </a>
               ) : null}
             </div>
@@ -118,10 +113,26 @@ export function PricingContent() {
         })}
       </div>
 
+      <div id="contact-purchase" className="mt-10 scroll-mt-24 rounded-2xl border border-zinc-200 bg-white p-6">
+        <h3 className="text-lg font-semibold text-zinc-950">{t("联系购买", "Contact to buy")}</h3>
+        <p className="mt-2 text-sm text-zinc-600">
+          {t(
+            "请通过以下任一方式联系我们，注明想购买的方案（Starter／Pro／Pro 季付）。确认后我们会提供微信／支付宝个人收款码，付款后人工开通工作台。",
+            "Contact us by any of the channels below and tell us which plan you want (Starter / Pro / Pro quarterly). We will send WeChat Pay / Alipay personal QR payment details, then activate your workspace manually after payment.",
+          )}
+        </p>
+        <ul className="mt-4 space-y-2 text-sm text-zinc-800">
+          <li>LINE ID：<span className="font-semibold">{contactIds.line}</span></li>
+          <li>{t("微信 ID", "WeChat ID")}：<span className="font-semibold">{contactIds.wechat}</span></li>
+          <li>Email：<a href={cnMailto} className="font-semibold underline underline-offset-4">{email}</a></li>
+          <li>{t("付款方式：微信／支付宝个人收款码（联系后提供）", "Payment: WeChat Pay / Alipay personal QR code (sent after contact)")}</li>
+        </ul>
+      </div>
+
       <p className="mt-8 text-xs leading-relaxed text-zinc-400">
         {t(
-          "订阅可随时取消。付款后我们会邮件联系你，人工协助开通工作台。Enterprise 与发票需求请来信 yjz8521@gmail.com。",
-          "Cancel anytime. After payment we email you and set up your workspace with you. For Enterprise or invoices, email yjz8521@gmail.com.",
+          "可随时停止续费。付款后我们会联系你，人工协助开通工作台。Enterprise 与发票需求请来信 yjz8521@gmail.com。",
+          "Stop renewing anytime. After payment we contact you and set up your workspace with you. For Enterprise or invoices, email yjz8521@gmail.com.",
         )}
       </p>
     </Section>

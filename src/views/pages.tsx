@@ -18,7 +18,7 @@ export const homeMeta = (l: Locale): Metadata => ({ alternates: alternates(l, "/
 const latestGuides = [...guides].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 3).map(({ slug, title, description, date }) => ({ slug, title, description, date }));
 export const Home = () => <HomeContent guides={latestGuides} />;
 
-export const pricingMeta = (l: Locale): Metadata => pageMeta(l, "/pricing/", "方案与价格 Pricing", "引源 GEO 价格：Free NT$0；Starter NT$1,990／月；Pro NT$3,900／月或季付 NT$9,900／季；Enterprise 洽谈。台湾与海外可用信用卡／PayPal，大陆客户可联系人工开通。");
+export const pricingMeta = (l: Locale): Metadata => pageMeta(l, "/pricing/", "方案与价格 Pricing", "引源 GEO 价格：Free NT$0；Starter NT$1,990／月；Pro NT$3,900／月或季付 NT$9,900／季；Enterprise 洽谈。通过 LINE、微信或 Email 联系购买，支持微信／支付宝付款。");
 export const Pricing = () => <PricingContent />;
 
 export const aboutMeta = (l: Locale): Metadata => pageMeta(l, "/about/", "关于 About", "引源 GEO：面向华语市场、以国内与海外生成式 AI 为目标的 GEO SaaS（自动监测已接入 {LIVE}，其他引擎陆续接入中），产品负责人 Kinnv。");

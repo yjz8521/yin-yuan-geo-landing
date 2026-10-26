@@ -103,5 +103,14 @@
  "代工厂（OEM／ODM）怎么做 GEO：让海外与大陆采购问 AI 时找到你": "GEO for OEM/ODM manufacturers: be found when overseas and mainland buyers ask AI",
  "采购找代工厂时，也会先问 ChatGPT 或 DeepSeek「台湾有哪些 XX 代工厂」。代工厂要公开的是制程能力、材料、MOQ、产能、认证与交期，而且要有英文与简体版本。": "Buyers sourcing a manufacturer may start by asking ChatGPT or DeepSeek which Taiwan factories make a product. OEM/ODM makers need public, citable capability facts — processes, materials, MOQ, capacity, certifications, lead times — in English and Simplified Chinese too.",
  "电商品牌怎么让 AI 推荐你的商品：从商品页到第三方评测": "How e-commerce brands get products recommended by AI: from product pages to third-party reviews",
- "消费者会问 AI「预算三千有什么推荐的空气清净机」。电商品牌要让商品页读得到、规格比得了，再加上真实的第三方评测，AI 才有理由推荐你。": "Shoppers ask AI things like “best air purifier under NT$3,000”. E-commerce brands need readable product pages, comparable specs and genuine third-party reviews before AI has a reason to recommend them."
+ "消费者会问 AI「预算三千有什么推荐的空气清净机」。电商品牌要让商品页读得到、规格比得了，再加上真实的第三方评测，AI 才有理由推荐你。": "Shoppers ask AI things like “best air purifier under NT$3,000”. E-commerce brands need readable product pages, comparable specs and genuine third-party reviews before AI has a reason to recommend them.",
+ "Starter / Pro 采用「联系购买」：通过 LINE、微信或 Email 联系我们，确认方案后提供微信／支付宝收款码，付款后人工开通（新台币计价，Pro 另有季付）。": "Starter / Pro are purchased by contacting us via LINE, WeChat or email. After confirming your plan we send WeChat Pay / Alipay QR payment details and activate your account manually (billed in TWD; Pro also quarterly).",
+ "目前暂不提供线上刷卡。请通过 LINE、微信或 Email 联系购买，我们会人工报价并开通。": "Online card checkout is not available yet. Please contact us via LINE, WeChat or email to purchase; we will quote and activate manually.",
+ "联系购买": "Contact to buy",
+ "请通过以下任一方式联系我们，注明想购买的方案（Starter／Pro／Pro 季付）。确认后我们会提供微信／支付宝个人收款码，付款后人工开通工作台。": "Contact us by any of the channels below and tell us which plan you want (Starter / Pro / Pro quarterly). We will send WeChat Pay / Alipay personal QR payment details, then activate your workspace manually after payment.",
+ "付款方式：微信／支付宝个人收款码（联系后提供）": "Payment: WeChat Pay / Alipay personal QR code (sent after contact)",
+ "可随时停止续费。付款后我们会联系你，人工协助开通工作台。Enterprise 与发票需求请来信 yjz8521@gmail.com。": "Stop renewing anytime. After payment we contact you and set up your workspace with you. For Enterprise or invoices, email yjz8521@gmail.com.",
+ "引源 GEO 联系购买（微信／支付宝）": "YinYuan GEO purchase inquiry (WeChat Pay / Alipay)",
+ "目前采用联系购买：通过 LINE（a1993391683）、微信（hao_031105）或 yjz8521@gmail.com 联系，确认方案后以微信／支付宝收款码付款，人工开通。": "We currently sell by direct contact: reach us on LINE (a1993391683), WeChat (hao_031105) or yjz8521@gmail.com; after confirming your plan you pay via WeChat Pay / Alipay QR code and we activate manually.",
+ "引源 GEO 价格：Free NT$0；Starter NT$1,990／月；Pro NT$3,900／月或季付 NT$9,900／季；Enterprise 洽谈。通过 LINE、微信或 Email 联系购买，支持微信／支付宝付款。": "YinYuan GEO pricing: Free NT$0; Starter NT$1,990/mo; Pro NT$3,900/mo or NT$9,900/quarter; Enterprise custom. Purchase by contacting us via LINE, WeChat or email; WeChat Pay / Alipay accepted."
 }
